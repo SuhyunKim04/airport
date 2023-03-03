@@ -310,7 +310,29 @@ button {
 }
 
 h1 {
-  color: red;
+  color: green;
+}
+
+.recommand {
+  display: flex;
+}
+.recommand li a {
+  display: block;
+  background: url("../images/pics_0.jpg") no-repeat center;
+  padding: 180px 0;
+}
+.recommand li a .text {
+  background-color: black;
+  padding: 50px;
+  position: relative;
+  top: 180px;
+  opacity: 0.5;
+}
+.recommand li a .text p {
+  color: #ffffff;
+}
+.recommand li a .text span {
+  color: #ffffff;
 }
 
 /*# sourceMappingURL=common.css.map */

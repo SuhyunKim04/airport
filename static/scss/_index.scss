@@ -1,1 +1,31 @@
-h1 {color: red;}
+h1 {color: green;}
+
+.recommand {
+    display: flex;
+    li{
+        // background: url('../images/pics_0.jpg') no-repeat center; 
+        // padding: 80px 50px;
+
+        a{
+            display: block;
+            background: url('../images/pics_0.jpg') no-repeat center; 
+            padding: 180px 0;
+
+            .text{
+                background-color: black;
+                padding: 50px;
+                position:relative;
+                top: 180px;
+                opacity: 0.5;
+
+                p{
+                    color: #ffffff;
+                }
+
+                span{
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+}

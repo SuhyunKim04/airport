@@ -333,23 +333,25 @@ h1 {
 
 .recommand {
   display: flex;
+  justify-content: space-between;
+  position: relative;
 }
 .recommand ul li a {
   display: block;
   background: url("../images/pics_0.jpg") no-repeat center center/cover;
-  width: 340px;
-  height: 456px;
+  width: 240px;
+  height: 356px;
 }
 .recommand ul li a:nth-child(3) {
   background: url("../images/pics_1.jpg") no-repeat center center/cover;
 }
 .recommand ul li a .text {
   background-color: black;
-  position: relative;
-  top: 316px;
+  position: absolute;
+  bottom: 0;
   opacity: 0.5;
-  width: 340px;
-  height: 140px;
+  width: 240px;
+  height: 100px;
 }
 .recommand ul li a .text p {
   color: #ffffff;

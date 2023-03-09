@@ -309,10 +309,6 @@ button {
   opacity: 0.75;
 }
 
-h1 {
-  color: green;
-}
-
 .page_header {
   display: flex;
   justify-content: space-between;
@@ -331,27 +327,51 @@ h1 {
   padding: 0 0 0 10px;
 }
 
-.recommand {
+.main img {
+  height: 70vh;
+  width: 100%;
+}
+
+.visual {
+  display: flex;
+}
+
+.recommand ul {
   display: flex;
   justify-content: space-between;
   position: relative;
 }
+.recommand ul li {
+  width: 260px;
+  background: no-repeat center center/cover;
+}
+.recommand ul li:nth-child(1) {
+  background-image: url("../images/pics_0.jpg");
+}
+.recommand ul li:nth-child(2) {
+  background-image: url("../images/pics_1.jpg");
+}
+.recommand ul li:nth-child(3) {
+  background-image: url("../images/pics_2.jpg");
+}
+.recommand ul li:nth-child(4) {
+  background-image: url("../images/pics_3.jpg");
+}
+.recommand ul li:nth-child(5) {
+  background-image: url("../images/pics_4.jpg");
+}
 .recommand ul li a {
   display: block;
-  background: url("../images/pics_0.jpg") no-repeat center center/cover;
-  width: 240px;
   height: 356px;
-}
-.recommand ul li a:nth-child(3) {
-  background: url("../images/pics_1.jpg") no-repeat center center/cover;
 }
 .recommand ul li a .text {
   background-color: black;
   position: absolute;
   bottom: 0;
+  left: 0;
   opacity: 0.5;
-  width: 240px;
-  height: 100px;
+  width: 260px;
+  height: 110px;
 }
 .recommand ul li a .text p {
   color: #ffffff;
@@ -364,6 +384,7 @@ h1 {
 
 .weekly {
   display: flex;
+  justify-content: space-between;
 }
 .weekly ul li a {
   display: block;
@@ -382,7 +403,6 @@ h1 {
 .weekly ul li a .text p {
   color: #ffffff;
   font-weight: 500;
-  font-family: "poppins, sasn-serif";
 }
 
 .page_footer {

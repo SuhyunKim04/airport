@@ -1,10 +1,7 @@
 @charset "utf-8";
-h1 {color: green;}
 
 .page_header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  @include flex;
     // margin: 0 20px;
 
     .gnb ul{
@@ -17,7 +14,7 @@ h1 {color: green;}
     }
 
     .acc_gnb ul{
-        display: flex;
+        @include flex(null, null);
 
         li{
             padding: 0 0 0 10px;
@@ -25,37 +22,50 @@ h1 {color: green;}
     }
 }
 
-.recommand {
+.main{
+
+   img{
+        height: 70vh;
+        width: 100%;
+   }
+}
+.visual{
     display: flex;
-    justify-content: space-between;
-    position: relative;
+
+}
+
+.recommand {
 
     ul{
-       
+        @include flex(null);
+        position: relative;
     
         li{
-            
+            width: 260px;
+            background:  no-repeat center center/cover;
+            @for $i from 0 through 4{
+                &:nth-child(#{$i + 1}){
+                    background-image: url('../images/pics_#{$i}.jpg') 
+                }
+
+            }
+
             // background: url('../images/pics_0.jpg') no-repeat center; 
             // padding: 80px 50px;
     
             a{
-                display: block;
-                background: url('../images/pics_0.jpg') no-repeat center center/cover; 
+                display: block; 
                 // padding: 180px 0;
-                width: 240px;
                 height: 356px;
     
-                &:nth-child(3){
-                    background: url('../images/pics_1.jpg') no-repeat center center/cover; 
-                }
+
     
                 .text{
                     background-color: black;
-                    position:absolute;
-                    bottom: 0;
+                    @include position(null,null,0,0);
                     opacity: 0.5;
-                    width: 240px;
-                    height: 100px;
+                    width: 260px;
+                    height: 110px;
                     
     
                     p{
@@ -76,6 +86,7 @@ h1 {color: green;}
 
 .weekly{
     display: flex;
+    justify-content: space-between;
 
     ul{
         li{
@@ -96,7 +107,6 @@ h1 {color: green;}
                     p{
                         color: #ffffff;
                         font-weight: 500;
-                        font-family: 'poppins, sasn-serif';
                     }
                 }
             }

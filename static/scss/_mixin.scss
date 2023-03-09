@@ -1,0 +1,44 @@
+@mixin flex($a:center, $j:space-between) {
+    display: flex;
+    justify-content: $j;
+    align-items: $a;
+}
+
+@mixin position($t:null, $r:null,$b:null,$l:null, $p:absolute){
+    position: $p;
+    bottom:$b;
+    top:$t;
+    right: $r;
+    left: $l;
+}
+
+@mixin ir($path:null, $p:center center, $s:contain) {
+    background:url($url + '#{$path}') no-repeat #{$p}/#{$s};
+
+    &>span {
+        @include blind; 
+    }
+}
+
+@mixin iconBg($path, $start, $end) {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+
+    @for $i from $start through $end {
+        &:nth-child(#{$i}) {
+            background-image:url($url + '#{$path}#{$i}.png');
+        }
+    }
+}
+
+@mixin center($pos:absolute) {
+    position: $pos;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+

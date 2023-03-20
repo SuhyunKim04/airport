@@ -45,7 +45,9 @@ img{
 // form
 textarea { resize:none;}
 
-button {border: none; cursor:pointer;}
+button {border: none; cursor:pointer;
+	background:none;
+}
 
 
 // custom 
@@ -56,4 +58,7 @@ button {border: none; cursor:pointer;}
     height: 1px;
     margin: -1px;
     overflow: hidden;
+}
+*{
+	box-sizing: border-box;
 }

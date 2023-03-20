@@ -1,5 +1,7 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
+@import url("https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&display=swap");
 body, h1, h2, h3, h4, h5, h6, p, blockquote, dl, dt, dd, ol, ul, li, fieldset {
   margin: 0;
   padding: 0;
@@ -53,6 +55,7 @@ textarea {
 button {
   border: none;
   cursor: pointer;
+  background: none;
 }
 
 .blind {
@@ -62,6 +65,10 @@ button {
   height: 1px;
   margin: -1px;
   overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 /* Slider */
@@ -309,22 +316,55 @@ button {
   opacity: 0.75;
 }
 
-.page_header {
+.page_header .inner {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+body {
+  font-family: "Spoqa Han Sans", "Spoqa Han Sans JP", "Sans-serif";
+  font-size: 13px;
+}
+
+.page_header .inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 80px;
+}
+.page_header h1 {
+  font-family: "Tiro Devanagari Hindi", serif;
+  font-size: 40px;
+}
+.page_header .gnb {
+  font-size: 18px;
+  font-weight: 600;
 }
 .page_header .gnb ul {
   display: flex;
 }
-.page_header .gnb ul li {
+.page_header .gnb ul a {
   padding: 0 40px;
 }
-.page_header .acc_gnb ul {
+.page_header .acc_gnb {
   display: flex;
+  column-gap: 20px;
 }
-.page_header .acc_gnb ul li {
-  padding: 0 0 0 10px;
+.page_header .acc_gnb li a {
+  background: no-repeat center center/contain;
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+.page_header .acc_gnb li:nth-child(1) a {
+  background-image: url("../images/ico_chatbot.png");
+}
+.page_header .acc_gnb li:nth-child(2) a {
+  background-image: url("../images/ico_profile.png");
+}
+.page_header .acc_gnb li:nth-child(3) a {
+  background-image: url("../images/ico_search.png");
 }
 
 .main img {
@@ -334,6 +374,29 @@ button {
 
 .visual {
   display: flex;
+}
+.visual .reserv {
+  width: 100%;
+  max-width: 450px;
+  min-width: 300px;
+  background-color: #2E2E2E;
+  padding: 20px;
+}
+.visual .reserv .inner {
+  background-color: #ffffff;
+  position: relative;
+  border-radius: 16px;
+  padding: 20px;
+}
+.visual .reserv .tab_menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.visual .reserv .tab_label {
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 .recommand ul {
@@ -383,22 +446,44 @@ button {
 }
 
 .weekly {
+  margin-top: 30px;
+}
+.weekly ul {
   display: flex;
   justify-content: space-between;
+  position: relative;
+}
+.weekly ul li {
+  width: 260px;
+  background: no-repeat center center/cover;
+}
+.weekly ul li:nth-child(1) {
+  background-image: url("../images/weekly_0.jpg");
+}
+.weekly ul li:nth-child(2) {
+  background-image: url("../images/weekly_1.jpg");
+}
+.weekly ul li:nth-child(3) {
+  background-image: url("../images/weekly_2.jpg");
+}
+.weekly ul li:nth-child(4) {
+  background-image: url("../images/weekly_3.jpg");
+}
+.weekly ul li:nth-child(5) {
+  background-image: url("../images/weekly_4.jpg");
 }
 .weekly ul li a {
   display: block;
-  background: url("../images/pics_2.jpg") no-repeat center center/cover;
-  width: 340px;
-  height: 456px;
+  height: 356px;
 }
 .weekly ul li a .text {
   background-color: black;
-  position: relative;
-  top: 316px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   opacity: 0.5;
-  width: 340px;
-  height: 140px;
+  width: 260px;
+  height: 110px;
 }
 .weekly ul li a .text p {
   color: #ffffff;
@@ -406,14 +491,11 @@ button {
 }
 
 .page_footer {
-  display: flex;
   padding-top: 50px;
 }
-.page_footer nav {
+.page_footer div nav .fnb {
   display: flex;
   justify-content: space-between;
-}
-.page_footer nav ul {
   padding: 0 15px 15px 0;
 }
 

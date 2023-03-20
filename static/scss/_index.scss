@@ -1,23 +1,63 @@
 @charset "utf-8";
+$imgUrl :'../images/';
+%inner {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+body{
+    font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; 
+    font-size: 13px;
+}
 
 .page_header{
-  @include flex;
-    // margin: 0 20px;
-
-    .gnb ul{
-        display: flex;
-        
-
-        li{
-            padding: 0 40px;
-        }
+    .inner{
+        @include flex;
+        @extend %inner;
+        height: 80px;
     }
 
-    .acc_gnb ul{
-        @include flex(null, null);
+    h1{
+        font-family: 'Tiro Devanagari Hindi', serif;
+        font-size: 40px;
+    }
+    // margin: 0 20px;
 
-        li{
-            padding: 0 0 0 10px;
+    .gnb{
+        font-size: 18px;
+        font-weight: 600;
+        ul{
+        display: flex;
+        
+    
+            a{
+                padding: 0 40px;
+
+                
+            }
+        }
+    }
+    
+
+    .acc_gnb{
+        @include flex(null, null);
+        column-gap: 20px;
+        $icons : 'chatbot', 'profile', 'search';
+        li {
+            a {
+                background:no-repeat center center/contain;
+                display:block;
+                width:30px;height:30px;
+            }
+                @for $i from 1 through 3{
+
+                    &:nth-child(#{$i}){
+                        a{
+                            background-image:url($imgUrl + 'ico_#{nth($icons, $i)}.png')
+                        }
+                    }
+                }
+            
         }
     }
 }
@@ -32,6 +72,29 @@
 .visual{
     display: flex;
 
+    .reserv{
+        width: 100%;
+        max-width: 450px;
+        min-width: 300px;
+        background-color: #2E2E2E;
+        padding: 20px;
+
+        .inner{
+            background-color: #ffffff;
+            position: relative;
+            border-radius: 16px;
+            padding: 20px;
+        }
+        .tab_menu{
+            @include flex($a:center, $j:flex-start);
+        }
+
+        .tab_label{
+           @include position(20px,20px);
+        
+        }
+    }
+
 }
 
 .recommand {
@@ -45,7 +108,7 @@
             background:  no-repeat center center/cover;
             @for $i from 0 through 4{
                 &:nth-child(#{$i + 1}){
-                    background-image: url('../images/pics_#{$i}.jpg') 
+                    background-image: url($imgUrl + 'pics_#{$i}.jpg') 
                 }
 
             }
@@ -85,24 +148,29 @@
 }
 
 .weekly{
-    display: flex;
-    justify-content: space-between;
+    margin-top: 30px;
 
     ul{
+        @include flex(null);
+        position: relative;
+
         li{
+            width: 260px;
+            background: no-repeat center center/cover; 
+                @for $i from 0 through 4 {
+                    &:nth-child(#{$i + 1}){
+                    background-image: url($imgUrl + 'weekly_#{$i}.jpg')}
+                }
             a{
                 display: block;
-                background: url('../images/pics_2.jpg') no-repeat center center/cover; 
-                width: 340px;
-                height: 456px;
+                height: 356px;
 
                 .text{
                     background-color: black;
-                    position:relative;
-                    top: 316px;
+                    @include position(null,null,0,0);
                     opacity: 0.5;
-                    width: 340px;
-                    height: 140px;
+                    width: 260px;
+                    height: 110px;
 
                     p{
                         color: #ffffff;
@@ -115,18 +183,26 @@
     }
 }
 .page_footer{
+    div{
+        nav{
+            .fnb{
+                @include flex(null);
+                padding: 0 15px 15px 0;
 
-    display: flex;
+                }
+            }
+        }
+    
     // justify-content: space-around;
     padding-top: 50px;
-    nav{
-        display: flex;
-        justify-content: space-between;
+    // nav{
+    //     display: flex;
+    //     justify-content: space-between;
         
-        ul{
-            padding: 0 15px 15px 0;
-        }
-    }
+    //     ul{
+    //         padding: 0 15px 15px 0;
+    //     }
+    // }
 
     
 }

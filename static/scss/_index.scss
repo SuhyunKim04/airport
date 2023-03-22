@@ -94,6 +94,17 @@ body{
         
         }
     }
+    .slide_wrap{
+        position: relative;
+
+        .slide_list{
+            li{
+                @include position(0,0,null,null);
+
+            }
+        }
+    }
+    
 
 }
 

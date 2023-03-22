@@ -398,6 +398,14 @@ body {
   top: 20px;
   right: 20px;
 }
+.visual .slide_wrap {
+  position: relative;
+}
+.visual .slide_wrap .slide_list li {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 
 .recommand ul {
   display: flex;

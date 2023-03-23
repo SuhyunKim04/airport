@@ -398,6 +398,16 @@ body {
   top: 20px;
   right: 20px;
 }
+.visual .reserv .book_form .book_depart span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.visual .reserv .book_form .book_arrive span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .visual .slide_wrap {
   position: relative;
 }
@@ -409,7 +419,17 @@ body {
   left: 30px;
 }
 .visual .slide_wrap .slide_list li a {
+  display: block;
   color: #ffffff;
+}
+.visual .slide_wrap .slide_list li a strong {
+  line-height: 24px;
+  font-size: 18px;
+}
+.visual .slide_wrap .slide_list li a p {
+  line-height: 40px;
+  font-size: 25px;
+  padding-top: 50px;
 }
 
 .recommand ul {

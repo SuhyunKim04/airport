@@ -93,6 +93,20 @@ body{
            @include position(20px,20px);
         
         }
+
+        .book_form{
+            .book_depart{
+                span{
+                    @include flex($a:center, $j:center);
+                }
+            }
+
+            .book_arrive{
+                span{
+                    @include flex ($a:center, $j:center);
+                }
+            }
+        }
     }
     .slide_wrap{
         position: relative;
@@ -102,7 +116,19 @@ body{
                 @include position(50px,0,0,30px);
                 
                 a{
+                    display: block;
                     color: #ffffff;
+
+                    strong{
+                        line-height: 24px;
+                        font-size: 18px;
+                    }
+
+                    p{
+                        line-height: 40px;
+                        font-size: 25px;
+                        padding-top: 50px;
+                    }
                 }
             }
         }

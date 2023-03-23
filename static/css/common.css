@@ -403,8 +403,13 @@ body {
 }
 .visual .slide_wrap .slide_list li {
   position: absolute;
-  top: 0;
+  bottom: 0;
+  top: 50px;
   right: 0;
+  left: 30px;
+}
+.visual .slide_wrap .slide_list li a {
+  color: #ffffff;
 }
 
 .recommand ul {

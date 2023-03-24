@@ -15,10 +15,7 @@
 
     <header class="page_header">
         <div class="inner">
-            <h1 class="logo">
-                AIRLINES
-            </h1>
-    
+            <h1 class="logo">AIRLINES</h1> 
             <nav class="gnb">
                 <ul>
                     <li><a href="#">예약</a></li>
@@ -27,108 +24,112 @@
                     <li><a href="#">아시아나클럽</a></li>
                 </ul>
             </nav>    
-    
-                <ul class="acc_gnb">
-                    <li>
-                        <a href="#">a
-                            <span class="blind">쳇봇으로 상담하기</span>
-                        </a>
-                       
-                    </li>
-                    <li>
-                        <a href="#">a
-                            <span class="blind">마이페이지</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">a
-                            <span class="blind">검색하기</span>
-                        </a>
-                    </li>
-                </ul>
+            <ul class="acc_gnb">
+                <li>
+                    <a href="#">
+                        <span class="blind">쳇봇으로 상담하기</span>
+                    </a> 
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="blind">마이페이지</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="blind">검색하기</span>
+                    </a>
+                </li>
+            </ul>
         </div>
     </header> 
 
     <main role="main" class="page_main">
-    <div class="visual">
-
-        <section class="reserv">
-            <div class="inner">
-                <form>
-                    <h2 class="blind">항공권 검색</h2>
-    
-                        <ul class="tab_menu">
-                            <li><button>왕복</button></li>
-                            <li><button>편도</button></li>
-                        </ul>
-    
-                            <label class="tab_label">마일리지 사용<input type="checkbox"></label>
-    
-                        <div class="book_form">
-                            <button type="button" class="book_depart">
-                                <span class="blind">출발지</span>
-                                <span lang="en">PUS</span>
-                                <span lang="ko">부산</span>
-                                <!-- <strong>PUS</strong>
-                                <span>부산</span> -->
-                            </button>
-    
-                            <button type="button" class="book_arrive">
-                                <span class="blind">도착지</span>
-                                <span lang="en">TO</span>
-                                <span lang="ko">도착지 선택</span>
-                                <!-- <strong>PUS</strong>
-                                <span>부산</span> -->
-                            </button>
-    
-                            <button type="button">
-                                <span class="blind">출발지 도착지 바꾸기</span>
-                            </button>
-                        </div>
-                        
-                        <div>
-                            <button type="button"><span>가는 날 ~ 오는 날</span></button>
-                        </div>
-    
-                        <dl>
-                            <dt>승객수</dt>
-                            <dd><button type="button"><span>성인 1명</span></button></dd>
-                        </dl>
-    
-                        <div>
-                            <label for="seat">좌석 등급</label>
-                            <select id="seat">
-                                <option>일반석</option>
-                                <option>프레스티지석</option>
-                                <option>일등석</option>
-                            </select>
-                        </div>
-    
-                        <button type="submit">검색</button>
-                </form>
-            </div>
-        </section>
-
-        <section class="slide_wrap">
-            <ul class="slide_list">
-                <li>
-                    <a href="#">
-                        <strong>
-                            파란하늘, 에메랄드 바다<br>
-                            제주도로 가자!<br>
-                            3월 15일 부 매일 운항
-                        </strong>
-                        <p>
-                            편리해진 스케쥴, 5% 항공권 할인 헤택<br>
-                            셀 수 없는 매력을 가진 제주도로 초대합니다.
-                        </p>
-                    </a>
-                </li>
-                <img src="./static/images/slide_0.jpg" alt="airport">
-            </ul>
-        </section>
+        <div class="visual">
+            <section class="reserv">
+                <h2 class="blind">항공권 예약하기</h2>
+                <div class="inner">
+                    <form>
+                        <fieldset>
+                            <legend>항공권 검색</legend> 
+                            <div class="book_container">
+                                <ul class="tab_menu">
+                                    <li><button>왕복</button></li>
+                                    <li><button>편도</button></li>
+                                </ul> 
+                                <label class="tab_label">
+                                    마일리지 사용
+                                    <input type="checkbox">
+                                </label>
         
-    </div>
+                                <div class="book_form">
+                                    <button type="button" class="book_depart">
+                                        <span class="blind">출발지</span>
+                                        <span lang="en">PUS</span>
+                                        <span lang="ko">부산</span>
+                                        <!-- <strong>PUS</strong>
+                                        <span>부산</span> -->
+                                    </button>
+            
+                                    <button type="button" class="book_arrive">
+                                        <span class="blind">도착지</span>
+                                        <span lang="en">TO</span>
+                                        <span lang="ko">도착지 선택</span>
+                                        <!-- <strong>PUS</strong>
+                                        <span>부산</span> -->
+                                    </button>
+            
+                                    <button type="button" class="swap">
+                                        <span class="material-symbols-outlined">
+                                            sync_alt
+                                        </span>
+                                        <span class="blind">출발지 도착지 바꾸기</span>
+                                    </button>
+                                </div>
+                            
+                                <div class="book_term">
+                                    <button type="button"><span>가는 날 ~ 오는 날</span></button>
+                                </div>
+        
+                                <dl>
+                                    <dt>승객수</dt>
+                                    <dd><button type="button"><span>성인 1명</span></button></dd>
+                                </dl>
+        
+                                <div class="book_class">
+                                    <label for="seat">좌석 등급</label>
+                                    <select id="seat">
+                                        <option>일반석</option>
+                                        <option>프레스티지석</option>
+                                        <option>일등석</option>
+                                    </select>
+                                </div> 
+                                <button type="submit" class="book_search">검색</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </section>
+
+            <div class="slide_wrap">
+
+                <ul class="slide_list">
+                    <li>
+                        <a href="#">
+                            <strong>
+                                파란하늘, 에메랄드 바다<br>
+                                제주도로 가자!<br>
+                                3월 15일 부 매일 운항
+                            </strong>
+                            <p>
+                                편리해진 스케쥴, 5% 항공권 할인 혜택<br>
+                                셀 수 없는 매력을 가진 제주도로 초대합니다.
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </div> 
+        </div>
 
 
         <section class="notice">
@@ -137,27 +138,33 @@
                 <ul>
                     <li>
                         <h3>코로나19 업데이트 센터</h3>
-                        <p>전 세계 출입국 규정, 항공편 운항 등 코로나19와 관련된 최신 정보를 확인하실 수 있습니다</p>
-                    </li>
-
+                        <p>
+                            전 세계 출입국 규정, 항공편 운항 등 코로나19와 관련된 최신 정보를 확인하실 수 있습니다
+                        </p>
+                    </li> 
                     <li>
                         <h3>코로나19 업데이트 센터</h3>
-                        <p>전 세계 출입국 규정, 항공편 운항 등 코로나19와 관련된 최신 정보를 확인하실 수 있습니다</p>
-                    </li>
-
+                        <p>
+                            전 세계 출입국 규정, 항공편 운항 등 코로나19와 관련된 최신 정보를 확인하실 수 있습니다
+                        </p>
+                    </li> 
                     <li>
                         <h3>코로나19 업데이트 센터</h3>
-                        <p>전 세계 출입국 규정, 항공편 운항 등 코로나19와 관련된 최신 정보를 확인하실 수 있습니다</p>
-                    </li>
-
+                        <p>
+                            전 세계 출입국 규정, 항공편 운항 등 코로나19와 관련된 최신 정보를 확인하실 수 있습니다
+                        </p>
+                    </li> 
                     <li>
                         <h3>코로나19 업데이트 센터</h3>
-                        <p>전 세계 출입국 규정, 항공편 운항 등 코로나19와 관련된 최신 정보를 확인하실 수 있습니다</p>
-                    </li>
-
+                        <p>
+                            전 세계 출입국 규정, 항공편 운항 등 코로나19와 관련된 최신 정보를 확인하실 수 있습니다
+                        </p>
+                    </li> 
                     <li>
                         <h3>코로나19 업데이트 센터</h3>
-                        <p>전 세계 출입국 규정, 항공편 운항 등 코로나19와 관련된 최신 정보를 확인하실 수 있습니다</p>
+                        <p>
+                            전 세계 출입국 규정, 항공편 운항 등 코로나19와 관련된 최신 정보를 확인하실 수 있습니다
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -166,8 +173,7 @@
         <section class="recommand">
             <h2 class="blind">추천</h2>
             <!-- 모달로 띄우기 -->
-            <ul>
-        
+            <ul> 
                 <li>
                     <a href="#">
                         <div class="text">
@@ -175,10 +181,8 @@
                                 <strong>서울 / 인천</strong>
                                 <i class="material-icons">sync_alt</i>
                                 <strong>프랑크푸르트</strong>
-                            </p>
-            
-                            <span>왕복</span>
-
+                            </p> 
+                            <span>왕복</span> 
                             <p>
                                 <b>KRW</b>
                                 <em>1,482,500</em>
@@ -186,9 +190,7 @@
                             </p>
                         </div>
                     </a>
-                </li>
-            
-            
+                </li> 
                 <li>
                     <a href="#">
                         <div class="text">
@@ -196,10 +198,8 @@
                                 <strong>서울 / 인천</strong>
                                 <i class="material-icons">sync_alt</i>
                                 <strong>프랑크푸르트</strong>
-                            </p>
-            
-                            <span>왕복</span>
-
+                            </p> 
+                            <span>왕복</span> 
                             <p>
                                 <b>KRW</b>
                                 <em>1,482,500</em>
@@ -207,10 +207,7 @@
                             </p>
                         </div>
                     </a>
-                </li>
-            
-
-            
+                </li> 
                 <li>
                     <a href="#">
                         <div class="text">
@@ -218,10 +215,8 @@
                                 <strong>서울 / 인천</strong>
                                 <i class="material-icons">sync_alt</i>
                                 <strong>호놀룰루</strong>
-                            </p>
-            
-                            <span>왕복</span>
-
+                            </p> 
+                            <span>왕복</span> 
                             <p>
                                 <b>KRW</b>
                                 <em>1,197,100</em>
@@ -229,10 +224,7 @@
                             </p>
                         </div>
                     </a>
-                </li>
-            
-
-            
+                </li> 
                 <li>
                     <a href="#">
                         <div class="text">
@@ -240,10 +232,8 @@
                                 <strong>서울 / 인천</strong>
                                 <i class="material-icons">sync_alt</i>
                                 <strong>토론토</strong>
-                            </p>
-            
-                            <span>왕복</span>
-
+                            </p>  
+                            <span>왕복</span> 
                             <p>
                                 <b>KRW</b>
                                 <em>1,340,000</em>
@@ -251,10 +241,7 @@
                             </p>
                         </div>
                     </a>
-                </li>
-            
-
-            
+                </li> 
                 <li>
                     <a href="#">
                         <div class="text">
@@ -262,10 +249,8 @@
                                 <strong>서울 / 인천</strong>
                                 <i class="material-icons">sync_alt</i>
                                 <strong>스웨덴</strong>
-                            </p>
-            
-                            <span>왕복</span>
-
+                            </p>  
+                            <span>왕복</span>  
                             <p>
                                 <b>KRW</b>
                                 <em>1,290,500</em>
@@ -276,7 +261,7 @@
                 </li>
             </ul>
         </section>
-
+       
         <section class="weekly">
             <h2 class="blind">주간인기순위</h2>
             <!-- 모달로 띄우기 -->
@@ -288,10 +273,8 @@
                                 <strong>서울 / 인천</strong>
                                 <i class="material-icons">sync_alt</i>
                                 <strong>오사카</strong>
-                            </p>
-            
-                            <span>왕복</span>
-
+                            </p> 
+                            <span>왕복</span> 
                             <p>
                                 <b>KRW</b>
                                 <em>350,000</em>
@@ -299,10 +282,7 @@
                             </p>
                         </div>
                     </a>
-                </li>
-        
-
-            
+                </li> 
                 <li>
                     <a href="#">
                         <div class="text">
@@ -310,10 +290,8 @@
                                 <strong>서울 / 인천</strong>
                                 <i class="material-icons">sync_alt</i>
                                 <strong>후쿠오카</strong>
-                            </p>
-            
-                            <span>왕복</span>
-
+                            </p> 
+                            <span>왕복</span> 
                             <p>
                                 <b>KRW</b>
                                 <em>450,000</em>
@@ -321,10 +299,7 @@
                             </p>
                         </div>
                     </a>
-                </li>
-            
-
-            
+                </li> 
                 <li>
                     <a href="#">
                         <div class="text">
@@ -332,10 +307,8 @@
                                 <strong>서울 / 인천</strong>
                                 <i class="material-icons">sync_alt</i>
                                 <strong>상하이</strong>
-                            </p>
-            
-                            <span>왕복</span>
-
+                            </p> 
+                            <span>왕복</span> 
                             <p>
                                 <b>KRW</b>
                                 <em>480,000</em>
@@ -343,10 +316,7 @@
                             </p>
                         </div>
                     </a>
-                </li>
-            
-
-        
+                </li> 
                 <li>
                     <a href="#">
                         <div class="text">
@@ -354,10 +324,8 @@
                                 <strong>서울 / 인천</strong>
                                 <i class="material-icons">sync_alt</i>
                                 <strong>대만</strong>
-                            </p>
-            
-                            <span>왕복</span>
-
+                            </p> 
+                            <span>왕복</span> 
                             <p>
                                 <b>KRW</b>
                                 <em>350,000</em>
@@ -365,10 +333,7 @@
                             </p>
                         </div>
                     </a>
-                </li>
-            
-
-            
+                </li> 
                 <li>
                     <a href="#">
                         <div class="text">
@@ -376,10 +341,8 @@
                                 <strong>서울 / 인천</strong>
                                 <i class="material-icons">sync_alt</i>
                                 <strong>괌</strong>
-                            </p>
-            
-                            <span>왕복</span>
-
+                            </p> 
+                            <span>왕복</span> 
                             <p>
                                 <b>KRW</b>
                                 <em>350,000</em>
@@ -392,78 +355,75 @@
         </section>
     </main>
 
-        <footer class="page_footer"> 
-            <div>
-
-                <nav>
-                    <ul class="fnb">
-                        <li>
-                            <a href="#">회사소개</a>
-                            <ul class="inside_list">
-                                <li><a href="#">대한항공에 대하여</a></li>
-                                <li><a href="#">기업지배구조</a></li>
-                                <li><a href="#">투자정보</a></li>
-                                <li><a href="#">지속가능경영</a></li>
-                                <li><a href="#">뉴스룸</a></li>
-                            </ul>
-                        </li>
-                    
-                        <li>
-                            <a href="#">고객지원</a>
-                            <ul class="inside_list">
-                                <li><a href="#">공지사항</a></li>
-                                <li><a href="#">자주묻는 질문</a></li>
-                                <li><a href="#">고객의 말씀</a></li>
-                                <li><a href="#">서비스 센터</a></li>
-                                <li><a href="#">e-서식함</a></li>
-                                <li><a href="#">웹 접근성</a></li>
-                            </ul>
-                        </li>
-                    
-                        <li>
-                            <a href="#">약관 및 규정</a>
-                            <ul class="inside_list">
-                                <li><a href="#">개인정보 처리방침</a></li>
-                                <li><a href="#">이용약관</a></li>
-                                <li><a href="#">운송약관 및 고지사항</a></li>
-                                <li><a href="#">소비자 안전 관련 정보</a></li>
-                                <li><a href="#">운영 및 서비스 요금료</a></li>
-                            </ul>
-                        </li>
-                    
-                        <li>
-                            <a href="#">기타 안내</a>
-                            <ul class="inside_list">
-                                <li><a href="#">초등학생 견학 신청</a></li>
-                                <li><a href="#">고객 안내 서비스</a></li>
-                                <li><a href="#">항공교통이용자 서비스 계획</a></li>
-                                <li><a href="#">항공교통이용자 피해 구제</a></li>
-                                <li><a href="#">관련 사이트</a></li>
-                                <li><a href="#">사이트맵</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
+    <footer class="page_footer"> 
+        <div> 
+            <nav>
+                <ul class="fnb">
+                    <li>
+                        <a href="#">회사소개</a>
+                        <ul class="inside_list">
+                            <li><a href="#">대한항공에 대하여</a></li>
+                            <li><a href="#">기업지배구조</a></li>
+                            <li><a href="#">투자정보</a></li>
+                            <li><a href="#">지속가능경영</a></li>
+                            <li><a href="#">뉴스룸</a></li>
+                        </ul>
+                    </li>
                 
-                    <ul class="download">
-                        <li>
-                            <a class="icons" href="#">
-                                <!-- <img src="./static/images/google.png" alt="google"> -->
-                            </a>
-                        </li>
-                        <li>
-                            <a class="icons" href="#">
-                                <img src="./static/images/apple.png" alt="apple">
-                            </a>
-                        </li>
-                    </ul>
-            </div>
+                    <li>
+                        <a href="#">고객지원</a>
+                        <ul class="inside_list">
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">자주묻는 질문</a></li>
+                            <li><a href="#">고객의 말씀</a></li>
+                            <li><a href="#">서비스 센터</a></li>
+                            <li><a href="#">e-서식함</a></li>
+                            <li><a href="#">웹 접근성</a></li>
+                        </ul>
+                    </li>
+                
+                    <li>
+                        <a href="#">약관 및 규정</a>
+                        <ul class="inside_list">
+                            <li><a href="#">개인정보 처리방침</a></li>
+                            <li><a href="#">이용약관</a></li>
+                            <li><a href="#">운송약관 및 고지사항</a></li>
+                            <li><a href="#">소비자 안전 관련 정보</a></li>
+                            <li><a href="#">운영 및 서비스 요금료</a></li>
+                        </ul>
+                    </li>
+                
+                    <li>
+                        <a href="#">기타 안내</a>
+                        <ul class="inside_list">
+                            <li><a href="#">초등학생 견학 신청</a></li>
+                            <li><a href="#">고객 안내 서비스</a></li>
+                            <li><a href="#">항공교통이용자 서비스 계획</a></li>
+                            <li><a href="#">항공교통이용자 피해 구제</a></li>
+                            <li><a href="#">관련 사이트</a></li>
+                            <li><a href="#">사이트맵</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
             
-                <p class="copyright"
-                    <small>&copy; 1997-2023 KOREAN AIR</small>
-                </p>
-        </footer>
-
-    
+            <ul class="download">
+                <li>
+                    <a class="icons" href="#">
+                        <!-- <img src="./static/images/google.png" alt="google"> -->
+                    </a>
+                </li>
+                <li>
+                    <a class="icons" href="#">
+                        <img src="./static/images/apple.png" alt="apple">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <p class="copyright"
+            <small>&copy; 1997-2023 KOREAN AIR</small>
+        </p>
+    </footer> 
 </body>
 </html>

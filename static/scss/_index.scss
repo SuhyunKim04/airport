@@ -73,17 +73,24 @@ body{
     display: flex;
 
     .reserv{
+        display: flex;
         width: 100%;
         max-width: 450px;
-        min-width: 300px;
+        min-width: 400px;
         background-color: #2E2E2E;
         padding: 20px;
 
         .inner{
+            flex-grow: 1;
             background-color: #ffffff;
             position: relative;
             border-radius: 16px;
             padding: 20px;
+        }
+
+        .book_container{
+            height: 420px;
+            @include flex(null,$d:column);
         }
         .tab_menu{
             @include flex($a:center, $j:flex-start);
@@ -95,29 +102,74 @@ body{
         }
 
         .book_form{
+            @include flex(null, $j:space-between);
+            margin-top: 10px;
+            
             .book_depart{
+                    order:1;
+                    flex-basis: calc(50% - 35px);
                 span{
                     @include flex($a:center, $j:center);
                 }
             }
 
             .book_arrive{
+                    flex-basis: calc(50% - 35px);
+                    order:3;
                 span{
                     @include flex ($a:center, $j:center);
                 }
             }
+
+            .swap{
+                border: 1px solid #a3a3a3;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;;
+                order:2;
+            }
+        }
+
+        .book_term{
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #d2d0d0;
+            border-width: 1px 0;
+            padding: 20px 0;
+            @include flex(null, $j:space-around);
+        }
+
+        dl{
+            @include flex;
+            margin-bottom: 10px;
+
+        }
+
+        .book_class{
+            @include flex;
+            margin-bottom: 10px;
+        }
+
+        .book_search{
+            display: flex;
+            background-color: yellow;
+            padding: 10px 95px;
         }
     }
     .slide_wrap{
         position: relative;
-
+        flex-grow:1;
         .slide_list{
             li{
-                @include position(50px,0,0,30px);
+                height: 500px;
+                &:nth-child(1){
+                    background-image: url($imgUrl + 'slide_0.jpg');
+                }
                 
                 a{
                     display: block;
                     color: #ffffff;
+                    padding: 110px 0 0 100px;
 
                     strong{
                         line-height: 24px;
@@ -224,11 +276,15 @@ body{
 }
 .page_footer{
     div{
+
+        @include flex;
         nav{
             .fnb{
                 @include flex(null);
                 padding: 0 15px 15px 0;
-
+                    li{
+                        @include flex(null, $j:space-between);
+                    }
                 }
             }
         }
@@ -244,5 +300,15 @@ body{
     //     }
     // }
 
-    
+    .download{
+        li{
+            @include flex;
+
+                .icons{
+                    width: 200px;
+                }
+        }
+
+
+    }
 }

@@ -49,9 +49,13 @@ button {border: none; cursor:pointer;
 	background:none;
 }
 
+fieldset{
+	border: none;
+}
+
 
 // custom 
-.blind {
+.blind, legend {
 	position: absolute;
     clip: rect(0 0 0 0);
     width: 1px;

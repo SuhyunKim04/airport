@@ -5,6 +5,22 @@
     flex-direction: $d;
 }
 
+@function unitcheck($size) {
+    @if( unitless($size) ) {
+        $size : $size + px
+    }
+    @return $size;
+}
+
+@mixin box($r :null, $w: null, $h:null) {
+    $r: unitcheck($r);
+    $w: unitcheck($w);
+    $h: unitcheck($h);
+    border-radius: $r;
+    width: $w;
+    height: $h;
+}
+
 @mixin position($t:null, $r:null,$b:null,$l:null, $p:absolute){
     position: $p;
     bottom:$b;

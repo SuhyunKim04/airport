@@ -226,6 +226,14 @@ body{
         overflow: hidden;
         height: 50px;
         column-gap: 20px;
+
+            h2{
+                @include flex;
+                padding-left: 10px;
+                    i{
+                        padding-right: 10px;
+                    }
+            }
     }
 
     li{

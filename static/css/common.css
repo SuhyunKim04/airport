@@ -568,6 +568,15 @@ body {
   height: 50px;
   column-gap: 20px;
 }
+.notice .inner h2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+}
+.notice .inner h2 i {
+  padding-right: 10px;
+}
 .notice li {
   display: flex;
   justify-content: center;

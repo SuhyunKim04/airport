@@ -21,19 +21,14 @@ body{
         font-family: 'Tiro Devanagari Hindi', serif;
         font-size: 40px;
     }
-    // margin: 0 20px;
 
     .gnb{
         font-size: 18px;
         font-weight: 600;
         ul{
         display: flex;
-        
-    
             a{
                 padding: 0 40px;
-
-                
             }
         }
     }
@@ -242,7 +237,7 @@ body{
     }
 }
 
-.recommand {
+.recommand{
     h2{
         font-weight: 600;
         font-family: 'Mukta', sans-serif;

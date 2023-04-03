@@ -9,6 +9,9 @@ console.log(arrys, newArrays)
 
 
 
+
+
+
 // items.forEach(function(item){
 //     copy.push(item);
 //   });

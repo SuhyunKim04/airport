@@ -195,9 +195,11 @@ body{
                 height: 500px;
                 background: no-repeat center center;
                 background-color: #6ebaff;
-                @for $i from 1 through 4 {
+                // background-image: url('../images/jeju_images/1_Artboard.png');
+                @for $i from 1 through 11 {
                     &:nth-child(#{$i}) {
-                        background-image: url($imgUrl + 'slide_#{$i}_bg.png')}
+                        background-image: url($imgUrl + '../images/jeju_images/Artboard_#{$i}.png')};
+                        // background-image: url($imgUrl + 'slide_#{$i}_bg.png')}
                 }
                 
                 a{

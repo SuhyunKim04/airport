@@ -543,16 +543,37 @@ body {
   background-color: #6ebaff;
 }
 .visual .slide_wrap .slide_list li:nth-child(1) {
-  background-image: url("../images/slide_1_bg.png");
+  background-image: url("../images/../images/jeju_images/Artboard_1.png");
 }
 .visual .slide_wrap .slide_list li:nth-child(2) {
-  background-image: url("../images/slide_2_bg.png");
+  background-image: url("../images/../images/jeju_images/Artboard_2.png");
 }
 .visual .slide_wrap .slide_list li:nth-child(3) {
-  background-image: url("../images/slide_3_bg.png");
+  background-image: url("../images/../images/jeju_images/Artboard_3.png");
 }
 .visual .slide_wrap .slide_list li:nth-child(4) {
-  background-image: url("../images/slide_4_bg.png");
+  background-image: url("../images/../images/jeju_images/Artboard_4.png");
+}
+.visual .slide_wrap .slide_list li:nth-child(5) {
+  background-image: url("../images/../images/jeju_images/Artboard_5.png");
+}
+.visual .slide_wrap .slide_list li:nth-child(6) {
+  background-image: url("../images/../images/jeju_images/Artboard_6.png");
+}
+.visual .slide_wrap .slide_list li:nth-child(7) {
+  background-image: url("../images/../images/jeju_images/Artboard_7.png");
+}
+.visual .slide_wrap .slide_list li:nth-child(8) {
+  background-image: url("../images/../images/jeju_images/Artboard_8.png");
+}
+.visual .slide_wrap .slide_list li:nth-child(9) {
+  background-image: url("../images/../images/jeju_images/Artboard_9.png");
+}
+.visual .slide_wrap .slide_list li:nth-child(10) {
+  background-image: url("../images/../images/jeju_images/Artboard_10.png");
+}
+.visual .slide_wrap .slide_list li:nth-child(11) {
+  background-image: url("../images/../images/jeju_images/Artboard_11.png");
 }
 .visual .slide_wrap .slide_list li a {
   display: block;

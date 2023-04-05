@@ -197,8 +197,14 @@ body{
                 background-color: #6ebaff;
                 @for $i from 1 through 11 {
                     &:nth-child(#{$i}) {
+                        // position: absolute;
+                        // left:0;
+                        // width: 200px;
                         background-image: url($imgUrl + '../images/jeju_images/Artboard_#{$i}.png')};
-                }
+                        position: absolute;
+                        left:0;
+                        width: 200px;
+                    }
                 
                 a{
                     display: block;

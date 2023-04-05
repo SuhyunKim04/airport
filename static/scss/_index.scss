@@ -66,6 +66,7 @@ body{
 }
 .visual{
     display: flex;
+    font-family: 'Rubik', sans-serif;
 
     .reserv{
         display: flex;
@@ -99,7 +100,7 @@ body{
         .tab_label{
            @include position(20px,20px);
            font-size: 16px;
-        
+           font-weight: 400;
         }
 
         .book_form{
@@ -109,6 +110,7 @@ body{
             .book_depart{
                     order:1;
                     flex-basis: calc(50% - 35px);
+                    font-weight: 600;
                 span{
                     @include flex($a:center, $j:center);
                     font-size: 16px;
@@ -118,6 +120,7 @@ body{
             .book_arrive{
                     flex-basis: calc(50% - 35px);
                     order:3;
+                    font-weight: 600;
                 span{
                     @include flex ($a:center, $j:center);
                     font-size: 16px;
@@ -134,15 +137,20 @@ body{
         }
 
         .book_term{
+            font-family: 'Rubik', sans-serif;
             margin-top: 20px;
             margin-bottom: 20px;
             border: 1px solid #d2d0d0;
             border-width: 1px 0;
             padding: 20px 0;
             @include flex(null, $j:space-around);
+            
                 
             span{
                 font-size: 16px;
+                font-style: italic;
+                font-weight: 500;
+                font-family: 'Rubik', sans-serif;
             }
         }
 
@@ -152,9 +160,11 @@ body{
 
             dt{
                 font-size: 16px;
+                font-family: 'Rubik', sans-serif;
             }
             span{
                 font-size: 16px;
+                font-family: 'Rubik', sans-serif;
             }
 
         }
@@ -169,6 +179,7 @@ body{
         }
 
         .book_search{
+            font-family: 'Rubik', sans-serif;
             display: flex;
             background-color: yellow;
             padding: 10px 95px;
@@ -214,6 +225,7 @@ body{
 
 .notice{
     background-color: rgb(210, 227, 249);
+    font-family: 'Rubik', sans-serif;
 
     .inner{
         @extend %inner;
@@ -255,6 +267,16 @@ body{
             }
         }
     }
+
+    .text{
+        p{
+            i{
+                position: relative;
+                top: 5px;
+
+            }
+        }
+    }
 }
 
 .weekly{
@@ -275,6 +297,16 @@ body{
             }
         }
 
+    }
+
+    .text{
+        p{
+            i{
+                position: relative;
+                top: 5px;
+
+            }
+        }
     }
 }
 .page_footer{

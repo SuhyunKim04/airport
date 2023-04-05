@@ -4,6 +4,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;1,400;1,500&display=swap");
 body, h1, h2, h3, h4, h5, h6, p, blockquote, dl, dt, dd, ol, ul, li, fieldset {
   margin: 0;
   padding: 0;
@@ -413,6 +414,7 @@ body {
 
 .visual {
   display: flex;
+  font-family: "Rubik", sans-serif;
 }
 .visual .reserv {
   display: flex;
@@ -448,6 +450,7 @@ body {
   top: 20px;
   right: 20px;
   font-size: 16px;
+  font-weight: 400;
 }
 .visual .reserv .book_form {
   display: flex;
@@ -457,6 +460,7 @@ body {
 .visual .reserv .book_form .book_depart {
   order: 1;
   flex-basis: calc(50% - 35px);
+  font-weight: 600;
 }
 .visual .reserv .book_form .book_depart span {
   display: flex;
@@ -467,6 +471,7 @@ body {
 .visual .reserv .book_form .book_arrive {
   flex-basis: calc(50% - 35px);
   order: 3;
+  font-weight: 600;
 }
 .visual .reserv .book_form .book_arrive span {
   display: flex;
@@ -482,6 +487,7 @@ body {
   order: 2;
 }
 .visual .reserv .book_term {
+  font-family: "Rubik", sans-serif;
   margin-top: 20px;
   margin-bottom: 20px;
   border: 1px solid #d2d0d0;
@@ -492,6 +498,9 @@ body {
 }
 .visual .reserv .book_term span {
   font-size: 16px;
+  font-style: italic;
+  font-weight: 500;
+  font-family: "Rubik", sans-serif;
 }
 .visual .reserv dl {
   display: flex;
@@ -501,9 +510,11 @@ body {
 }
 .visual .reserv dl dt {
   font-size: 16px;
+  font-family: "Rubik", sans-serif;
 }
 .visual .reserv dl span {
   font-size: 16px;
+  font-family: "Rubik", sans-serif;
 }
 .visual .reserv .book_class {
   display: flex;
@@ -515,6 +526,7 @@ body {
   font-size: 16px;
 }
 .visual .reserv .book_search {
+  font-family: "Rubik", sans-serif;
   display: flex;
   background-color: yellow;
   padding: 10px 95px;
@@ -559,6 +571,7 @@ body {
 
 .notice {
   background-color: rgb(210, 227, 249);
+  font-family: "Rubik", sans-serif;
 }
 .notice .inner {
   display: flex;
@@ -606,6 +619,10 @@ body {
 .recommand ul li:nth-child(5) {
   background-image: url("../images/pics_4.jpg");
 }
+.recommand .text p i {
+  position: relative;
+  top: 5px;
+}
 
 .weekly h2 {
   font-weight: 600;
@@ -627,6 +644,10 @@ body {
 }
 .weekly ul li:nth-child(5) {
   background-image: url("../images/weekly_4.jpg");
+}
+.weekly .text p i {
+  position: relative;
+  top: 5px;
 }
 
 .page_footer {

@@ -21,6 +21,20 @@
     height: $h;
 }
 
+@mixin full($bg:null,$z:null,$p:absolute) {
+    position:$p;
+    background:$bg;
+    top:0;right:0;
+    left:0;bottom:0;
+    z-index:$z;
+}
+@mixin center($p:fixed){
+    position: $p;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
 @mixin position($t:null, $r:null,$b:null,$l:null, $p:absolute){
     position: $p;
     bottom:$b;

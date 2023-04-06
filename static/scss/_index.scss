@@ -251,6 +251,41 @@ body{
         height:50px;
     }
 }
+.dimm{
+    @include full(rgba(0,0,0,0.7),1000, fixed); 
+    display:none;
+    &.open {
+        display:block;
+    }
+}
+.view_detail{
+    @include center;
+    background-color: #6ebaff;
+    width:100%;
+    max-width: 600px;
+    z-index: 1001;
+    display:none;
+    &.open {
+        display:block;
+    }
+        .contents{
+            @include flex($j:center,$d:column);
+
+            .view_contents{
+                @include flex;
+            }
+                .view_pics{
+                    width: 100%;
+                    height: 300px;
+                    background:no-repeat center center/contain;
+                    display:block;
+                    @for $i from 0 through 4{
+                        &:nth-child(#{$i + 1}){
+                            background-image: url($imgUrl + 'pics_#{$i}.jpg')}
+                        }
+                }
+        }
+}
 
 .recommand{
     h2{

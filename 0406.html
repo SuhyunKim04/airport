@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>forEach sample</h1>
+<p>Name : <span class="msg">Nobody</span></p>
+
+<button type="button" class="fan">Pitter fan</button>
+<button type="button" class="bell">Tingker bell</button>
+<button type="button" class="scott">Jason scott</button>
+
+<script>
+    const lists = document.querySelectorAll('button');
+    const msg=document.querySelector('.msg');
+    console.log(lists);
+  
+    const items = ['apple','mango','banana']
+    items.forEach( (item,i) => {
+        console.log(i, item);
+         
+    })
+    
+   lists.forEach((list,i) => {
+    list.addEventListener('click',(e) => {    
+        msg.innerHTML  = e.target.innerHTML;
+    }
+    )
+   })
+ /*
+    fan.addEventListener('click', function(e){
+        let name = e.target.innerHTML;
+        msg.innerHTML = name;
+    })
+   */
+</script>
+</body>
+</html>

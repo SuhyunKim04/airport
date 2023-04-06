@@ -238,7 +238,7 @@ body{
         column-gap: 20px;
 
             h2{
-                @include flex;
+                @include flex($j:flex-start);
                 padding-left: 10px;
                     i{
                         padding-right: 10px;

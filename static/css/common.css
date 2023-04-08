@@ -5,6 +5,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;1,400;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
 body, h1, h2, h3, h4, h5, h6, p, blockquote, dl, dt, dd, ol, ul, li, fieldset {
   margin: 0;
   padding: 0;
@@ -533,6 +534,19 @@ body {
   justify-content: center;
   font-size: 16px;
 }
+.visual .option {
+  position: absolute;
+  left: 450px;
+  z-index: 1100;
+  background-color: red;
+  width: 80px;
+  height: 50px;
+}
+.visual .option span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .visual .slide_wrap {
   position: relative;
   flex-grow: 1;
@@ -634,12 +648,10 @@ body {
 }
 
 .view_detail {
-  position: absolute;
-  left: 50%;
+  position: fixed;
   top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
   background-color: #6ebaff;
   width: 100%;
   max-width: 600px;

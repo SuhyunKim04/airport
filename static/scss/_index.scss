@@ -187,6 +187,19 @@ body{
             font-size: 16px;
         }
     }
+
+    .option{
+        @include position($l:450px);
+        z-index: 1100;
+        background-color: red;
+        width: 80px;
+        height: 50px;
+
+         span{
+            @include flex;
+         }
+        
+    }
     .slide_wrap{
         position: relative;
         flex-grow:1;

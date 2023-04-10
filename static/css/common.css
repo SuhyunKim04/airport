@@ -746,6 +746,10 @@ body {
   top: 5px;
 }
 
+.view_detail {
+  display: grid;
+}
+
 .page_footer {
   padding: 30px;
 }

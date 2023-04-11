@@ -661,6 +661,14 @@ body {
 .view_detail.open {
   display: block;
 }
+.view_detail .view_grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+.view_detail .view_grid .monthly {
+  display: grid;
+  grid-template-columns: 50px 50px 50px;
+}
 .view_detail .contents {
   display: flex;
   justify-content: center;
@@ -744,10 +752,6 @@ body {
 .weekly .text p i {
   position: relative;
   top: 5px;
-}
-
-.view_detail {
-  display: grid;
 }
 
 .page_footer {

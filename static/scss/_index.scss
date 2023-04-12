@@ -284,13 +284,14 @@ body{
     }
 
     .view_grid{
-        display: grid;
-        // grid-template-columns: 200px;
-        grid-template-columns: 1fr 3fr;
+        @include grid($c:1fr 3fr);
+        // display: grid;
+        // grid-template-columns: 1fr 3fr;
 
         .monthly{
-            display: grid;
-            grid-template-columns: 50px 50px 50px;
+            @include grid($c:50px 50px 50px);
+            // display: grid;
+            // grid-template-columns: 50px 50px 50px;
         }
     }
         .contents{

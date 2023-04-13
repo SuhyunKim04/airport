@@ -174,7 +174,7 @@ fieldset {
 
 /* Slider */
 .slick-loading .slick-list {
-  background: #fff url("./ajax-loader.gif") center center no-repeat;
+  background: #fff url("./fonts/ajax-loader.gif") center center no-repeat;
 }
 
 /* Icons */
@@ -652,7 +652,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #6ebaff;
+  background-color: #ffffff;
   width: 100%;
   max-width: 600px;
   z-index: 1001;
@@ -661,19 +661,48 @@ body {
 .view_detail.open {
   display: block;
 }
+.view_detail .close {
+  position: relative;
+  right: 0;
+}
 .view_detail .view_grid {
   display: grid;
   grid-template-columns: 1fr 3fr;
+  padding: 30px 30px;
 }
 .view_detail .view_grid .monthly {
   display: grid;
   grid-template-columns: 50px 50px 50px;
+  grid-gap: 16px;
+}
+.view_detail .view_grid .monthly button {
+  font-size: 16px;
+}
+.view_detail .book_button {
+  font-size: 16px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  padding-bottom: 20px;
 }
 .view_detail .contents {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  grid-gap: 10px;
+}
+.view_detail .contents h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+.view_detail .contents .text p {
+  padding-bottom: 10px;
+  font-size: 16px;
+}
+.view_detail .contents .text i {
+  position: relative;
+  top: 5px;
 }
 .view_detail .contents .view_contents {
   display: flex;

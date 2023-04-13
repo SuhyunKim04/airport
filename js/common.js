@@ -36,17 +36,22 @@ const viewInfor = () => {
     const arrive = view.querySelector('.arrive');
     const price = view.querySelector('.price');
     const info = view.querySelector('.info');
+    const book_button = view.querySelector('.book_button');
     const close = view.querySelector('.close');
 
-    const openModal = () => {
-        
-    }
     const closeModal = () => {
         view.classList.remove('open');
         dimm.classList.remove('open');
     }
     console.log(close)
-    close.addEventListener('click', closeModal);
+    book_button.addEventListener('click', closeModal);
+
+    const openModal = () => {
+        view.classList.add('open');
+        dimm.classList.add('open');
+    }
+    console.log()
+    close.addEventListener('click',closeModal);
  
     function setDetail(index) {
         depart.innerHTML = datas[index].departure
@@ -63,8 +68,7 @@ const viewInfor = () => {
             const target = event.target;
             console.log(target.innerHTML);
             if(target.nodeName == 'A') {
-                view.classList.add('open');
-                dimm.classList.add('open');
+                openModal()
                 info.innerHTML = target.innerHTML
             }
         })

@@ -274,7 +274,7 @@ body{
 
 .view_detail{
     @include center;
-    background-color: #6ebaff;
+    background-color: #ffffff;
     width:100%;
     max-width: 600px;
     z-index: 1001;
@@ -283,19 +283,53 @@ body{
         display:block;
     }
 
+    .close{
+        @include position($p:relative);
+        right:0;
+    }
+
     .view_grid{
         @include grid($c:1fr 3fr);
-        // display: grid;
-        // grid-template-columns: 1fr 3fr;
+        padding: 30px 30px;
 
         .monthly{
             @include grid($c:50px 50px 50px);
-            // display: grid;
-            // grid-template-columns: 50px 50px 50px;
+            grid-gap: 16px;
+            
+            button{
+                font-size: 16px;
+            }
         }
+
+    }
+    .book_button{
+        font-size: 16px;
+        @include position($p:relative);
+        left: 50%;
+        transform: translate(-50%);
+        padding-bottom: 20px;
+        
     }
         .contents{
             @include flex($j:center,$d:column);
+            grid-gap: 10px;
+
+            h2{
+                font-size: 20px;
+                font-weight: 600;
+            }
+
+            .text{
+                p{
+                    padding-bottom: 10px;
+                    font-size: 16px;
+                }
+
+                i{
+                    @include position($t:5px, $p:relative);
+                }
+                
+            }
 
             .view_contents{
                 @include flex;

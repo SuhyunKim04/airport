@@ -21,9 +21,10 @@
     height: $h;
 }
 
-@mixin grid($c:null) {
+@mixin grid($c:null, $r:null) {
     display: grid;
     grid-template-columns: $c;
+    grid-template-rows: $r;
 }
 
 @mixin full($bg:null,$z:null,$p:absolute) {

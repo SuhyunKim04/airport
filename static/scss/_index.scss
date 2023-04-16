@@ -66,13 +66,15 @@ body{
 }
 .visual{
     display: flex;
+    height:500px;
     font-family: 'Rubik', sans-serif;
 
     .reserv{
         display: flex;
-        width: 100%;
-        max-width: 450px;
-        min-width: 400px;
+        flex-basis:450px;
+        // width: 100%;
+        // max-width: 450px;
+        // min-width: 400px;
         background-color: #505eee;
         padding: 20px;
 
@@ -188,7 +190,7 @@ body{
         }
     }
 
-    .option{
+    .tabMenu{
         @include position($l:450px);
         z-index: 1100;
         background-color: red;
@@ -202,21 +204,39 @@ body{
     }
     .slide_wrap{
         position: relative;
-        flex-grow:1;
+        width:calc(100% - 450px);
+        // flex-grow:1;
         .slide_list{
-            li{
-                height: 500px;
-                background: no-repeat center center;
-                background-color: #6ebaff;
-                @for $i from 1 through 11 {
-                    &:nth-child(#{$i}) {
-                        // position: absolute;
-                        // left:0;
-                        // width: 200px;
-                        background-image: url($imgUrl + '../images/jeju_images/Artboard_#{$i}.png')};
-                    }
+
+            .slick-next{
+                right: 25px;
+            }
+
+            .slick-prev{
+                left: 25px;
+                z-index: 500;
+            }
+
+            .slick-dots{
+                bottom: 25px;
+
                 
-                a{
+            }
+            .list_item{ 
+                height: 500px;
+                // width:100%;
+                background: no-repeat center center/cover;
+                $color : #6ebaff, #22a048, goldenrod;
+                &.a { background-color:nth($color, 1)}
+                &.b { background-color:nth($color, 2)}
+                &.c { background-color:nth($color, 3)}
+                @for $i from 1 through 3 {
+                    &:nth-child(#{$i}) { 
+                        // background-color: nth($color, $i);
+                        background-image: url($imgUrl + '../images/slide_1_bg.png');
+                    }
+                }
+               & > a{
                     display: block;
                     color: #ffffff;
                     padding: 110px 0 0 100px;
@@ -238,6 +258,64 @@ body{
     
 
 }
+
+
+// test
+._slide_wrap{
+    position: relative;
+    flex-grow:1;
+    .slide_list{
+
+        .slick-next{
+            right: 25px;
+        }
+
+        .slick-prev{
+            left: 25px;
+            z-index: 500;
+        }
+
+        .slick-dots{
+            bottom: 25px;
+
+            
+        }
+        .list_item{ 
+            // height: 500px;
+            // width:100%;
+            background: no-repeat center center/cover;
+            $color : #6ebaff, #22a048, goldenrod;
+            &.a { background-color:nth($color, 1)}
+            &.b { background-color:nth($color, 2)}
+            &.c { background-color:nth($color, 3)}
+            @for $i from 1 through 3 {
+                &:nth-of-type(#{$i}) { 
+                    // background-color: nth($color, $i);
+                    background-image: url($imgUrl + '../images/slide_1_bg.png');
+                }
+            }
+           & > a{
+                display: block;
+                // color: #ffffff;
+                
+                padding: 110px 0 0 100px;
+
+                strong{
+                    line-height: 24px;
+                    font-size: 18px;
+                }
+
+                p{
+                    line-height: 40px;
+                    font-size: 25px;
+                    padding-top: 50px;
+                }
+            }
+        }
+    }
+}
+
+// -- test
 
 .notice{
     background-color: rgb(210, 227, 249);
@@ -298,6 +376,9 @@ body{
             
             button{
                 font-size: 16px;
+                border: 1px solid rgb(107, 107, 107);
+                border-radius: 5px;
+                opacity: 0.8;
             }
         }
 
@@ -317,16 +398,21 @@ body{
             h2{
                 font-size: 20px;
                 font-weight: 600;
+                padding: 0 20px 0 20px;
             }
 
             .text{
                 p{
-                    padding-bottom: 10px;
+                    padding-bottom: 30px;
                     font-size: 16px;
                 }
 
                 i{
                     @include position($t:5px, $p:relative);
+                }
+                em{
+                    color: red;
+                    font-size: 18px;
                 }
                 
             }

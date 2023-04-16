@@ -31,14 +31,13 @@ const datas = [
 const viewInfor = () => {
     const view = document.querySelector('.view_detail');
     const list = document.querySelectorAll('.recommand .module_slide_card li');
+    const weekly = document.querySelectorAll('.weekly .module_slide_card li');
     const dimm = document.querySelector('.dimm');
-    const depart = view.querySelector('.departure');
-    const arrive = view.querySelector('.arrive');
-    const price = view.querySelector('.price');
     const info = view.querySelector('.info');
     const book_button = view.querySelector('.book_button');
     const close = view.querySelector('.close');
-
+    const monthly = view.querySelectorAll('.monthly button');
+    const month = view.querySelector('.month');
     const closeModal = () => {
         view.classList.remove('open');
         dimm.classList.remove('open');
@@ -53,15 +52,6 @@ const viewInfor = () => {
     console.log()
     close.addEventListener('click',closeModal);
  
-    function setDetail(index) {
-        depart.innerHTML = datas[index].departure
-        arrive.innerHTML = datas[index].arrive
-        price.innerHTML = datas[index].price
-    }
-
-    function setjourney(index) {
-
-    }
 
     list.forEach( (e,idx) => {
         e.addEventListener('click',(event) => {
@@ -74,11 +64,44 @@ const viewInfor = () => {
         })
     })
 
-    
-}
+    weekly.forEach((e,idx) => {
+        e.addEventListener('click',(week) => {
+            const aim = week.target;
+            if(aim.nodeName == 'A') {
+                openModal()
+                info.innerHTML = aim.innerHTML
+            }
+
+        })
+    })
+    console.log(monthly)
+    monthly.forEach((e,idx) => {
+        e.addEventListener('click',(event) => {
+            const mon = event.target;
+            if(mon.nodeName == 'BUTTON') {
+                console.log(typeof(month))
+                month.innerHTML = mon.innerHTML;
+            }
+        })
+    })
+};
 
 viewInfor();
 
+ 
+$(function() {
+    const $list = $('.slide_wrap .slide_list');
+    // const $slide = $('.test_slide')
+    $list.slick({
+        dots: true,
+        infinite: true,
+        arrows:true,
+        speed: 500,
+        // fade: true,
+        cssEase: 'linear'
+        });
+})
+ 
 
 
 

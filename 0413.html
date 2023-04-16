@@ -52,6 +52,11 @@
             color:#fff;
         }
 
+        .container .hate.remove {
+            background-color: #1672b9;
+            color:#fff;
+        }
+
         .multi-bg {
             height:400px;
             outline:1px solid red;
@@ -88,9 +93,9 @@
             z-index:10;
         }
 
-        .slide-container .slick-prev:before {
+        /* .slide-container .slick-prev:before {
              
-        }
+        } */
 
     </style>
 
@@ -129,6 +134,7 @@
     <div class="container">
         <a href="javascript:void(0)">IMAGE</a>
         <button type="button" class="like">LIKE</button>
+        <button type="button" class="hate">HATE</button>
         <span class="count">12</span>
         <div class="contents">
             <p>Good morning, nice to meet you.</p>
@@ -139,7 +145,8 @@
     <script>
         const container = document.querySelector('.container');
         const span = container.querySelector('.count');
-        const likeBtn = container.querySelector('.like')
+        const likeBtn = container.querySelector('.like');
+        const hateBtn = container.querySelector('.hate');
         let count = 12; 
 
         const viewImage = () => {
@@ -152,12 +159,20 @@
             span.innerHTML = count;
         }
 
+        const hateCount = () => {
+            count--;
+            hateBtn.classList.remove('delete');
+            span.innerHTML = count;
+        }
+
         container.addEventListener('click', (e)=>{
             const target = e.target;
             if(target.nodeName == 'A') {
                 viewImage();
             }else if(target.nodeName == 'BUTTON'){
                 likeCount();
+            }else if(target.nodeName == 'BUTTON'){
+                hateCount();
             }
             
         })

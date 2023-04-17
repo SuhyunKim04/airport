@@ -53,41 +53,49 @@
                         <fieldset>
                             <legend>항공권 검색</legend> 
                             <div class="book_container">
-                                <ul class="tab_menu">
-                                    <li><button>왕복</button></li>
-                                    <li><button>편도</button></li>
-                                </ul> 
-                                <label class="tab_label">
-                                    마일리지 사용
-                                    <input type="checkbox">
-                                </label>
-        
-                                <div class="book_form">
-                                    <button type="button" class="book_depart">
-                                        <span class="blind">출발지</span>
-                                        <span lang="en">PUS</span>
-                                        <span lang="ko">부산</span>
-                                    </button>
-            
-                                    <button type="button" class="book_arrive">
-                                        <span class="blind">도착지</span>
-                                        <span lang="en">TO</span>
-                                        <span lang="ko">도착지 선택</span>
-                                    </button>
-            
-                                    <button type="button" class="swap">
-                                        <span class="material-symbols-outlined">
-                                            sync_alt
-                                        </span>
-                                        <span class="blind">출발지 도착지 바꾸기</span>
-                                    </button>
+                                <div class="books">
+                                    <div class="option">
+                                        <button type="button" class="active">왕복</button>
+                                        <button type="button">편도</button>
+                                    </div> 
+                                    <label class="tab_label">
+                                        마일리지 사용
+                                        <input type="checkbox">
+                                    </label>
+
+                                    <div class="book_form">
+                                        <button type="button" class="book_depart">
+                                            <span class="blind">출발지</span>
+                                            <span class="eng_location" lang="en">PUS</span>
+                                            <span lang="ko">부산</span>
+                                        </button>
+                
+                                        <button type="button" class="book_arrive">
+                                            <span class="blind">도착지</span>
+                                            <span class="eng_location" lang="en">To</span>
+                                            <span lang="ko">도착지</span>
+                                        </button>
+                
+                                        <button type="button" class="swap">
+                                            <span class="material-symbols-outlined">
+                                                sync_alt
+                                            </span>
+                                            <span class="blind">출발지 도착지 바꾸기</span>
+                                        </button>
+                                    </div>
+                                
+                                    <div class="book_term">
+                                        <button type="button">
+                                            <i class="material-symbols-outlined">
+                                                calendar_month
+                                            </i>
+                                            <span>가는 날 ~ 오는 날</span>
+                                        </button>
+                                    </div>
                                 </div>
-                            
-                                <div class="book_term">
-                                    <button type="button"><span>가는 날 ~ 오는 날</span></button>
-                                </div>
+                                
         
-                                <dl>
+                                <dl class="passenger">
                                     <dt>승객수</dt>
                                     <dd><button type="button"><span>성인 1명</span></button></dd>
                                 </dl>
@@ -106,26 +114,38 @@
                     </form>
                 </div>
                 
-                <ul class="tabMenu">
-                    <li class="on">
-                        <span class="material-symbols-outlined">
-                            flight
-                        </span>
+                <ul class="tab_menu">
+                    <li>
+                        <button class="on">
+                            <i class="material-symbols-outlined">
+                                flight
+                            </i>
+                            <span class="menu">Reservation</span>
+                        </button>
                     </li>
                     <li>
-                        <span class="material-symbols-outlined">
-                            flight
-                        </span>
+                        <button>
+                            <i class="material-symbols-outlined">
+                                search
+                            </i>
+                            <spann class="menu">Search</span>
+                        </button>
                     </li>
                     <li>
-                        <span class="material-symbols-outlined">
-                            flight
-                        </span>
+                        <button>
+                            <i class="material-symbols-outlined">
+                                airplane_ticket
+                            </i>
+                            <spann class="menu">Ticket</span>
+                        </button>
                     </li>
                     <li>
-                        <span class="material-symbols-outlined">
-                            flight
-                        </span>
+                        <button>
+                            <i class="material-symbols-outlined">
+                                schedule
+                            </i>
+                            <spann class="menu">Scheduel</span>
+                        </button>
                     </li>
                 </ul> 
             </section>

@@ -426,31 +426,74 @@ body {
 }
 .visual .reserv .inner {
   flex-grow: 1;
-  background-color: #ffffff;
   position: relative;
-  border-radius: 16px;
-  padding: 20px;
 }
 .visual .reserv .book_container {
-  height: 420px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  font-size: 16px;
 }
-.visual .reserv .tab_menu {
+.visual .reserv .book_container .books, .visual .reserv .book_container .passenger, .visual .reserv .book_container .book_class {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+.visual .reserv .option {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin-bottom: 30px;
+  /*
+  button{
+      font-size: 16px;
+      border-bottom:4px solid transparent;
+
+      &.active, &:hover{
+          border-bottom: 4px solid #3661ed;
+      }
+
+  }
+  */
 }
-.visual .reserv .tab_menu li button {
-  font-size: 16px;
+.visual .reserv .option button {
+  position: relative;
+  font-size: 18px;
+  font-weight: 600;
+  color: #a3a3a3;
+}
+.visual .reserv .option button:first-child {
+  margin-right: 10px;
+}
+.visual .reserv .option button:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  height: 4px;
+  background-color: #505eee;
+  width: 0;
+  transition: 0.4s;
+}
+.visual .reserv .option button.active {
+  font-size: 20px;
+  color: #505eee;
+}
+.visual .reserv .option button.active:after {
+  width: 100%;
+}
+.visual .reserv .option button:hover {
+  color: #505eee;
 }
 .visual .reserv .tab_label {
   position: absolute;
   top: 20px;
   right: 20px;
-  font-size: 16px;
-  font-weight: 400;
+}
+.visual .reserv .books {
+  background-color: #22a048;
 }
 .visual .reserv .book_form {
   display: flex;
@@ -466,7 +509,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 16px;
+  font-size: 14px;
+}
+.visual .reserv .book_form .book_depart .eng_location {
+  font-size: 24px;
 }
 .visual .reserv .book_form .book_arrive {
   flex-basis: calc(50% - 35px);
@@ -477,7 +523,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 16px;
+  font-size: 14px;
+}
+.visual .reserv .book_form .book_arrive .eng_location {
+  font-size: 24px;
 }
 .visual .reserv .book_form .swap {
   border: 1px solid #a3a3a3;
@@ -487,30 +536,32 @@ body {
   order: 2;
 }
 .visual .reserv .book_term {
-  font-family: "Rubik", sans-serif;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px 0;
   border: 1px solid #d2d0d0;
   border-width: 1px 0;
   padding: 20px 0;
+}
+.visual .reserv .book_term button {
+  column-gap: 10px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 .visual .reserv .book_term span {
   font-size: 16px;
   font-style: italic;
   font-weight: 500;
-  font-family: "Rubik", sans-serif;
 }
 .visual .reserv dl {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
 }
 .visual .reserv dl dt {
   font-size: 16px;
   font-family: "Rubik", sans-serif;
+  color: rgb(139, 141, 144);
 }
 .visual .reserv dl span {
   font-size: 16px;
@@ -520,31 +571,94 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
 }
 .visual .reserv .book_class label {
+  font-size: 16px;
+  color: rgb(139, 141, 144);
+}
+.visual .reserv .book_class select {
+  border: none;
+  font-size: 16px;
+}
+.visual .reserv .book_class select option {
   font-size: 16px;
 }
 .visual .reserv .book_search {
   font-family: "Rubik", sans-serif;
-  display: flex;
-  background-color: yellow;
-  padding: 10px 95px;
-  justify-content: center;
-  font-size: 16px;
+  background-color: rgb(40, 51, 201);
+  height: 54px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  border-radius: 10px;
 }
-.visual .tabMenu {
+.visual .tab_menu {
   position: absolute;
   left: 450px;
-  z-index: 1100;
-  background-color: red;
-  width: 80px;
-  height: 50px;
+  z-index: 100;
 }
-.visual .tabMenu span {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.visual .tab_menu li button {
+  width: 80px;
+  padding: 20px 0;
+  border-radius: 0 20px 20px 0;
+  transition: all 0.5s;
+}
+.visual .tab_menu li button i {
+  transition: transform 0.2s 0.2s;
+}
+.visual .tab_menu li button:hover {
+  width: 100px;
+  color: #ffffff;
+}
+.visual .tab_menu li button:hover i {
+  transform: rotate(45deg);
+}
+.visual .tab_menu li:nth-child(1) button {
+  background-color: #ed582b;
+}
+.visual .tab_menu li:nth-child(1) button:hover i {
+  transform: translateY(-8px);
+}
+.visual .tab_menu li:nth-child(2) button {
+  background-color: gold;
+}
+.visual .tab_menu li:nth-child(2) button:hover i {
+  transform: scale(1.5);
+}
+.visual .tab_menu li:nth-child(3) button {
+  background-color: #90e2a9;
+}
+.visual .tab_menu li:nth-child(3) button:hover i {
+  transform: rotate(45deg);
+}
+.visual .tab_menu li:nth-child(4) button {
+  background-color: #de5a97;
+}
+.visual .tab_menu li:nth-child(4) button:hover i {
+  transform: rotate(360deg);
+}
+.visual .tab_menu li .menu {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+.visual .tab_menu li button.on {
+  background-color: #505eee;
+  padding: 40px 0;
+  color: #fff;
+}
+.visual .tab_menu li button.on i {
+  font-size: 30px;
+}
+.visual .tab_menu li button.on .menu {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  display: block;
 }
 .visual .slide_wrap {
   position: relative;
@@ -566,21 +680,15 @@ body {
 }
 .visual .slide_wrap .slide_list .list_item.a {
   background-color: #6ebaff;
+  background-image: url("../images/slide_1_bg.png");
 }
 .visual .slide_wrap .slide_list .list_item.b {
   background-color: #22a048;
+  background-image: url("../images/slide_1_bg.png");
 }
 .visual .slide_wrap .slide_list .list_item.c {
   background-color: goldenrod;
-}
-.visual .slide_wrap .slide_list .list_item:nth-child(1) {
-  background-image: url("../images/../images/slide_1_bg.png");
-}
-.visual .slide_wrap .slide_list .list_item:nth-child(2) {
-  background-image: url("../images/../images/slide_1_bg.png");
-}
-.visual .slide_wrap .slide_list .list_item:nth-child(3) {
-  background-image: url("../images/../images/slide_1_bg.png");
+  background-image: url("../images/slide_1_bg.png");
 }
 .visual .slide_wrap .slide_list .list_item > a {
   display: block;
@@ -592,55 +700,6 @@ body {
   font-size: 18px;
 }
 .visual .slide_wrap .slide_list .list_item > a p {
-  line-height: 40px;
-  font-size: 25px;
-  padding-top: 50px;
-}
-
-._slide_wrap {
-  position: relative;
-  flex-grow: 1;
-}
-._slide_wrap .slide_list .slick-next {
-  right: 25px;
-}
-._slide_wrap .slide_list .slick-prev {
-  left: 25px;
-  z-index: 500;
-}
-._slide_wrap .slide_list .slick-dots {
-  bottom: 25px;
-}
-._slide_wrap .slide_list .list_item {
-  background: no-repeat center center/cover;
-}
-._slide_wrap .slide_list .list_item.a {
-  background-color: #6ebaff;
-}
-._slide_wrap .slide_list .list_item.b {
-  background-color: #22a048;
-}
-._slide_wrap .slide_list .list_item.c {
-  background-color: goldenrod;
-}
-._slide_wrap .slide_list .list_item:nth-of-type(1) {
-  background-image: url("../images/../images/slide_1_bg.png");
-}
-._slide_wrap .slide_list .list_item:nth-of-type(2) {
-  background-image: url("../images/../images/slide_1_bg.png");
-}
-._slide_wrap .slide_list .list_item:nth-of-type(3) {
-  background-image: url("../images/../images/slide_1_bg.png");
-}
-._slide_wrap .slide_list .list_item > a {
-  display: block;
-  padding: 110px 0 0 100px;
-}
-._slide_wrap .slide_list .list_item > a strong {
-  line-height: 24px;
-  font-size: 18px;
-}
-._slide_wrap .slide_list .list_item > a p {
   line-height: 40px;
   font-size: 25px;
   padding-top: 50px;

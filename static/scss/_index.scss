@@ -495,7 +495,7 @@ body{
 
     ul{
         li{
-            @for $i from 0 through 4{
+            @for $i from 0 through 6{
                 &:nth-child(#{$i + 1}){
                     background-image: url($imgUrl + 'pics_#{$i}.jpg') 
                 }

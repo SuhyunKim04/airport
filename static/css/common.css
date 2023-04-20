@@ -861,6 +861,12 @@ body {
 .recommand ul li:nth-child(5) {
   background-image: url("../images/pics_4.jpg");
 }
+.recommand ul li:nth-child(6) {
+  background-image: url("../images/pics_5.jpg");
+}
+.recommand ul li:nth-child(7) {
+  background-image: url("../images/pics_6.jpg");
+}
 .recommand .text p i {
   position: relative;
   top: 5px;

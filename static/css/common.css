@@ -867,6 +867,15 @@ body {
 .recommand ul li:nth-child(7) {
   background-image: url("../images/pics_6.jpg");
 }
+.recommand ul li:nth-child(8) {
+  background-image: url("../images/pics_7.jpg");
+}
+.recommand ul li:nth-child(9) {
+  background-image: url("../images/pics_8.jpg");
+}
+.recommand ul li:nth-child(10) {
+  background-image: url("../images/pics_9.jpg");
+}
 .recommand .text p i {
   position: relative;
   top: 5px;
@@ -892,6 +901,21 @@ body {
 }
 .weekly ul li:nth-child(5) {
   background-image: url("../images/weekly_4.jpg");
+}
+.weekly ul li:nth-child(6) {
+  background-image: url("../images/weekly_5.jpg");
+}
+.weekly ul li:nth-child(7) {
+  background-image: url("../images/weekly_6.jpg");
+}
+.weekly ul li:nth-child(8) {
+  background-image: url("../images/weekly_7.jpg");
+}
+.weekly ul li:nth-child(9) {
+  background-image: url("../images/weekly_8.jpg");
+}
+.weekly ul li:nth-child(10) {
+  background-image: url("../images/weekly_9.jpg");
 }
 .weekly .text p i {
   position: relative;

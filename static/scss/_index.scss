@@ -495,7 +495,7 @@ body{
 
     ul{
         li{
-            @for $i from 0 through 6{
+            @for $i from 0 through 9{
                 &:nth-child(#{$i + 1}){
                     background-image: url($imgUrl + 'pics_#{$i}.jpg') 
                 }
@@ -526,7 +526,7 @@ body{
 
     ul{
         li{
-            @for $i from 0 through 4 {
+            @for $i from 0 through 9{
                 &:nth-child(#{$i + 1}){
                 background-image: url($imgUrl + 'weekly_#{$i}.jpg')}
             }

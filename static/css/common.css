@@ -324,20 +324,16 @@ fieldset {
   opacity: 0.75;
 }
 
-.module_slide_card {
-  display: flex;
-  justify-content: space-between;
-}
-.module_slide_card li {
+.module_slide_wrap .module_card {
   width: 260px;
   background: no-repeat center center/cover;
 }
-.module_slide_card li a {
+.module_slide_wrap .module_card > a {
   display: block;
   position: relative;
   height: 356px;
 }
-.module_slide_card li a .text {
+.module_slide_wrap .module_card > a .text {
   background-color: black;
   position: absolute;
   bottom: 0;
@@ -347,17 +343,17 @@ fieldset {
   height: 110px;
   padding-left: 10px;
 }
-.module_slide_card li a .text p {
+.module_slide_wrap .module_card > a .text p {
   color: #ffffff;
   font-weight: 500;
   margin-top: 10px;
   font-size: 14px;
 }
-.module_slide_card li a .text span {
+.module_slide_wrap .module_card > a .text span {
   color: #ffffff;
 }
 
-.notice .inner, .page_header .inner, .module_slide_card {
+.notice .inner, .page_header .inner, .module_slide_wrap {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
@@ -368,25 +364,91 @@ body {
   font-size: 13px;
 }
 
+.page_header {
+  position: fixed;
+  z-index: 900;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: #ffffff;
+}
+.page_header .bg {
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: 240px;
+}
 .page_header .inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 80px;
+  position: relative;
 }
 .page_header h1 {
   font-family: "Tiro Devanagari Hindi", serif;
   font-size: 40px;
 }
 .page_header .gnb {
-  font-size: 18px;
-  font-weight: 600;
+  background-color: rgba(128, 128, 0, 0.2);
 }
-.page_header .gnb ul {
+.page_header .gnb .main_menu {
   display: flex;
 }
-.page_header .gnb ul a {
-  padding: 0 40px;
+.page_header .gnb .main_menu > li {
+  position: relative;
+  min-width: 170px;
+  text-align: center;
+}
+.page_header .gnb .main_menu > li > a {
+  font-weight: 600;
+  font-size: 18px;
+  background-color: red;
+  display: block;
+}
+.page_header .main_menu.depth1 > li {
+  position: static;
+}
+.page_header .sub_depth2 {
+  position: absolute;
+  left: 0;
+  top: 105px;
+  outline: 1px solid blue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  display: none;
+  width: 100%;
+}
+.page_header .sub_depth2.active {
+  display: flex;
+}
+.page_header .sub_depth2 > li {
+  border-left: 1px solid #d8d8d8;
+  padding-left: 20px;
+}
+.page_header .sub_depth2 > li > a {
+  font-weight: bold;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 30px;
+}
+.page_header .sub_depth3 {
+  background-color: pink;
+}
+.page_header .sub_menu {
+  outline: 1px solid red;
+  position: absolute;
+  top: 80px;
+  left: 20px;
+  font-size: 14px;
+  text-align: left;
+}
+.page_header .sub_menu li a {
+  line-height: 1.4;
 }
 .page_header .acc_gnb {
   display: flex;
@@ -417,6 +479,7 @@ body {
   display: flex;
   height: 500px;
   font-family: "Rubik", sans-serif;
+  margin: 80px 0 0;
 }
 .visual .reserv {
   display: flex;
@@ -846,34 +909,37 @@ body {
   font-size: 30px;
   margin: 20px 0 20px 20px;
 }
-.recommand ul li:nth-child(1) {
+.recommand .module_slide_card .module_card {
+  margin: 0 10px;
+}
+.recommand .module_slide_card .module_card.a {
   background-image: url("../images/pics_0.jpg");
 }
-.recommand ul li:nth-child(2) {
+.recommand .module_slide_card .module_card.b {
   background-image: url("../images/pics_1.jpg");
 }
-.recommand ul li:nth-child(3) {
+.recommand .module_slide_card .module_card.c {
   background-image: url("../images/pics_2.jpg");
 }
-.recommand ul li:nth-child(4) {
+.recommand .module_slide_card .module_card.d {
   background-image: url("../images/pics_3.jpg");
 }
-.recommand ul li:nth-child(5) {
+.recommand .module_slide_card .module_card.e {
   background-image: url("../images/pics_4.jpg");
 }
-.recommand ul li:nth-child(6) {
+.recommand .module_slide_card .module_card.f {
   background-image: url("../images/pics_5.jpg");
 }
-.recommand ul li:nth-child(7) {
+.recommand .module_slide_card .module_card.g {
   background-image: url("../images/pics_6.jpg");
 }
-.recommand ul li:nth-child(8) {
+.recommand .module_slide_card .module_card.h {
   background-image: url("../images/pics_7.jpg");
 }
-.recommand ul li:nth-child(9) {
+.recommand .module_slide_card .module_card.i {
   background-image: url("../images/pics_8.jpg");
 }
-.recommand ul li:nth-child(10) {
+.recommand .module_slide_card .module_card.j {
   background-image: url("../images/pics_9.jpg");
 }
 .recommand .text p i {

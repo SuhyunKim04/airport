@@ -1,14 +1,14 @@
-.module_slide_card{
+.module_slide_wrap{
     @extend %inner;
-    @include flex(null);
+    // @include flex(null);
 
-    li{
+    .module_card{
         width: 260px;
         background:  no-repeat center center/cover;
         
 
         
-        a{
+        & > a{
             display: block; 
             position: relative;
             height: 356px;

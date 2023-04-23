@@ -100,8 +100,21 @@ $(function() {
         // fade: true,
         cssEase: 'linear'
         });
-})
- 
 
+        console.log('hello')
+        
+        const $slide = $('.module_slide_card');
+        console.log('world')
+        $slide.slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+          });
+                          
+
+      console.log('end')
+    
+})
 
 

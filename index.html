@@ -14,10 +14,10 @@
 <body>
     <div class="dimm"></div>
     <header class="page_header">
-        <!-- <div class="bg"></div> -->
+        <div class="bg"></div>
         <div class="inner">
             <h1 class="logo">AIRLINES</h1> 
-            <!-- <nav class="gnb">
+            <nav class="gnb">
                 <ul class="main_menu depth1">
                     <li>
                         <a href="javascript:void(0);">예매</a>
@@ -132,7 +132,7 @@
                         </ul>
                     </li>
                 </ul>
-            </nav>     -->
+            </nav>    
             <ul class="acc_gnb">
                 <li>
                     <a href="javascript:void(0);">
@@ -155,109 +155,219 @@
 
     <main role="main" class="page_main">
         <div class="visual">
-            <section class="reserv">
-                <h2 class="blind">항공권 예약하기</h2>
-                <div class="inner">
-                    <form>
-                        <fieldset>
-                            <legend>항공권 검색</legend> 
-                            <div class="book_container">
-                                <div class="books">
-                                    <div class="option">
-                                        <button type="button" class="active">왕복</button>
-                                        <button type="button">편도</button>
+            <div class="tab-container">
+                
+                <section class="tab-contents active  reserv">
+                    <h2 class="blind">항공권 예약하기</h2>
+                    <div class="inner">
+                        <form>
+                            <fieldset>
+                                <legend>항공권 검색</legend> 
+                                <div class="book_container">
+                                    <div class="books">
+                                        <div class="option">
+                                            <button type="button" class="active">왕복</button>
+                                            <button type="button">편도</button>
+                                        </div> 
+                                        <label class="tab_label">
+                                            마일리지 사용
+                                            <input type="checkbox">
+                                        </label>
+    
+                                        <div class="book_form">
+                                            <button type="button" class="book_depart">
+                                                <span class="blind">출발지</span>
+                                                <span class="eng_location" lang="en">PUS</span>
+                                                <span lang="ko">부산</span>
+                                            </button>
+                    
+                                            <button type="button" class="book_arrive">
+                                                <span class="blind">도착지</span>
+                                                <span class="eng_location" lang="en">To</span>
+                                                <span lang="ko">도착지</span>
+                                            </button>
+                    
+                                            <button type="button" class="swap">
+                                                <span class="material-symbols-outlined">
+                                                    sync_alt
+                                                </span>
+                                                <span class="blind">출발지 도착지 바꾸기</span>
+                                            </button>
+                                        </div>
+                                    
+                                        <div class="book_term">
+                                            <button type="button">
+                                                <i class="material-symbols-outlined">
+                                                    calendar_month
+                                                </i>
+                                                <span>가는 날 ~ 오는 날</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <dl class="passenger">
+                                        <dt>승객수</dt>
+                                        <dd><button type="button"><span>성인 1명</span></button></dd>
+                                    </dl>
+            
+                                    <div class="book_class">
+                                        <label for="seat">좌석 등급</label>
+                                        <select id="seat">
+                                            <option>일반석</option>
+                                            <option>프레스티지석</option>
+                                            <option>일등석</option>
+                                        </select>
                                     </div> 
-                                    <label class="tab_label">
-                                        마일리지 사용
-                                        <input type="checkbox">
-                                    </label>
-
-                                    <div class="book_form">
-                                        <button type="button" class="book_depart">
-                                            <span class="blind">출발지</span>
-                                            <span class="eng_location" lang="en">PUS</span>
-                                            <span lang="ko">부산</span>
-                                        </button>
-                
-                                        <button type="button" class="book_arrive">
-                                            <span class="blind">도착지</span>
-                                            <span class="eng_location" lang="en">To</span>
-                                            <span lang="ko">도착지</span>
-                                        </button>
-                
-                                        <button type="button" class="swap">
-                                            <span class="material-symbols-outlined">
-                                                sync_alt
-                                            </span>
-                                            <span class="blind">출발지 도착지 바꾸기</span>
-                                        </button>
-                                    </div>
-                                
-                                    <div class="book_term">
-                                        <button type="button">
-                                            <i class="material-symbols-outlined">
-                                                calendar_month
-                                            </i>
-                                            <span>가는 날 ~ 오는 날</span>
-                                        </button>
-                                    </div>
+                                    <button type="submit" class="book_search">검색</button>
                                 </div>
-                                
-                                <dl class="passenger">
-                                    <dt>승객수</dt>
-                                    <dd><button type="button"><span>성인 1명</span></button></dd>
-                                </dl>
-        
-                                <div class="book_class">
-                                    <label for="seat">좌석 등급</label>
-                                    <select id="seat">
-                                        <option>일반석</option>
-                                        <option>프레스티지석</option>
-                                        <option>일등석</option>
-                                    </select>
-                                </div> 
-                                <button type="submit" class="book_search">검색</button>
+                            </fieldset>
+                        </form>
+                    </div>
+                    
+                </section>
+                <section class="tab-contents search">
+                    <div class="inner">
+                        <form>
+                            <legend>항공권 검색하기</legend>
+                            <div class="container">
+                                <div class="flight_num">
+                                    <p>예약번호 또는 항공권번호</p>
+                                    <a href="#">
+                                        <em>예) A1B2C3 또는 180-항공권 번호</em>
+                                    </a>
+                                </div>
+                                <div class="flight_days">
+                                    <p>탑승일</p>
+                                    <a href="#">
+                                        <em><i class="material-symbols-outlined">calendar_month</i>
+                                                탑승일을 선택해 주세요</em>
+                                    </a>
+                                </div>
+                                <div class="flight_lastname">
+                                    <p>승객 성</p>
+                                    <a href="#">성</a>
+                                </div>
+                                <div class="flight_firstname">
+                                    <p>승객 이름</p>
+                                    <a href="#">이름</a>
+                                </div>
+                                <button type="submit" class="search_btn">조회</button>
                             </div>
-                        </fieldset>
-                    </form>
-                </div>
-                
-            </section>
+                        </form>
+                    </div>
+                </section>
+        
+                <section class="tab-contents ticket">
+                    <div class="inner">
+                        <form>
+                            <legend>티켓검색</legend>
+                            <div class="container">
+                                <div class="flight_num">
+                                    <p>예약번호 또는 항공권번호</p>
+                                    <a href="#">
+                                        <em>예) A1B2C3 또는 180-항공권 번호</em>
+                                    </a>
+                                </div>
+                                <div class="flight_depart">
+                                    <p>출발일</p>
+                                    <a href="#"><em>2023년 4월 24일</em>
+                                        <i class="material-symbols-outlined">
+                                            keyboard_arrow_down
+                                        </i>
+                                    </a>
+                                </div>
+                                <div class="flight_lastname">
+                                    <p>승객 성</p>
+                                    <a href="#">성</a>
+                                </div>
+                                <div class="flight_firstname">
+                                    <p>승객 이름</p>
+                                    <a href="#">이름</a>
+                                </div>
+                                <button type="submit" class="search_btn">조회</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                <section class="tab-contents time">
+                    <div class="inner">
+                        <form>
+                            <legend>스케쥴</legend>
+                            <div class="container">
+                                <div class="option">
+                                    <button type="button" class="active">출도착 현황</button>
+                                    <button type="button">주간스케쥴</button>
+                                </div> 
+                                <div class="book_form">
+                                    <button type="button" class="book_depart">
+                                        <span class="blind">출발지</span>
+                                        <span class="eng_location" lang="en">From</span>
+                                        <span lang="ko">출발지</span>
+                                    </button>
+            
+                                    <button type="button" class="book_arrive">
+                                        <span class="blind">도착지</span>
+                                        <span class="eng_location" lang="en">To</span>
+                                        <span lang="ko">도착지</span>
+                                    </button>
+            
+                                    <button type="button" class="swap">
+                                        <span class="material-symbols-outlined">
+                                            sync_alt
+                                        </span>
+                                        <span class="blind">출발지 도착지 바꾸기</span>
+                                    </button>
+                                </div>
+                                <div class="dayofdepart">
+                                    <p>탑승일</p>
+                                    <a href="#">
+                                        <em><i class="material-symbols-outlined">calendar_month</i>
+                                                2023년 3월 28일</em>
+                                    </a>
+                                </div>
+                                <button type="submit" class="search_btn">조회</button>
+                            </div>
+        
+                        </form>
+                    </div>
+                </section>
+    
+                <ul class="tab_menu">
+                    <li class="on">
+                        <button type="button">
+                            <i class="material-symbols-outlined">
+                                flight
+                            </i>
+                            <span class="menu">Reservation</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            <i class="material-symbols-outlined">
+                                search
+                            </i>
+                            <span class="menu">Search</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            <i class="material-symbols-outlined">
+                                airplane_ticket
+                            </i>
+                            <span class="menu">Ticket</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            <i class="material-symbols-outlined">
+                                schedule
+                            </i>
+                            <span class="menu">Scheduel</span>
+                        </button>
+                    </li>
+                </ul> 
 
-            <ul class="tab_menu">
-                <li>
-                    <button class="on">
-                        <i class="material-symbols-outlined">
-                            flight
-                        </i>
-                        <span class="menu">Reservation</span>
-                    </button>
-                </li>
-                <li>
-                    <button>
-                        <i class="material-symbols-outlined">
-                            search
-                        </i>
-                        <span class="menu">Search</span>
-                    </button>
-                </li>
-                <li>
-                    <button>
-                        <i class="material-symbols-outlined">
-                            airplane_ticket
-                        </i>
-                        <span class="menu">Ticket</span>
-                    </button>
-                </li>
-                <li>
-                    <button>
-                        <i class="material-symbols-outlined">
-                            schedule
-                        </i>
-                        <span class="menu">Scheduel</span>
-                    </button>
-                </li>
-            </ul> 
+            </div>
             
             <div class="slide_wrap">
 
@@ -303,37 +413,7 @@
                 </ul>
             </div> 
         </div>
-        <section class="search">
-            <div class="inner">
-                <form>
-                    <legend>항공권 검색하기</legend>
-                    <div class="container">
-                        <div class="flight_num">
-                            <p>예약번호 또는 항공권번호</p>
-                            <a href="#">
-                                <em>예) A1B2C3 또는 180-항공권 번호</em>
-                            </a>
-                        </div>
-                        <div class="flight_days">
-                            <p>탑승일</p>
-                            <a href="#">
-                                <em><i class="material-symbols-outlined">calendar_month</i>
-                                        탑승일을 선택해 주세요</em>
-                            </a>
-                        </div>
-                        <div class="flight_lastname">
-                            <p>승객 성</p>
-                            <a href="#">성</a>
-                        </div>
-                        <div class="flight_firstname">
-                            <p>승객 이름</p>
-                            <a href="#">이름</a>
-                        </div>
-                        <button type="submit" class="search_btn">조회</button>
-                    </div>
-                </form>
-            </div>
-        </section>
+       
 
         <div class="notice">
             <div class="inner">
@@ -805,7 +885,7 @@
 
 
 
-    <div class="slide_wrap test">
+    <!-- <div class="slide_wrap test">
         <ul class="slide_list test_slide">
             <li class="list_item a">
                 <a href="javascript:void(0);">
@@ -846,7 +926,7 @@
                 </a>
             </li>
         </ul>
-    </div> 
+    </div>  -->
 
     <footer class="page_footer"> 
         <div class="inner"> 

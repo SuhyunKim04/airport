@@ -1,0 +1,503 @@
+.visual{
+    display: flex;
+    height: 500px;
+  
+    font-family: 'Rubik', sans-serif;
+    margin:80px 0 0;
+    .tab-container {
+       
+        flex-basis:450px;
+        position:relative;
+        .tab-contents {
+            padding:20px;
+            display:none;
+            height:500px;
+            &.active {display:block;}
+            .inner{
+                flex-grow: 1;
+                position: relative;
+            }
+        }
+        .tab_menu{
+            @include position($l:450px,$t:0);
+            z-index: 100;
+            $color:  #ed582b, gold, #90e2a9, #de5a97;
+            $transform: translateY(-8px), scale(1.5),rotate(45deg),rotate(360deg);
+           
+            
+            li{
+                button {
+                    width: 80px;  
+                    padding: 20px 0;
+                    border-radius: 0 20px 20px 0;
+                    transition: all 0.5s;
+                    i{
+                        transition: transform 0.2s 0.2s;
+                    }
+                    &:hover{
+                        width: 100px;
+                        color: #ffffff;
+                        i{
+                            transform: rotate(45deg);
+                            // transform: translateY(-8px);
+                        }
+                    }
+    
+                }
+                @for $i from 1 through 4{
+                    &:nth-child(#{$i})  {
+    
+                        button {
+                            background-color: nth($color, $i);
+                            &:hover{
+                                i{
+                                    transform:nth($transform, $i);
+                                }
+                            }
+                        }
+                    }
+                }
+    
+                .menu {
+                    @include blind;
+                }
+               &.on{
+
+                button {
+
+                    background-color: $main;
+                    padding: 40px 0;
+                    color:#fff;
+                    i {
+                        font-size:30px;
+                    }
+                    .menu {
+                        position:static;
+                        width:auto;height:auto;margin:0;
+                        display:block;
+    
+                    }
+                }
+                }
+    
+            }
+            
+        }
+    }
+    .reserv{
+      
+        display: flex;
+        background-color: #505eee; 
+
+      
+
+        .book_container{
+            @include flex(null,$d:column);
+            font-size:16px;
+            .books, .passenger, .book_class{
+                background-color: #ffffff;
+                border-radius: 10px;
+                padding: 20px;
+                margin-bottom: 10px;
+            }
+        }
+        .option{
+            @include flex($a:center, $j:flex-start);
+            margin-bottom: 30px;
+            /*
+            button{
+                font-size: 16px;
+                border-bottom:4px solid transparent;
+
+                &.active, &:hover{
+                    border-bottom: 4px solid #3661ed;
+                }
+                
+            }
+            */
+
+            button {
+                position:relative;
+                font-size:18px;
+                font-weight:600;
+                color:#a3a3a3;
+                &:first-child {margin-right:10px;}
+                &:after {
+                    content:'';
+                    display:block;
+                    position:absolute;
+                    left:0;bottom:-8px;
+                    height:4px;
+                    background-color: $main;
+                    width:0;
+                    transition:0.4s;
+                }
+
+                &.active {
+                    font-size:20px;
+                    color:$main;
+                    &:after {
+
+                        width:100%; 
+                    }
+                }
+              
+                &:hover {
+                    color:$main;
+                }
+            }
+        }
+
+        .tab_label{
+           @include position(20px,20px);
+        }
+        .books{
+            background-color: #22a048;
+        }
+        .book_form{
+            @include flex(null, $j:space-between);
+            margin-top: 10px;
+            
+            .book_depart{
+                    order:1;
+                    flex-basis: calc(50% - 35px);
+                    font-weight: 600;
+                span{
+                    @include flex($a:center, $j:center);
+                    font-size: 14px;
+                }
+                .eng_location{
+                    font-size: 24px;
+                }
+            }
+
+            .book_arrive{
+                    flex-basis: calc(50% - 35px);
+                    order:3;
+                    font-weight: 600;
+                span{
+                    @include flex ($a:center, $j:center);
+                    font-size: 14px;
+                }
+                .eng_location{
+                    font-size: 24px;
+                }
+            }
+
+            .swap{
+                border: 1px solid #a3a3a3;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;;
+                order:2;
+            }
+        }
+
+        .book_term{ 
+            margin:20px 0;
+            border: 1px solid #d2d0d0;
+            border-width: 1px 0;
+            padding: 20px 0; 
+            
+            button{
+                column-gap: 10px;
+                margin:0 auto;
+                @include flex($a:center, $j:space-around);
+            }
+                
+            span{
+                font-size: 16px;
+                font-style: italic;
+                font-weight: 500; 
+                
+            }
+            
+        }
+
+        dl{
+            @include flex;
+
+            dt{
+                font-size: 16px;
+                font-family: 'Rubik', sans-serif;
+                color:rgb(139, 141, 144);
+            }
+            span{
+                font-size: 16px;
+                font-family: 'Rubik', sans-serif;
+            }
+
+        }
+
+        .book_class{
+            @include flex;
+
+            label{
+                font-size: 16px;
+                color:rgb(139, 141, 144);
+            }
+            select{
+                border: none;
+                font-size: 16px;
+                option{
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .book_search{
+            font-family: 'Rubik', sans-serif;
+            background-color: rgb(40, 51, 201);
+            height: 54px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #ffffff;
+            border-radius: 10px;
+        }
+
+
+    }
+
+    .search{
+         
+        background-color:gold;
+       
+     
+        .container{
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 10px;
+    
+            .flight_num{
+                padding-bottom: 20px;
+                p{
+                    font-size: 16px;
+                    padding-bottom: 10px;
+                }
+                a{
+                    color:rgb(185, 185, 186);
+                    em{
+                        border-bottom: 1px solid #000000;
+                    }
+    
+                }
+            }
+            .flight_days{
+                padding-bottom: 20px;
+                p{
+                    font-size: 16px;
+                    padding-bottom: 10px;
+                }
+                a{
+                    color:rgb(185, 185, 186);
+                    em{
+                        border-bottom: 1px solid #000000;
+                        display: flex;
+                        align-items: center;
+                        margin: 0 auto;
+                        column-gap: 10px;
+                    }
+                }
+            }
+        }
+        .flight_lastname{
+            padding-bottom: 20px;
+                p{
+                    font-size: 16px;
+                    padding-bottom: 10px;
+                }
+                a{
+                    color: rgb(185, 185, 186);
+                    border-bottom: 1px solid #000000;
+                }
+        }
+        .flight_firstname{
+            padding-bottom: 20px;
+                p{
+                    font-size: 16px;
+                    padding-bottom: 10px;
+                }
+                a{
+                    color: rgb(185, 185, 186);
+                    border-bottom: 1px solid #000000;
+                }
+        }
+        .search_btn{
+            font-family: 'Rubik', sans-serif;
+            background-color: gold;
+            height: 54px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #ffffff;
+            border-radius: 10px;
+        }
+    
+    }
+    
+    .ticket{
+       
+        background-color:#90e2a9;
+       
+        .container{
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 10px;
+        }
+        .flight_num{
+            padding-bottom: 20px;
+            p{
+                font-size: 16px;
+                padding-bottom: 10px;
+            }
+            a{
+                color:rgb(185, 185, 186);
+                em{
+                    border-bottom: 1px solid #000000;
+                }
+    
+            }
+        }
+        .flight_depart{
+            padding-bottom: 20px;
+                p{
+                    font-size: 16px;
+                    padding-bottom: 10px;
+                }
+                a{
+                   font-weight: 600;
+                    border-bottom: 1px solid #000000;
+                    display: flex;
+                    align-items: center;
+                    margin: 0 auto;
+                    column-gap: 10px;
+                }
+        }
+        .flight_lastname{
+            padding-bottom: 20px;
+                p{
+                    font-size: 16px;
+                    padding-bottom: 10px;
+                }
+                a{
+                    color: rgb(185, 185, 186);
+                    border-bottom: 1px solid #000000;
+                }
+        }
+        .flight_firstname{
+            padding-bottom: 20px;
+                p{
+                    font-size: 16px;
+                    padding-bottom: 10px;
+                }
+                a{
+                    color: rgb(185, 185, 186);
+                    border-bottom: 1px solid #000000;
+                }
+        }
+        .search_btn{
+            font-family: 'Rubik', sans-serif;
+            background-color: #90e2a9;
+            height: 54px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #ffffff;
+            border-radius: 10px;
+        }
+    
+    }
+    
+    .time{
+        display: flex;
+        background-color:#de5a97;
+        padding: 20px;
+        flex-basis:450px;
+        .inner{
+            flex-grow: 1;
+            position: relative;
+        }
+        .container{
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 10px;
+        }
+        .option{
+            @include flex($a:center, $j:flex-start);
+            margin-bottom: 30px;
+        }
+        .book_form{
+            @include flex(null, $j:space-between);
+            margin-top: 10px;
+    
+            .book_depart{
+                order:1;
+                flex-basis: calc(50% - 35px);
+                font-weight: 600;
+            span{
+                @include flex($a:center, $j:center);
+                font-size: 14px;
+            }
+            .eng_location{
+                font-size: 24px;
+            }
+            
+        }
+        }
+    }
+
+}
+   
+    .slide_wrap{
+        position: relative;
+        width:calc(100% - 450px);
+        // flex-grow:1;
+        .slide_list{
+
+            .slick-next{
+                right: 25px;
+            }
+
+            .slick-prev{
+                left: 25px;
+                z-index: 500;
+            }
+
+            .slick-dots{
+                bottom: 25px;
+
+                
+            }
+            .list_item{ 
+                height: 500px;
+                // width:100%;
+                background: no-repeat center center/cover;
+                $color : #6ebaff, #22a048, goldenrod;
+                &.a { background-color:nth($color, 1);
+                    background-image: url($imgUrl + 'slide_1_bg.png');}
+                &.b { background-color:nth($color, 2);
+                    background-image: url($imgUrl + 'slide_1_bg.png');}
+                &.c { background-color:nth($color, 3);
+                    background-image: url($imgUrl + 'slide_1_bg.png');}
+            
+               & > a{
+                    display: block;
+                    color: #ffffff;
+                    padding: 110px 0 0 100px;
+
+                    strong{
+                        line-height: 24px;
+                        font-size: 18px;
+                    }
+
+                    p{
+                        line-height: 40px;
+                        font-size: 25px;
+                        padding-top: 50px;
+                    }
+                }
+            }
+        }
+    }
+    

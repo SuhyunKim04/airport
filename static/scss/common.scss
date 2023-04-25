@@ -6,6 +6,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;1,400;1,500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0');
-@import 'reset','mixin','lib','module','index';
-
+$imgUrl :'../images/';
+$main : #505eee;
+@import 'reset';
+%inner {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+body{
+    font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; 
+    font-size: 13px;
+}
+@import 'mixin','lib','module','index';
+@import 'header';
+@import 'modal';
+@import 'visual';
+@import 'footer';
  

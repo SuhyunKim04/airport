@@ -1,0 +1,90 @@
+.dimm{
+    @include full(rgba(0,0,0,0.7),1000, fixed); 
+    display:none;
+    &.open {
+        display:block;
+    }
+}
+
+.view_detail{
+    @include center;
+    background-color: #ffffff;
+    width:100%;
+    max-width: 600px;
+    z-index: 1001;
+    display:none;
+    &.open {
+        display:block;
+    }
+
+    .close{
+        @include position($p:relative);
+        right:0;
+    }
+
+    .view_grid{
+        @include grid($c:1fr 3fr);
+        padding: 30px 30px;
+
+        .monthly{
+            @include grid($c:50px 50px 50px);
+            grid-gap: 16px;
+            
+            button{
+                font-size: 16px;
+                border: 1px solid rgb(107, 107, 107);
+                border-radius: 5px;
+                opacity: 0.8;
+            }
+        }
+
+    }
+    .book_button{
+        font-size: 16px;
+        @include position($p:relative);
+        left: 50%;
+        transform: translate(-50%);
+        padding-bottom: 20px;
+        
+    }
+        .contents{
+            @include flex($j:center,$d:column);
+            grid-gap: 10px;
+
+            h2{
+                font-size: 20px;
+                font-weight: 600;
+                padding: 0 20px 0 20px;
+            }
+
+            .text{
+                p{
+                    padding-bottom: 30px;
+                    font-size: 16px;
+                }
+
+                i{
+                    @include position($t:5px, $p:relative);
+                }
+                em{
+                    color: red;
+                    font-size: 18px;
+                }
+                
+            }
+
+            .view_contents{
+                @include flex;
+            }
+                .view_pics{
+                    width: 100%;
+                    height: 300px;
+                    background:no-repeat center center/contain;
+                    display:block;
+                    @for $i from 0 through 4{
+                        &:nth-child(#{$i + 1}){
+                            background-image: url($imgUrl + 'pics_#{$i}.jpg')}
+                        }
+                }
+        }
+}

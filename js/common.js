@@ -88,6 +88,17 @@ const viewInfor = () => {
 
 viewInfor();
 
+const visualTab = () => {
+    const tabMenu = document.querySelectorAll('.visual .tab_menu li');
+    tabMenu.forEach((e,idx) => {
+        e.addEventListener('click', (event) => {
+            e.classList.add('on')
+        })
+    })
+    console.log(tabMenu)
+}
+
+visualTab();
  
 $(function() {
     const $list = $('.slide_wrap .slide_list');

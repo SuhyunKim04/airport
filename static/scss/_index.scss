@@ -83,24 +83,30 @@ body{
                 margin-bottom:30px;
             }
         }
+        .sub_img{
+            display: block;
+            background-image: url($imgUrl + 'sub_image_0.jpg');
+            width: 150px;
+            
+        }
     }
 
     .sub_depth3 {
         background-color:pink;
     }
 
-    .sub_menu{
-        outline: 1px solid red;
-        position: absolute;
-        top:80px;left:20px;
-        font-size: 14px;
-        text-align: left;
-        li{
-            a{
-                line-height: 1.4;
-            }
-        }
-    }
+    // .sub_menu{
+    //     outline: 1px solid red;
+    //     position: absolute;
+    //     top:80px;left:20px;
+    //     font-size: 14px;
+    //     text-align: left;
+    //     li{
+    //         a{
+    //             line-height: 1.4;
+    //         }
+    //     }
+    // }
     
 
     .acc_gnb{
@@ -208,13 +214,10 @@ body{
                     color:$main;
                 }
             }
-
-            
         }
 
         .tab_label{
            @include position(20px,20px);
-       
         }
         .books{
             background-color: #22a048;
@@ -317,10 +320,13 @@ body{
             font-size: 18px;
             font-weight: 600;
             color: #ffffff;
-            border-radius: 10px;;
+            border-radius: 10px;
         }
+
+
     }
 
+}
     .tab_menu{
         @include position($l:450px);
         z-index: 100;
@@ -434,9 +440,87 @@ body{
         }
     }
     
+.search{
+    display: flex;
+    background-color:gold;
+    padding: 20px;
+    flex-basis:450px;
+
+    .inner{
+        flex-grow: 1;
+        position: relative;
+    }
+    .container{
+        background-color: #ffffff;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 10px;
+
+        .flight_num{
+            padding-bottom: 20px;
+            p{
+                font-size: 16px;
+                padding-bottom: 10px;
+            }
+            a{
+                color:rgb(185, 185, 186);
+                em{
+                    border-bottom: 1px solid #000000;
+                }
+
+            }
+        }
+        .flight_days{
+            padding-bottom: 20px;
+            p{
+                font-size: 16px;
+                padding-bottom: 10px;
+            }
+            a{
+                color:rgb(185, 185, 186);
+                em{
+                    border-bottom: 1px solid #000000;
+                    display: flex;
+                    align-items: center;
+                    margin: 0 auto;
+                    column-gap: 10px;
+                }
+            }
+        }
+    }
+    .flight_lastname{
+        padding-bottom: 20px;
+            p{
+                font-size: 16px;
+                padding-bottom: 10px;
+            }
+            a{
+                color: rgb(185, 185, 186);
+                border-bottom: 1px solid #000000;
+            }
+    }
+    .flight_firstname{
+        padding-bottom: 20px;
+            p{
+                font-size: 16px;
+                padding-bottom: 10px;
+            }
+            a{
+                color: rgb(185, 185, 186);
+                border-bottom: 1px solid #000000;
+            }
+    }
+    .search_btn{
+        font-family: 'Rubik', sans-serif;
+        background-color: gold;
+        height: 54px;
+        font-size: 18px;
+        font-weight: 600;
+        color: #ffffff;
+        border-radius: 10px;
+    }
 
 }
-
 .notice{
     background-color: rgb(210, 227, 249);
     font-family: 'Rubik', sans-serif;

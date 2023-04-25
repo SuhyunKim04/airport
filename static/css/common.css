@@ -436,19 +436,13 @@ body {
   display: block;
   margin-bottom: 30px;
 }
+.page_header .sub_depth2 .sub_img {
+  display: block;
+  background-image: url("../images/sub_image_0.jpg");
+  width: 150px;
+}
 .page_header .sub_depth3 {
   background-color: pink;
-}
-.page_header .sub_menu {
-  outline: 1px solid red;
-  position: absolute;
-  top: 80px;
-  left: 20px;
-  font-size: 14px;
-  text-align: left;
-}
-.page_header .sub_menu li a {
-  line-height: 1.4;
 }
 .page_header .acc_gnb {
   display: flex;
@@ -655,52 +649,53 @@ body {
   color: #ffffff;
   border-radius: 10px;
 }
-.visual .tab_menu {
+
+.tab_menu {
   position: absolute;
   left: 450px;
   z-index: 100;
 }
-.visual .tab_menu li button {
+.tab_menu li button {
   width: 80px;
   padding: 20px 0;
   border-radius: 0 20px 20px 0;
   transition: all 0.5s;
 }
-.visual .tab_menu li button i {
+.tab_menu li button i {
   transition: transform 0.2s 0.2s;
 }
-.visual .tab_menu li button:hover {
+.tab_menu li button:hover {
   width: 100px;
   color: #ffffff;
 }
-.visual .tab_menu li button:hover i {
+.tab_menu li button:hover i {
   transform: rotate(45deg);
 }
-.visual .tab_menu li:nth-child(1) button {
+.tab_menu li:nth-child(1) button {
   background-color: #ed582b;
 }
-.visual .tab_menu li:nth-child(1) button:hover i {
+.tab_menu li:nth-child(1) button:hover i {
   transform: translateY(-8px);
 }
-.visual .tab_menu li:nth-child(2) button {
+.tab_menu li:nth-child(2) button {
   background-color: gold;
 }
-.visual .tab_menu li:nth-child(2) button:hover i {
+.tab_menu li:nth-child(2) button:hover i {
   transform: scale(1.5);
 }
-.visual .tab_menu li:nth-child(3) button {
+.tab_menu li:nth-child(3) button {
   background-color: #90e2a9;
 }
-.visual .tab_menu li:nth-child(3) button:hover i {
+.tab_menu li:nth-child(3) button:hover i {
   transform: rotate(45deg);
 }
-.visual .tab_menu li:nth-child(4) button {
+.tab_menu li:nth-child(4) button {
   background-color: #de5a97;
 }
-.visual .tab_menu li:nth-child(4) button:hover i {
+.tab_menu li:nth-child(4) button:hover i {
   transform: rotate(360deg);
 }
-.visual .tab_menu li .menu {
+.tab_menu li .menu {
   position: absolute;
   clip: rect(0 0 0 0);
   width: 1px;
@@ -708,64 +703,143 @@ body {
   margin: -1px;
   overflow: hidden;
 }
-.visual .tab_menu li button.on {
+.tab_menu li button.on {
   background-color: #505eee;
   padding: 40px 0;
   color: #fff;
 }
-.visual .tab_menu li button.on i {
+.tab_menu li button.on i {
   font-size: 30px;
 }
-.visual .tab_menu li button.on .menu {
+.tab_menu li button.on .menu {
   position: static;
   width: auto;
   height: auto;
   margin: 0;
   display: block;
 }
-.visual .slide_wrap {
+
+.slide_wrap {
   position: relative;
   width: calc(100% - 450px);
 }
-.visual .slide_wrap .slide_list .slick-next {
+.slide_wrap .slide_list .slick-next {
   right: 25px;
 }
-.visual .slide_wrap .slide_list .slick-prev {
+.slide_wrap .slide_list .slick-prev {
   left: 25px;
   z-index: 500;
 }
-.visual .slide_wrap .slide_list .slick-dots {
+.slide_wrap .slide_list .slick-dots {
   bottom: 25px;
 }
-.visual .slide_wrap .slide_list .list_item {
+.slide_wrap .slide_list .list_item {
   height: 500px;
   background: no-repeat center center/cover;
 }
-.visual .slide_wrap .slide_list .list_item.a {
+.slide_wrap .slide_list .list_item.a {
   background-color: #6ebaff;
   background-image: url("../images/slide_1_bg.png");
 }
-.visual .slide_wrap .slide_list .list_item.b {
+.slide_wrap .slide_list .list_item.b {
   background-color: #22a048;
   background-image: url("../images/slide_1_bg.png");
 }
-.visual .slide_wrap .slide_list .list_item.c {
+.slide_wrap .slide_list .list_item.c {
   background-color: goldenrod;
   background-image: url("../images/slide_1_bg.png");
 }
-.visual .slide_wrap .slide_list .list_item > a {
+.slide_wrap .slide_list .list_item > a {
   display: block;
   color: #ffffff;
   padding: 110px 0 0 100px;
 }
-.visual .slide_wrap .slide_list .list_item > a strong {
+.slide_wrap .slide_list .list_item > a strong {
   line-height: 24px;
   font-size: 18px;
 }
-.visual .slide_wrap .slide_list .list_item > a p {
+.slide_wrap .slide_list .list_item > a p {
   line-height: 40px;
   font-size: 25px;
   padding-top: 50px;
+}
+
+.search {
+  display: flex;
+  background-color: gold;
+  padding: 20px;
+  flex-basis: 450px;
+}
+.search .inner {
+  flex-grow: 1;
+  position: relative;
+}
+.search .container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+.search .container .flight_num {
+  padding-bottom: 20px;
+}
+.search .container .flight_num p {
+  font-size: 16px;
+  padding-bottom: 10px;
+}
+.search .container .flight_num a {
+  color: rgb(185, 185, 186);
+}
+.search .container .flight_num a em {
+  border-bottom: 1px solid #000000;
+}
+.search .container .flight_days {
+  padding-bottom: 20px;
+}
+.search .container .flight_days p {
+  font-size: 16px;
+  padding-bottom: 10px;
+}
+.search .container .flight_days a {
+  color: rgb(185, 185, 186);
+}
+.search .container .flight_days a em {
+  border-bottom: 1px solid #000000;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  column-gap: 10px;
+}
+.search .flight_lastname {
+  padding-bottom: 20px;
+}
+.search .flight_lastname p {
+  font-size: 16px;
+  padding-bottom: 10px;
+}
+.search .flight_lastname a {
+  color: rgb(185, 185, 186);
+  border-bottom: 1px solid #000000;
+}
+.search .flight_firstname {
+  padding-bottom: 20px;
+}
+.search .flight_firstname p {
+  font-size: 16px;
+  padding-bottom: 10px;
+}
+.search .flight_firstname a {
+  color: rgb(185, 185, 186);
+  border-bottom: 1px solid #000000;
+}
+.search .search_btn {
+  font-family: "Rubik", sans-serif;
+  background-color: gold;
+  height: 54px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  border-radius: 10px;
 }
 
 .notice {

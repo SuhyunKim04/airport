@@ -542,6 +542,7 @@ body {
 }
 .page_header .sub_depth2.active {
   display: flex;
+  align-items: stretch;
 }
 .page_header .sub_depth2 > li {
   border-left: 1px solid #d8d8d8;
@@ -553,10 +554,19 @@ body {
   display: block;
   margin-bottom: 30px;
 }
-.page_header .sub_depth2 .sub_img {
+.page_header .sub_depth2 .sub_images li {
   display: block;
+  background: no-repeat center center/cover;
   background-image: url("../images/sub_image_0.jpg");
-  width: 150px;
+  padding: 50px;
+  width: 100%;
+  position: relative;
+}
+.page_header .sub_depth2 .sub_images .sub_img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: 600;
 }
 .page_header .sub_depth3 {
   background-color: pink;

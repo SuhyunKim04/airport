@@ -79,7 +79,7 @@ fieldset {
   box-sizing: border-box;
 }
 
-.page_header .inner, .notice .inner, .module_slide_card {
+.page_header .inner, .notice .inner, .weekly .module_slide_card, .recommand .module_slide_card {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
@@ -335,47 +335,47 @@ body {
   opacity: 0.75;
 }
 
-.module_slide_card .module_card {
+.recommand .module_slide_card .module_card {
   width: 260px;
   background: no-repeat center center/cover;
   margin: 0 10px;
 }
-.module_slide_card .module_card.a {
+.recommand .module_slide_card .module_card.a {
   background-image: url("../images/pics_0.jpg");
 }
-.module_slide_card .module_card.b {
+.recommand .module_slide_card .module_card.b {
   background-image: url("../images/pics_1.jpg");
 }
-.module_slide_card .module_card.c {
+.recommand .module_slide_card .module_card.c {
   background-image: url("../images/pics_2.jpg");
 }
-.module_slide_card .module_card.d {
+.recommand .module_slide_card .module_card.d {
   background-image: url("../images/pics_3.jpg");
 }
-.module_slide_card .module_card.e {
+.recommand .module_slide_card .module_card.e {
   background-image: url("../images/pics_4.jpg");
 }
-.module_slide_card .module_card.f {
+.recommand .module_slide_card .module_card.f {
   background-image: url("../images/pics_5.jpg");
 }
-.module_slide_card .module_card.g {
+.recommand .module_slide_card .module_card.g {
   background-image: url("../images/pics_6.jpg");
 }
-.module_slide_card .module_card.h {
+.recommand .module_slide_card .module_card.h {
   background-image: url("../images/pics_7.jpg");
 }
-.module_slide_card .module_card.i {
+.recommand .module_slide_card .module_card.i {
   background-image: url("../images/pics_8.jpg");
 }
-.module_slide_card .module_card.j {
+.recommand .module_slide_card .module_card.j {
   background-image: url("../images/pics_9.jpg");
 }
-.module_slide_card .module_card > a {
+.recommand .module_slide_card .module_card > a {
   display: block;
   position: relative;
   height: 356px;
 }
-.module_slide_card .module_card > a .text {
+.recommand .module_slide_card .module_card > a .text {
   background-color: black;
   position: absolute;
   bottom: 0;
@@ -385,13 +385,73 @@ body {
   height: 110px;
   padding-left: 10px;
 }
-.module_slide_card .module_card > a .text p {
+.recommand .module_slide_card .module_card > a .text p {
   color: #ffffff;
   font-weight: 500;
   margin-top: 10px;
   font-size: 14px;
 }
-.module_slide_card .module_card > a .text span {
+.recommand .module_slide_card .module_card > a .text span {
+  color: #ffffff;
+}
+
+.weekly .module_slide_card .slide_card {
+  width: 260px;
+  background: no-repeat center center/cover;
+  margin: 0 10px;
+}
+.weekly .module_slide_card .slide_card.a {
+  background-image: url("../images/weekly_0.jpg");
+}
+.weekly .module_slide_card .slide_card.b {
+  background-image: url("../images/weekly_1.jpg");
+}
+.weekly .module_slide_card .slide_card.c {
+  background-image: url("../images/weekly_2.jpg");
+}
+.weekly .module_slide_card .slide_card.d {
+  background-image: url("../images/weekly_3.jpg");
+}
+.weekly .module_slide_card .slide_card.e {
+  background-image: url("../images/weekly_4.jpg");
+}
+.weekly .module_slide_card .slide_card.f {
+  background-image: url("../images/weekly_5.jpg");
+}
+.weekly .module_slide_card .slide_card.g {
+  background-image: url("../images/weekly_6.jpg");
+}
+.weekly .module_slide_card .slide_card.h {
+  background-image: url("../images/weekly_7.jpg");
+}
+.weekly .module_slide_card .slide_card.i {
+  background-image: url("../images/weekly_8.jpg");
+}
+.weekly .module_slide_card .slide_card.j {
+  background-image: url("../images/weekly_9.jpg");
+}
+.weekly .module_slide_card .slide_card > a {
+  display: block;
+  position: relative;
+  height: 356px;
+}
+.weekly .module_slide_card .slide_card > a .text {
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0.7;
+  width: 100%;
+  height: 110px;
+  padding-left: 10px;
+}
+.weekly .module_slide_card .slide_card > a .text p {
+  color: #ffffff;
+  font-weight: 500;
+  margin-top: 10px;
+  font-size: 14px;
+}
+.weekly .module_slide_card .slide_card > a .text span {
   color: #ffffff;
 }
 

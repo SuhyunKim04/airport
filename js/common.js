@@ -25,6 +25,60 @@ const datas = [
         price: 100,
         information: '3월입니다.'
     },
+    {
+        id:3,
+        month: 4,
+        price: 100,
+        information: '4월입니다.'
+    },
+    {
+        id:4,
+        month: 5,
+        price: 100,
+        information: '5월입니다.'
+    },
+    {
+        id:5,
+        month: 6,
+        price: 100,
+        information: '6월입니다.'
+    },
+    {
+        id:6,
+        month: 7,
+        price: 100,
+        information: '7월입니다.'
+    },
+    {
+        id:7,
+        month: 8,
+        price: 100,
+        information: '8월입니다.'
+    },
+    {
+        id:8,
+        month: 9,
+        price: 100,
+        information: '9월입니다.'
+    },
+    {
+        id:9,
+        month: 10,
+        price: 100,
+        information: '10월입니다.'
+    },
+    {
+        id:10,
+        month: 11,
+        price: 100,
+        information: '11월입니다.'
+    },
+    {
+        id:11,
+        month: 12,
+        price: 100,
+        information: '12월입니다.'
+    },
 ]
 
 
@@ -97,6 +151,26 @@ const visualTab = () => {
     })
     console.log(tabMenu)
 }
+
+const mainMenu = () => {
+    const dropMenu = document.querySelectorAll('.main_menu .click');
+    const dropContents = document.querySelectorAll('.sub_depth2 li')
+    console.log(dropContents)
+    
+    dropMenu.forEach((e,idx) => {
+        e.addEventListener('click', (activeSection) => {
+            
+        })
+    })
+    
+    const activeSection = (e) => {
+        let menuIndex = [...dropMenu].indexOf(e.target)
+    
+        console.log(menuIndex)
+    }
+}
+
+mainMenu();
 
 visualTab();
  

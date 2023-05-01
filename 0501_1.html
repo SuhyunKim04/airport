@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .wrap li {
+      }
+
+      .wrap li.on {
+        color: red;
+      }
+
+      .contents li {
+        display: none;
+      }
+      .contents li.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <ul class="wrap">
+        <li class="on">
+          <a href="javascript:void(0);"><span>MENU</span><b>1</b></a>
+        </li>
+        <li>
+          <a href="javascript:void(0);">MENU 2</a>
+        </li>
+        <li>
+          <a href="javascript:void(0);">MENU 3</a>
+        </li>
+      </ul>
+
+      <ul class="contents">
+        <li class="active">
+          1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+          at facilis, fugiat vero quaerat corrupti voluptatibus consequatur
+          tempore eum, quam ullam mollitia porro iure natus iusto, voluptatem
+          deserunt. Assumenda, aliquid.
+        </li>
+        <li>
+          2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+          at facilis, fugiat vero quaerat corrupti voluptatibus consequatur
+          tempore eum, quam ullam mollitia porro iure natus iusto, voluptatem
+          deserunt. Assumenda, aliquid.
+        </li>
+        <li>
+          3.Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+          at facilis, fugiat vero quaerat corrupti voluptatibus consequatur
+          tempore eum, quam ullam mollitia porro iure natus iusto, voluptatem
+          deserunt. Assumenda, aliquid.
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      const container = document.querySelector(".container");
+      const menus = container.querySelectorAll(".wrap");
+      const contents = container.querySelectorAll(".contents li");
+
+      menus.forEach((menu, index) => {
+        menu.addEventListener("click", (e) => {
+          console.log(menu, "클릭한대상 : ", e.target, e.currentTarget);
+          // menu == e.currentTarget : li
+          // e.target : 실제클릭한 대상(내부에 자식요소가없다면 e.currentTarget과 동일한대상이 된다.)
+          if (e.target.nodeName === "B") {
+            console.log("hello");
+          } else {
+            console.log(`${e.target.nodeName}을 클릭했군요`);
+          }
+          menus.forEach((e) => e.classList.remove("on"));
+
+          menus.forEach((e) => {
+            e.classList.remove("on");
+          });
+
+          menu.classList.add("on");
+
+          contents.forEach((e) => e.classList.remove("active"));
+          contents[index].classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>

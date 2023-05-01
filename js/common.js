@@ -96,21 +96,21 @@ const viewInfor = () => {
         view.classList.remove('open');
         dimm.classList.remove('open');
     }
-    console.log(close)
+   
     book_button.addEventListener('click', closeModal);
 
     const openModal = () => {
         view.classList.add('open');
         dimm.classList.add('open');
     }
-    console.log()
+   
     close.addEventListener('click',closeModal);
  
 
     list.forEach( (e,idx) => {
         e.addEventListener('click',(event) => {
             const target = event.target;
-            console.log(target.innerHTML);
+           
             if(target.nodeName == 'A') {
                 openModal()
                 info.innerHTML = target.innerHTML
@@ -128,12 +128,11 @@ const viewInfor = () => {
 
         })
     })
-    console.log(monthly)
+    
     monthly.forEach((e,idx) => {
         e.addEventListener('click',(event) => {
             const mon = event.target;
             if(mon.nodeName == 'BUTTON') {
-                console.log(typeof(month))
                 month.innerHTML = mon.innerHTML;
             }
         })
@@ -143,31 +142,72 @@ const viewInfor = () => {
 viewInfor();
 
 const visualTab = () => {
-    const tabMenu = document.querySelectorAll('.visual .tab_menu li');
-    tabMenu.forEach((e,idx) => {
-        e.addEventListener('click', (event) => {
-            e.classList.add('on')
+    const tabMenus = document.querySelectorAll('.visual .tab_menu li');
+    const tabContents = document.querySelectorAll('.tab-contents');
+    console.log(tabContents)
+    // const reserve = tabContents.querySelector('.reserv');
+    // const search = tabContents.querySelector('.search');
+    // const ticket = tabContents.querySelector('.ticket');
+    // const time = tabContents.querySelector('.time');
+    tabMenus.forEach((tabMenu,index) => {
+        tabMenu.addEventListener('click', (e) => {
+            tabMenus.forEach(menu => {
+                menu.classList.remove('on');
+            })
+            e.currentTarget.classList.add('on');
+
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            })
+
+            tabContents[index].classList.add('active');
         })
+
     })
-    console.log(tabMenu)
+    
 }
 
 const mainMenu = () => {
-    const dropMenu = document.querySelectorAll('.main_menu .click');
-    const dropContents = document.querySelectorAll('.sub_depth2 li')
+    const dropMenu = document.querySelectorAll('.main_btn');
+    const dropContents = document.querySelectorAll('.sub_depth2')
+    const bg = document.querySelector('.bg');
+    const gnb = document.querySelector('.gnb');
     console.log(dropContents)
     
-    dropMenu.forEach((e,idx) => {
-        e.addEventListener('click', (activeSection) => {
+    dropMenu.forEach((e,index) => {
+        e.addEventListener('mouseenter', () => {
+            dropMenu.forEach(e=>{e.classList.remove('active')});
+            e.classList.add('active');
+
+            dropContents.forEach(sub_depth2=>{sub_depth2.classList.remove('active')});
+            dropContents[index].classList.add('active');
+
+            bg.style.display = 'block';
             
         })
     })
+
+    gnb.addEventListener('mouseleave',() => {
+        bg.style.display = 'none';
+        dropContents.forEach((e,index) => {
+            e.classList.remove('active');
+        })
+    })
+
+    // const closeModal = () => {
+    //     view.classList.remove('open');
+    //     dimm.classList.remove('open');
+    // }
+    // console.log(close)
+    // book_button.addEventListener('click', closeModal);
+
+    // const openModal = () => {
+    //     view.classList.add('open');
+    //     dimm.classList.add('open');
+    // }
+    // console.log()
+    // close.addEventListener('click',closeModal);
     
-    const activeSection = (e) => {
-        let menuIndex = [...dropMenu].indexOf(e.target)
-    
-        console.log(menuIndex)
-    }
 }
 
 mainMenu();
@@ -186,19 +226,28 @@ $(function() {
         cssEase: 'linear'
         });
 
-        console.log('hello')
+       
         
-        const $slide = $('.module_slide_card');
-        console.log('world')
-        $slide.slick({
+        const $recommand = $('.recommand .module_slide_card');
+        
+        $recommand.slick({
             slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+          });
+
+        const $weekly = $('.weekly .module_slide_card');
+        
+        $weekly.slick({
+            slidesToShow: 5,
             slidesToScroll: 1,
             autoplay: true,
             autoplaySpeed: 2000,
           });
                           
 
-      console.log('end')
+      
     
 })
 

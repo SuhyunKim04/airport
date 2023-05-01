@@ -21,7 +21,7 @@
         .tab_menu{
             @include position($l:450px,$t:0);
             z-index: 100;
-            $color:  #ed582b, gold, #90e2a9, #de5a97;
+            $color:  $main, gold, #90e2a9, #de5a97;
             $transform: translateY(-8px), scale(1.5),rotate(45deg),rotate(360deg);
            
             
@@ -65,7 +65,7 @@
 
                 button {
 
-                    background-color: $main;
+                    // background-color: $main;
                     padding: 40px 0;
                     color:#fff;
                     i {

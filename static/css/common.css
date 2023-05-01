@@ -557,6 +557,7 @@ body {
   left: 0;
   width: 100%;
   height: 240px;
+  display: none;
 }
 .page_header .inner {
   display: flex;
@@ -569,9 +570,6 @@ body {
   font-family: "Tiro Devanagari Hindi", serif;
   font-size: 40px;
 }
-.page_header .gnb {
-  background-color: rgba(128, 128, 0, 0.2);
-}
 .page_header .gnb .main_menu {
   display: flex;
 }
@@ -583,8 +581,10 @@ body {
 .page_header .gnb .main_menu > li > a {
   font-weight: 600;
   font-size: 18px;
-  background-color: red;
   display: block;
+}
+.page_header .gnb .main_menu > li > a .active, .page_header .gnb .main_menu > li > a:hover {
+  color: blue;
 }
 .page_header .main_menu.depth1 > li {
   position: static;
@@ -593,7 +593,6 @@ body {
   position: absolute;
   left: 0;
   top: 105px;
-  outline: 1px solid blue;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -627,9 +626,6 @@ body {
   top: 0;
   left: 0;
   font-weight: 600;
-}
-.page_header .sub_depth3 {
-  background-color: pink;
 }
 .page_header .acc_gnb {
   display: flex;
@@ -802,7 +798,7 @@ body {
   transform: rotate(45deg);
 }
 .visual .tab-container .tab_menu li:nth-child(1) button {
-  background-color: #ed582b;
+  background-color: #505eee;
 }
 .visual .tab-container .tab_menu li:nth-child(1) button:hover i {
   transform: translateY(-8px);
@@ -834,7 +830,6 @@ body {
   overflow: hidden;
 }
 .visual .tab-container .tab_menu li.on button {
-  background-color: #505eee;
   padding: 40px 0;
   color: #fff;
 }

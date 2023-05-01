@@ -10,6 +10,7 @@
             top:80px;left:0;
             width: 100%;
             height: 240px;
+            display: none;
         }
     .inner{
         @include flex;
@@ -24,7 +25,6 @@
     }
 
     .gnb{
-        background-color:rgba(olive, 0.2);
         .main_menu{
             display: flex;
             & > li{
@@ -34,8 +34,11 @@
                 & > a {
                     font-weight: 600;
                     font-size: 18px;
-                    background-color:red;
                     display: block;
+
+                    .active,&:hover{
+                        color:blue;
+                    }
                 }
             }
         }
@@ -50,7 +53,6 @@
     .sub_depth2 {
         position:absolute;
         left:0;top:105px;
-        outline:1px solid blue;
         @include flex;
         display:none;
 
@@ -89,9 +91,7 @@
         }
     }
 
-    .sub_depth3 {
-        background-color:pink;
-    }
+   
 
     .acc_gnb{
         @include flex(null, null);

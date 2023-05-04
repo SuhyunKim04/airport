@@ -1,3 +1,5 @@
+
+
 .visual{
     display: flex;
     height: 500px;
@@ -467,6 +469,18 @@
             .eng_location{
                 font-size: 24px;
             }
+
+            .book_arrive{
+                order:2;
+                font-weight: 600;
+                span{
+                    @include flex($a:center, $j:center);
+                    font-size: 14px;
+                }
+                .eng_location{
+                    font-size: 24px;
+                }
+            }
             
         }
         }
@@ -526,3 +540,101 @@
         }
     }
     
+.middle_ad{
+    .ad_pic{
+        background: no-repeat left top/cover;
+        background-image: linear-gradient(150deg, rgba(#fff, 0.5) 20%,rgba(#fff, 0)), url($imgUrl + 'middle_ad.jpg');
+        padding-bottom: 50px;
+        width: 100%;
+        margin-top: 80px;
+    }
+
+    .ad_text{
+        padding: 80px 0 40px 100px;
+            h2{
+                padding-bottom: 10px;
+                font-weight: 600;
+                font-size: 30px;
+            }
+            p{
+                font-size: 16px;
+            }
+    }
+
+    .service_box{
+        @extend %inner;
+        .contents_box{
+            @include flex($j:space-around);
+            column-gap:40px; 
+            
+            li{
+                background-color: rgba(255, 255, 255, 0.95);
+                flex:1;
+                max-width:250px; 
+
+                .icon {
+                    .shadow {
+                        background-image:radial-gradient(rgba(gray,0.5), rgba(gray,0) 50%);
+                        height:20px;
+                        width:100px;
+                        position:relative;
+                        transform:scaleX(0) translateY(85px);
+                        margin:0 auto;
+                    }
+                }
+
+                a {
+                    display:block;
+                    text-align:center;
+                    padding:50px 0 30px;
+
+                    &:hover {
+                        
+                        img {
+                            animation:moveUpDown 0.4s infinite ease-out alternate both;
+                            
+                        }
+
+                        .shadow {
+                     
+                            animation:shadow 0.4s infinite ease-in alternate both;
+                        }
+                    }
+
+                    img {
+                        width:60px; 
+                        position:relative;
+                    }
+
+                    .contents_text {
+                        margin-top:20px;
+                        strong {
+                            font-size:1.3em;
+                            font-weight:400;
+                        }
+
+                        p {
+                            margin-top:10px;
+                            color:#666;
+                            line-height:1.2;
+                        }
+                    }
+
+                }
+
+               
+
+            }
+        }
+    }
+}
+
+
+@keyframes moveUpDown {
+    0% { transform:translateY(0); }
+    100% { transform:translateY(-7px)}
+}
+@keyframes shadow {
+    0% { transform:translateY(85px) scaleX(1) ;}
+    100% { transform:translateY(85px) scaleX(0.6) ;}
+}

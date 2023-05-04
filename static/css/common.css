@@ -79,7 +79,7 @@ fieldset {
   box-sizing: border-box;
 }
 
-.page_header .inner, .notice .inner, .weekly .module_slide_card, .recommand .module_slide_card {
+.middle_ad .service_box, .page_header .inner, .notice .inner, .weekly .module_slide_card, .recommand .module_slide_card {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
@@ -1215,6 +1215,19 @@ body {
 .visual .time .book_form .book_depart .eng_location {
   font-size: 24px;
 }
+.visual .time .book_form .book_depart .book_arrive {
+  order: 2;
+  font-weight: 600;
+}
+.visual .time .book_form .book_depart .book_arrive span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+.visual .time .book_form .book_depart .book_arrive .eng_location {
+  font-size: 24px;
+}
 
 .slide_wrap {
   position: relative;
@@ -1261,6 +1274,87 @@ body {
   padding-top: 50px;
 }
 
+.middle_ad .ad_pic {
+  background: no-repeat left top/cover;
+  background-image: linear-gradient(150deg, rgba(255, 255, 255, 0.5) 20%, rgba(255, 255, 255, 0)), url("../images/middle_ad.jpg");
+  padding-bottom: 50px;
+  width: 100%;
+  margin-top: 80px;
+}
+.middle_ad .ad_text {
+  padding: 80px 0 40px 100px;
+}
+.middle_ad .ad_text h2 {
+  padding-bottom: 10px;
+  font-weight: 600;
+  font-size: 30px;
+}
+.middle_ad .ad_text p {
+  font-size: 16px;
+}
+.middle_ad .service_box .contents_box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  column-gap: 40px;
+}
+.middle_ad .service_box .contents_box li {
+  background-color: rgba(255, 255, 255, 0.95);
+  flex: 1;
+  max-width: 250px;
+}
+.middle_ad .service_box .contents_box li .icon .shadow {
+  background-image: radial-gradient(rgba(128, 128, 128, 0.5), rgba(128, 128, 128, 0) 50%);
+  height: 20px;
+  width: 100px;
+  position: relative;
+  transform: scaleX(0) translateY(85px);
+  margin: 0 auto;
+}
+.middle_ad .service_box .contents_box li a {
+  display: block;
+  text-align: center;
+  padding: 50px 0 30px;
+}
+.middle_ad .service_box .contents_box li a:hover img {
+  animation: moveUpDown 0.4s infinite ease-out alternate both;
+}
+.middle_ad .service_box .contents_box li a:hover .shadow {
+  animation: shadow 0.4s infinite ease-in alternate both;
+}
+.middle_ad .service_box .contents_box li a img {
+  width: 60px;
+  position: relative;
+}
+.middle_ad .service_box .contents_box li a .contents_text {
+  margin-top: 20px;
+}
+.middle_ad .service_box .contents_box li a .contents_text strong {
+  font-size: 1.3em;
+  font-weight: 400;
+}
+.middle_ad .service_box .contents_box li a .contents_text p {
+  margin-top: 10px;
+  color: #666;
+  line-height: 1.2;
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-7px);
+  }
+}
+@keyframes shadow {
+  0% {
+    transform: translateY(85px) scaleX(1);
+  }
+  100% {
+    transform: translateY(85px) scaleX(0.6);
+  }
+}
 .page_footer {
   padding: 30px;
 }

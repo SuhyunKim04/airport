@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+@mixin pos($p: absolute, $t: null, $w: null, $h: null, $bg: null) {
+  position: $p;
+  @if ($t == null) {
+    left: 0;
+    top: 0;
+  } @else if($t == "right top") {
+    right: 0;
+    top: 0;
+  } @else if($t == "left bottom") {
+    left: 0;
+    bottom: 0;
+  } @else if($t == "right bottom") {
+    right: 0;
+    bottom: 0;
+  } @else if($t == "full") {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  width: $w;
+  height: $h;
+  background-color: $bg;
+}
+
+@mixin flex($a: center, $j: space-between) {
+  display: flex;
+  align-items: $a;
+  justify-content: $j;
+}
+
+@mixin abs($t: 0, $r: null, $b: null, $l: 0) {
+  position: absolute;
+  top: $t;
+  left: $l;
+  right: $r;
+  bottom: $b;
+}

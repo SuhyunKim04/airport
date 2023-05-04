@@ -251,4 +251,28 @@ $(function() {
     
 })
 
+/*
+const notice = document.querySelector('.notice');
+const noticeList = notice.querySelectorAll('.list ul li');
+console.log(noticeList)
 
+let seconds = 1;
+let timerId;
+
+timerId = setInterval(function(){
+    notice.textContent = seconds++
+},2000);
+*/
+
+const notice = document.querySelector('.notice');
+console.log(notice.offsetTop, notice.offsetLeft, notice.offsetWidth);
+let noticeBox = notice.getBoundingClientRect();
+console.log(noticeBox, noticeBox.top );
+
+
+let count =0;
+const scrollUp = () => {
+    console.log(`This time is ${count++}th.`)
+}
+
+// setInterval( scrollUp, 1000);

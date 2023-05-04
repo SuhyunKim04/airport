@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Ubuntu:wght@300;400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.4s;
+}
+
+fieldset {
+  border: none;
+}
+
+.page-header .inner {
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+  font-family: ubuntu, sans-serif;
+}
+
+.page-header {
+  background-color: rgb(72, 83, 98);
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.page-header .bg {
+  position: absolute;
+  top: 71px;
+  left: 0;
+  right: 0;
+  background-color: rgb(72, 83, 98);
+  height: 0;
+  transition: height 0.4s;
+  z-index: 1;
+}
+.page-header .inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.page-header .gnb {
+  position: relative;
+}
+.page-header .gnb .line {
+  width: 0;
+  transition: 0.4s;
+  height: 5px;
+  background-color: gold;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+}
+.page-header .gnb a:hover {
+  color: gold;
+}
+.page-header .gnb .depth1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 20px;
+}
+.page-header .gnb .depth1 > li {
+  text-align: center;
+  position: relative;
+}
+.page-header .gnb .depth1 > li.on .depth2 {
+  display: block;
+}
+.page-header .gnb .depth1 > li > a {
+  display: block;
+  line-height: 70px;
+  padding: 0 20px;
+}
+.page-header .gnb .depth2 {
+  padding: 30px 0;
+  display: none;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  z-index: 2;
+  white-space: nowrap;
+}
+
+/*# sourceMappingURL=dropdown_1.css.map */

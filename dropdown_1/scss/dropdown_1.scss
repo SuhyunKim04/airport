@@ -1,0 +1,68 @@
+@charset "utf-8";
+
+@import "reset", "common", "mixin";
+
+$bg: rgb(72, 83, 98);
+
+body {
+  font-family: ubuntu, sans-serif;
+}
+
+.page-header {
+  background-color: $bg;
+  color: #fff;
+  border-bottom: 1px solid rgba(#fff, 0.1);
+  @include pos($w: 100%);
+  .bg {
+    @include abs(71px, 0, null, 0);
+    background-color: $bg;
+    height: 0;
+    transition: height 0.4s;
+    z-index: 1;
+  }
+  .inner {
+    @extend %inner;
+    @include flex;
+  }
+
+  .gnb {
+    position: relative;
+    .line {
+      width: 0;
+      transition: 0.4s;
+      height: 5px;
+      background-color: gold;
+      @include abs(null, null, -3px, 0);
+    }
+
+    a:hover {
+      color:gold;
+    }
+    .depth1 {
+      @include flex($j: center);
+      column-gap: 20px;
+      & > li {
+        &.on {
+          .depth2 {
+            display: block;
+          }
+        }
+        & > a {
+          display: block;
+          line-height: 70px;
+          padding: 0 20px;
+        }
+        text-align: center;
+        position: relative;
+      }
+    }
+
+    .depth2 {
+      padding: 30px 0;
+      display: none;
+      @include abs(70px);
+      z-index: 2;
+      white-space: nowrap;
+    }
+  }
+}

@@ -5,6 +5,8 @@
 //     view.classList.add('open');
 //     dimm.classList.add('open');
 // })
+document.addEventListener("DOMContentLoaded", (event) => {
+
 
 const datas = [
     {
@@ -92,6 +94,7 @@ const viewInfor = () => {
     const close = view.querySelector('.close');
     const monthly = view.querySelectorAll('.monthly button');
     const month = view.querySelector('.month');
+    // view.innerHTML = datas[index].information
     const closeModal = () => {
         view.classList.remove('open');
         dimm.classList.remove('open');
@@ -168,49 +171,67 @@ const visualTab = () => {
 }
 
 const mainMenu = () => {
-    const dropMenu = document.querySelectorAll('.main_btn');
-    const dropContents = document.querySelectorAll('.sub_depth2')
-    const bg = document.querySelector('.bg');
-    const gnb = document.querySelector('.gnb');
-    console.log(dropContents)
+    const header = document.getElementById("header");
+    const gnb = header.querySelector('.gnb');
+    const menus = gnb.querySelectorAll(".depth1 > li");
+    const bg = header.querySelector(".bg");
+    const line = gnb.querySelector(".line");
+
     
-    dropMenu.forEach((e,index) => {
-        e.addEventListener('mouseenter', () => {
-            dropMenu.forEach(e=>{e.classList.remove('active')});
-            e.classList.add('active');
+    const showMenu = (menu, idx) => {
+        
+        menu.classList.add("on"); 
+        let size = menu.offsetWidth; 
+        bg.style.height = menu.children[1].offsetHeight + "px";  
+        lineUpdate(idx, size);
+    };
 
-            dropContents.forEach(sub_depth2=>{sub_depth2.classList.remove('active')});
-            dropContents[index].classList.add('active');
+    const lineUpdate = (idx, size) => {
+        
+        let start = gnb.offsetLeft;
+        let x = start;
 
-            bg.style.display = 'block';
-            
+        if (idx === "hide") {
+            line.style.display = "none";
+            return false;
+        }else {
+            line.style.display = "block";
+        }
+
+        if (idx === 0) {
+            x = start;
+        } else if (idx === 1) {
+            x = menus[0].offsetWidth + 20 + start;
+        } else if(idx === 2) {
+            x = menus[0].offsetWidth + menus[1].offsetWidth + 40 + start;
+        }else {
+            x = menus[0].offsetWidth + menus[1].offsetWidth + menus[2].offsetWidth + 60 +start;
+        }
+
+        line.style.left = x + "px";
+        line.style.width = size + "px";
+    };
+
+    const hideMenu = (menu) => {
+        
+        menus.forEach((menu) => menu.classList.remove("on"));
+        bg.style.height = 0;
+        lineUpdate("hide");
+    };
+
+    menus.forEach((menu, idx) => {
+        menu.addEventListener("mouseenter", () => {
+            hideMenu();
+            showMenu(menu, idx);
+        });
+
+        gnb.addEventListener("mouseleave", () => {
+            hideMenu();
         })
     })
-
-    gnb.addEventListener('mouseleave',() => {
-        bg.style.display = 'none';
-        dropContents.forEach((e,index) => {
-            e.classList.remove('active');
-        })
-    })
-
-    // const closeModal = () => {
-    //     view.classList.remove('open');
-    //     dimm.classList.remove('open');
-    // }
-    // console.log(close)
-    // book_button.addEventListener('click', closeModal);
-
-    // const openModal = () => {
-    //     view.classList.add('open');
-    //     dimm.classList.add('open');
-    // }
-    // console.log()
-    // close.addEventListener('click',closeModal);
-    
 }
-
 mainMenu();
+
 
 visualTab();
  
@@ -263,16 +284,21 @@ timerId = setInterval(function(){
     notice.textContent = seconds++
 },2000);
 */
+const getOffset = () => {
+    const notice = document.querySelector('.notice');
+    return notice.offsetTop;
+    console.log(notice.offsetTop, notice.offsetLeft, notice.offsetWidth);
+    let noticeBox = notice.getBoundingClientRect();
+    console.log(noticeBox, noticeBox.top );
 
-const notice = document.querySelector('.notice');
-console.log(notice.offsetTop, notice.offsetLeft, notice.offsetWidth);
-let noticeBox = notice.getBoundingClientRect();
-console.log(noticeBox, noticeBox.top );
-
-
-let count =0;
-const scrollUp = () => {
-    console.log(`This time is ${count++}th.`)
 }
+getOffset();
+
+
+// let count = 0;
+// const scrollUp = () => {
+    
+// }
 
 // setInterval( scrollUp, 1000);
+})

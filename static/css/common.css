@@ -468,8 +468,6 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: stretch;
-  overflow: hidden;
-  height: 50px;
   column-gap: 20px;
 }
 .notice .inner h2 {
@@ -480,6 +478,14 @@ body {
 }
 .notice .inner h2 i {
   padding-right: 10px;
+}
+.notice .list {
+  outline: 1px solid red;
+  overflow: hidden;
+  height: 50px;
+}
+.notice .list ul {
+  transition: 0.4s;
 }
 .notice li {
   display: flex;

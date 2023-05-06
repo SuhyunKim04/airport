@@ -230,12 +230,8 @@ const mainMenu = () => {
         })
     })
 }
-mainMenu();
 
-
-visualTab();
- 
-$(function() {
+function slideBanners() {
     const $list = $('.slide_wrap .slide_list');
     // const $slide = $('.test_slide')
     $list.slick({
@@ -246,31 +242,30 @@ $(function() {
         // fade: true,
         cssEase: 'linear'
         });
+ 
+        
+    const $recommand = $('.recommand .module_slide_card');
+    
+    $recommand.slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        });
 
-       
-        
-        const $recommand = $('.recommand .module_slide_card');
-        
-        $recommand.slick({
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 2000,
-          });
-
-        const $weekly = $('.weekly .module_slide_card');
-        
-        $weekly.slick({
-            slidesToShow: 5,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 2000,
-          });
+    const $weekly = $('.weekly .module_slide_card');
+    
+    $weekly.slick({
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        });
+}
                           
 
       
-    
-})
+ 
 
 /*
 const notice = document.querySelector('.notice');
@@ -284,21 +279,52 @@ timerId = setInterval(function(){
     notice.textContent = seconds++
 },2000);
 */
-const getOffset = () => {
-    const notice = document.querySelector('.notice');
-    return notice.offsetTop;
-    console.log(notice.offsetTop, notice.offsetLeft, notice.offsetWidth);
-    let noticeBox = notice.getBoundingClientRect();
-    console.log(noticeBox, noticeBox.top );
+const noticeAutoScroll = () => {
+    const notice = document.getElementById('notice');
+    const list = notice.querySelector('.list ul');
+    // return notice.offsetTop;
+    // console.log(notice.offsetTop, notice.offsetLeft, notice.offsetWidth);
+    // let noticeBox = notice.getBoundingClientRect();
+    // console.log(noticeBox, noticeBox.top );
+
+    let timerId;
+    let size = 0;
+    let line = notice.querySelector('.list').offsetHeight;
+    let limit = (list.childElementCount - 1 )* line
+    const scrollUp = () => {
+    
+        if (size >= limit){
+            size = 0 
+        }else{
+            size += line
+            // 만약 사이즈가 250보다 크면 0으로 돌아가고, 작으면 50을 더해라
+        }
+        list.style.transform = `translateY(-${size}px)`;
+        console.log(size);
+        
+    }
+
+    const loopPlay = () => {
+        timerId = setInterval(scrollUp, 3000);
+    }
+    const loopStop = () => {
+        clearInterval(timerId);
+        console.log('scroll is stoped')
+    }
+
+    loopPlay();
+    notice.addEventListener('mouseenter', loopStop );
+    notice.addEventListener('mouseleave', loopPlay );
+
 
 }
-getOffset();
+
+ 
 
 
-// let count = 0;
-// const scrollUp = () => {
-    
-// }
-
-// setInterval( scrollUp, 1000);
+mainMenu(); // gnb
+visualTab(); // home - tabmenu
+noticeAutoScroll(); // notice
+slideBanners(); //jquery slide
+ 
 })

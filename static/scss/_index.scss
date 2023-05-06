@@ -13,8 +13,7 @@
      .inner{
          @extend %inner;
          @include flex($a:stretch, $j:flex-start);
-         overflow: hidden;
-         height: 50px;
+       
          column-gap: 20px;
  
              h2{
@@ -24,6 +23,15 @@
                          padding-right: 10px;
                      }
              }
+     }
+
+     .list {
+        outline:1px solid red;
+        overflow: hidden;
+         height: 50px;
+        ul {
+            transition:0.4s;
+        }
      }
  
      li{

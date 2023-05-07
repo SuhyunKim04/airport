@@ -282,11 +282,8 @@ timerId = setInterval(function(){
 const noticeAutoScroll = () => {
     const notice = document.getElementById('notice');
     const list = notice.querySelector('.list ul');
-    // return notice.offsetTop;
-    // console.log(notice.offsetTop, notice.offsetLeft, notice.offsetWidth);
-    // let noticeBox = notice.getBoundingClientRect();
-    // console.log(noticeBox, noticeBox.top );
 
+    
     let timerId;
     let size = 0;
     let line = notice.querySelector('.list').offsetHeight;

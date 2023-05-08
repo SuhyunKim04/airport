@@ -207,7 +207,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:void(0);">
+                    <a href="javascript:void(0);" class="openSearch">
                         <span class="blind">검색하기</span>
                     </a>
                 </li>
@@ -220,9 +220,49 @@
         <form>
             <fieldset>
                 <legend>검색</legend>
-
-            </fieldset>
-        </form>
+                <div class="search_box">
+                    <div class="search_form">
+                        <input type="search" required>
+                        <input type="submit" value="검색">
+                    </div>
+                    <div class="search_custom">
+                        <div class="recent_search">
+                            <strong>최근 검색어</strong>
+                            <ul>
+                                <li>
+                                    <a href="#">수화물</a>
+                                    <button type="button" class="material-symbols-outlined">
+                                    close
+                                    <span class="blind">검색어 삭제</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <a href="#">예약관리</a>
+                                    <button type="button" class="material-symbols-outlined">
+                                    close
+                                    <span class="blind">검색어 삭제</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <a href="#">특별서비스</a>
+                                    <button type="button" class="material-symbols-outlined">
+                                    close
+                                    <span class="blind">검색어 삭제</span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="link">
+                            <strong>빠른 링크</strong>
+                            <a href="#">온라인 체크인</a>
+                            <a href="#">예약관리</a>
+                            <a href="#">항공편 스케쥴</a>
+                            <a href="#">항공기 출도착 안내</a>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+            <button type="button" class="close"></button>
 
     </div>
 

@@ -87,7 +87,7 @@
     .reserv{
       
         display: flex;
-        background-color: #505eee; 
+        background-color: $main; 
 
       
 
@@ -104,17 +104,6 @@
         .option{
             @include flex($a:center, $j:flex-start);
             margin-bottom: 30px;
-            /*
-            button{
-                font-size: 16px;
-                border-bottom:4px solid transparent;
-
-                &.active, &:hover{
-                    border-bottom: 4px solid #3661ed;
-                }
-                
-            }
-            */
 
             button {
                 position:relative;
@@ -247,15 +236,13 @@
 
         .book_search{
             font-family: 'Rubik', sans-serif;
-            background-color: rgb(40, 51, 201);
+            background-color: rgb(23, 30, 127);
             height: 54px;
             font-size: 18px;
             font-weight: 600;
             color: #ffffff;
             border-radius: 10px;
         }
-
-
     }
 
     .search{
@@ -342,7 +329,6 @@
                 border-radius: 10px;
                 width: 370px;
             }
-        
     }
     
     .ticket{
@@ -550,7 +536,8 @@
     }
 
     .ad_text{
-        padding: 80px 0 40px 100px;
+        @extend %inner;
+        padding: 80px 0 40px 0;
             h2{
                 padding-bottom: 10px;
                 font-weight: 600;
@@ -621,8 +608,6 @@
                     }
 
                 }
-
-               
 
             }
         }

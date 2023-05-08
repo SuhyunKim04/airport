@@ -108,7 +108,10 @@ const viewInfor = () => {
     }
    
     close.addEventListener('click',closeModal);
- 
+    
+    let date = new Date();
+    let now = date.getMonth();
+    
 
     list.forEach( (e,idx) => {
         e.addEventListener('click',(event) => {
@@ -116,7 +119,7 @@ const viewInfor = () => {
            
             if(target.nodeName == 'A') {
                 openModal()
-                info.innerHTML = target.innerHTML
+                info.innerHTML = target.innerHTML + datas[now].information;
             }
         })
     })
@@ -126,7 +129,7 @@ const viewInfor = () => {
             const aim = week.target;
             if(aim.nodeName == 'A') {
                 openModal()
-                info.innerHTML = aim.innerHTML
+                info.innerHTML = aim.innerHTML + datas[now].information;
             }
 
         })
@@ -137,6 +140,7 @@ const viewInfor = () => {
             const mon = event.target;
             if(mon.nodeName == 'BUTTON') {
                 month.innerHTML = mon.innerHTML;
+                info.innerHTML = datas[idx].information;
             }
         })
     })
@@ -297,7 +301,7 @@ const noticeAutoScroll = () => {
             // 만약 사이즈가 250보다 크면 0으로 돌아가고, 작으면 50을 더해라
         }
         list.style.transform = `translateY(-${size}px)`;
-        console.log(size);
+
         
     }
 
@@ -316,12 +320,32 @@ const noticeAutoScroll = () => {
 
 }
 
- 
 
+const searchBox = () => {
+    
+    const search = document.querySelector('.openSearch');
+    const searchModal = document.querySelector('.searchModal');
+    const searchClose = searchModal.querySelector('.close');
+    const dimm = document.querySelector('.dimm');
 
+    const openSearchModal = () => {
+        console.log('hello')
+        searchModal.classList.add('open')
+        dimm.classList.add('open')
+
+        
+    }
+    search.addEventListener('click',openSearchModal);
+
+    const closeSearchModal = () => {
+        searchModal.classList.remove('open');
+        dimm.classList.remove('open')
+    }
+    searchClose.addEventListener('click', closeSearchModal);
+}
 mainMenu(); // gnb
 visualTab(); // home - tabmenu
 noticeAutoScroll(); // notice
-slideBanners(); //jquery slide
- 
+slideBanners(); //jquery 
+searchBox();
 })

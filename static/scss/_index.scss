@@ -26,7 +26,6 @@
      }
 
      .list {
-        outline:1px solid red;
         overflow: hidden;
          height: 50px;
         ul {
@@ -42,33 +41,32 @@
  
  
  .recommand{
+    @extend %inner;
      h2{
          font-weight: 600;
          font-family: 'Mukta', sans-serif;
          font-size: 30px;
-         margin: 20px 0 20px 20px;
+         margin: 20px 0 20px 0;
+        }
  
-         
-     }
- 
-     .text{
-         p{
-             i{
+    .text{
+        p{
+            i{
                  position: relative;
                  top: 5px;
  
-             }
-         }
-     }
- }
+            }
+        }
+    }
+}
  
  .weekly{
-     
+    @extend %inner;
      h2{
          font-weight: 600;
          font-family: 'Mukta', sans-serif;
          font-size: 30px;
-         margin: 20px 0 20px 20px;
+         margin: 20px 0 20px 0;
  
      }
  

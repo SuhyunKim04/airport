@@ -201,11 +201,11 @@
 
     &::before, &::after{
        position: absolute;
-        left:0;top:0;
+        right:30px;top:15px;
         content: '';
         height: 30px;
         width:2px;
-        background-color:#000;
+        background-color:map-get($hash,hover_text);
         
     }
 

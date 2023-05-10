@@ -716,12 +716,12 @@ body {
 }
 .close::before, .close::after {
   position: absolute;
-  left: 0;
-  top: 0;
+  right: 30px;
+  top: 15px;
   content: "";
   height: 30px;
   width: 2px;
-  background-color: #000;
+  background-color: #fff;
 }
 .close::before {
   transform: rotate(45deg);

@@ -120,6 +120,7 @@ const viewInfor = () => {
             if(target.nodeName == 'A') {
                 openModal()
                 info.innerHTML = target.innerHTML + datas[now].information;
+                info.innerHTML = target.innerHTML + datas.price;
             }
         })
     })

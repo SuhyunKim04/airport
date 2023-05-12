@@ -1083,6 +1083,7 @@ body {
   border-radius: 10px;
 }
 .visual .search {
+  color: rgb(102, 102, 102);
   background-color: gold;
 }
 .visual .search .container {
@@ -1165,6 +1166,7 @@ body {
   width: 370px;
 }
 .visual .ticket {
+  color: rgb(102, 102, 102);
   background-color: #90e2a9;
 }
 .visual .ticket .container {
@@ -1247,14 +1249,11 @@ body {
   width: 370px;
 }
 .visual .time {
+  color: rgb(102, 102, 102);
   display: flex;
   background-color: #de5a97;
   padding: 20px;
   flex-basis: 450px;
-}
-.visual .time .inner {
-  flex-grow: 1;
-  position: relative;
 }
 .visual .time .container {
   background-color: #ffffff;
@@ -1270,12 +1269,11 @@ body {
 }
 .visual .time .book_form {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin-top: 10px;
 }
 .visual .time .book_form .book_depart {
   order: 1;
-  flex-basis: calc(50% - 35px);
   font-weight: 600;
 }
 .visual .time .book_form .book_depart span {
@@ -1292,9 +1290,6 @@ body {
   font-weight: 600;
 }
 .visual .time .book_form .book_depart .book_arrive span {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 14px;
 }
 .visual .time .book_form .book_depart .book_arrive .eng_location {

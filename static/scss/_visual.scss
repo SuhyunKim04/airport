@@ -246,6 +246,7 @@
     }
 
     .search{
+        color:$lightText;
         background-color:gold;
         .container{
             background-color: #ffffff;
@@ -332,7 +333,7 @@
     }
     
     .ticket{
-       
+        color:$lightText;
         background-color:#90e2a9;
        
         .container{
@@ -422,14 +423,12 @@
     }
     
     .time{
+        color:$lightText;
         display: flex;
         background-color:#de5a97;
         padding: 20px;
         flex-basis:450px;
-        .inner{
-            flex-grow: 1;
-            position: relative;
-        }
+
         .container{
             background-color: #ffffff;
             border-radius: 10px;
@@ -441,12 +440,12 @@
             margin-bottom: 30px;
         }
         .book_form{
-            @include flex(null, $j:space-between);
+            @include flex(null, $j:space-evenly);
             margin-top: 10px;
     
             .book_depart{
                 order:1;
-                flex-basis: calc(50% - 35px);
+                // flex-basis: calc(50% - 35px);
                 font-weight: 600;
             span{
                 @include flex($a:center, $j:center);
@@ -460,7 +459,7 @@
                 order:2;
                 font-weight: 600;
                 span{
-                    @include flex($a:center, $j:center);
+                    // @include flex($a:center, $j:center);
                     font-size: 14px;
                 }
                 .eng_location{

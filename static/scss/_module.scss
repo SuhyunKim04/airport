@@ -82,43 +82,48 @@
             width: 260px;
             background:  no-repeat center center/cover;
             margin:0 10px;
+            
 
-            &.a {
-                background-image:url($imgUrl + 'weekly_0.jpg');
-            }
-            &.b {
-                background-image:url($imgUrl + 'weekly_1.jpg');
-            }
-            &.c {
-                background-image:url($imgUrl + 'weekly_2.jpg');
-            }
-            &.d {
-                background-image:url($imgUrl + 'weekly_3.jpg');
-            }
-            &.e {
-                background-image:url($imgUrl + 'weekly_4.jpg');
-            }
-            &.f {
-                background-image:url($imgUrl + 'weekly_5.jpg');
-            }
-            &.g {
-                background-image:url($imgUrl + 'weekly_6.jpg');
-            }
-            &.h {
-                background-image:url($imgUrl + 'weekly_7.jpg');
-            }
-            &.i {
-                background-image:url($imgUrl + 'weekly_8.jpg');
-            }
-            &.j {
-                background-image:url($imgUrl + 'weekly_9.jpg');
-            }
+            // &.a {
+            //     background-image:url($imgUrl + 'weekly_0.jpg');
+            // }
+            // &.b {
+            //     background-image:url($imgUrl + 'weekly_1.jpg');
+            // }
+            // &.c {
+            //     background-image:url($imgUrl + 'weekly_2.jpg');
+            // }
+            // &.d {
+            //     background-image:url($imgUrl + 'weekly_3.jpg');
+            // }
+            // &.e {
+            //     background-image:url($imgUrl + 'weekly_4.jpg');
+            // }
+            // &.f {
+            //     background-image:url($imgUrl + 'weekly_5.jpg');
+            // }
+            // &.g {
+            //     background-image:url($imgUrl + 'weekly_6.jpg');
+            // }
+            // &.h {
+            //     background-image:url($imgUrl + 'weekly_7.jpg');
+            // }
+            // &.i {
+            //     background-image:url($imgUrl + 'weekly_8.jpg');
+            // }
+            // &.j {
+            //     background-image:url($imgUrl + 'weekly_9.jpg');
+            // }
 
             & > a{
                 display: block; 
                 position: relative;
                 height: 356px;
+                overflow:hidden;
 
+                .picbg{
+                   min-height:100%;
+                }
 
                 .text{
                     background-color: black;

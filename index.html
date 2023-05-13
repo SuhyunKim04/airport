@@ -222,7 +222,7 @@
                 <legend>검색</legend>
                 <div class="search_box">
                     <div class="search_form">
-                        <input type="search" required>
+                        <input type="search" required class="search_modal">
                         <input type="submit" value="검색">
                     </div>
                     <div class="search_custom">
@@ -254,10 +254,21 @@
                         </div>
                         <div class="link">
                             <strong>빠른 링크</strong>
-                            <a href="#">온라인 체크인</a>
-                            <a href="#">예약관리</a>
-                            <a href="#">항공편 스케쥴</a>
-                            <a href="#">항공기 출도착 안내</a>
+                            <ul class="quick_link">
+                                <li>
+                                    <a href="#">온라인 체크인</a>
+                                </li>
+                                <li>
+                                    <a href="#">예약관리</a>
+                                </li>
+                                <li>
+                                    <a href="#">항공편 스케쥴</a>
+                                </li>
+                                <li>
+                                    <a href="#">항공기 출도착 안내</a>
+                                </li>
+                            </ul>
+                    
                         </div>
                     </div>
                 </fieldset>
@@ -341,31 +352,31 @@
                 <section class="tab-contents search">
                     <div class="inner">
                         <form>
-                            <legend>항공권 검색하기</legend>
-                            <div class="container">
-                                <div class="flight_num">
-                                    <p>예약번호 또는 항공권번호</p>
-                                    <a href="#">
-                                        <em>예) A1B2C3 또는 180-항공권 번호</em>
-                                    </a>
+                            <fieldset>
+                                <legend>항공권 검색하기</legend>
+                                <div class="container">
+                                    <div class="flight_num">
+                                        <p>예약번호 또는 항공권번호</p>
+                                        <input type="text" name="filghtnum" class="numblank" value="예) A1B2C3 또는 180-항공권 번호"> 
+                                    </div>
+                                    <div class="flight_days">
+                                        <p>탑승일</p>
+                                        <a href="#">
+                                            <em><i class="material-symbols-outlined">calendar_month</i>
+                                                    탑승일을 선택해 주세요</em>
+                                        </a>
+                                    </div>
+                                    <div class="flight_lastname">
+                                        <p>승객 성</p>
+                                        <input type="text" name="lastname" class="lastname" value="성">
+                                    </div>
+                                    <div class="flight_firstname">
+                                        <p>승객 이름</p>
+                                        <input type="text" name="firstname" class="firstname" value="이름">
+                                    </div>
+                                    <button type="submit" class="search_btn">조회</button>
                                 </div>
-                                <div class="flight_days">
-                                    <p>탑승일</p>
-                                    <a href="#">
-                                        <em><i class="material-symbols-outlined">calendar_month</i>
-                                                탑승일을 선택해 주세요</em>
-                                    </a>
-                                </div>
-                                <div class="flight_lastname">
-                                    <p>승객 성</p>
-                                    <a href="#"><em>성</em></a>
-                                </div>
-                                <div class="flight_firstname">
-                                    <p>승객 이름</p>
-                                    <a href="#"><em>이름</em></a>
-                                </div>
-                                <button type="submit" class="search_btn">조회</button>
-                            </div>
+                            </fieldset>
                         </form>
                     </div>
                 </section>
@@ -377,9 +388,7 @@
                             <div class="container">
                                 <div class="flight_num">
                                     <p>예약번호 또는 항공권번호</p>
-                                    <a href="#">
-                                        <em>예) A1B2C3 또는 180-항공권 번호</em>
-                                    </a>
+                                    <input type="text" name="filghtnum" class="numblank" value="예) A1B2C3 또는 180-항공권 번호"> 
                                 </div>
                                 <div class="flight_depart">
                                     <p>출발일</p>
@@ -392,11 +401,11 @@
                                 </div>
                                 <div class="flight_lastname">
                                     <p>승객 성</p>
-                                    <a href="#"><em>성</em></a>
+                                    <input type="text" name="lastname" class="lastname" value="성">
                                 </div>
                                 <div class="flight_firstname">
                                     <p>승객 이름</p>
-                                    <a href="#"><em>이름</em></a>
+                                    <input type="text" name="firstname" class="firstname" value="이름">
                                 </div>
                                 <button type="submit" class="search_btn">조회</button>
                             </div>
@@ -881,10 +890,16 @@
             <h2>Weekly</h2>
             <!-- 모달로 띄우기 -->
             <ul class="module_slide_card">
+                
+            </ul>
+
+            
+            <!-- <ul class="module_slide_card">
                 <li class="slide_card a">
                     <a href="javascript:void(0);">
+                        <img src="./static/images/weekly_0.jpg" alt="images" class="picbg">
                         <div class="text">
-                            <p>
+                            <p class="randmark">
                                 <strong>서울 / 인천</strong>
                                 <i class="material-symbols-outlined">
                                     sync_alt
@@ -892,9 +907,9 @@
                                 <strong>오사카</strong>
                             </p> 
                             <span>왕복</span> 
-                            <p>
+                            <p class="price_wrap">
                                 <b>KRW</b>
-                                <em>350,000</em>
+                                <em class="test_price">350,000</em>
                                 <span>~</span>
                             </p>
                         </div>
@@ -1071,7 +1086,8 @@
                         </div>
                     </a>
                 </li>
-            </ul>
+            </ul> -->
+           
         </section>
     </main>
 

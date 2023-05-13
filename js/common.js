@@ -7,6 +7,69 @@
 // })
 document.addEventListener("DOMContentLoaded", (event) => {
 
+const tripLists = [
+    {
+        id:0,
+        start : 'seoul',
+        end: 'osaka',
+        way: '왕복'
+    },
+    {
+        id:1,
+        start : 'seoul',
+        end: 'fukuoka',
+        way: '왕복'
+    },
+    {
+        id:2,
+        start : 'seoul',
+        end: 'shanghai',
+        way: '왕복'
+    },
+    {
+        id:3,
+        start : 'seoul',
+        end: 'taiwan',
+        way: '왕복'
+    },
+    {
+        id:4,
+        start : 'seoul',
+        end: 'guam',
+        way: '왕복'
+    },
+    {
+        id:5,
+        start : 'seoul',
+        end: 'doha',
+        way: '왕복'
+    },
+    {
+        id:6,
+        start : 'seoul',
+        end: 'san francisco',
+        way: '편도'
+    },
+    {
+        id:7,
+        start : 'seoul',
+        end: 'cancun',
+        way: '편도'
+    },
+    {
+        id:8,
+        start : 'seoul',
+        end: 'lundon',
+        way: '편도'
+    },
+    {
+        id:9,
+        start : 'seoul',
+        end: 'barcelona',
+        way: '왕복'
+    },
+    
+]
 
 const datas = [
     {
@@ -83,11 +146,53 @@ const datas = [
     },
 ]
 
+const weeklyUpdate = () => {
+    const wrap = document.querySelector('.weekly .module_slide_card');
+    const count = tripLists.length;
+    let weeklyData = '';
+    
+    for (let i=0; i < count; i++){
+        weeklyData += `<li class="slide_card a">
+        <a href="javascript:void(0);">
+        <img src="./static/images/weekly_${[i]}.jpg" alt="images" class="picbg">
+            <div class="text">
+                <p>
+                    <strong>${tripLists[i].start}</strong>
+                    <i class="material-symbols-outlined">
+                        sync_alt
+                    </i>
+                    <strong>${tripLists[i].end}</strong>
+                </p> 
+                <span>${tripLists[i].way}</span> 
+                <p>
+                    <b>KRW</b>
+                    <em>${datas[i].price}</em>
+                    <span>~</span>
+                </p>
+            </div>
+        </a>
+        </li> `
+    }
+   wrap.innerHTML = weeklyData;
+
+
+    let test = '';
+    const a = ['mango','banana','melon']
+    for(let i=0; i< a.length; i++) {
+        test = test + a[i]
+        test += a[i]
+    }
+
+
+    console.log(test);
+}
+
+weeklyUpdate();
 
 const viewInfor = () => {
     const view = document.querySelector('.view_detail');
     const list = document.querySelectorAll('.recommand .module_slide_card li');
-    const weekly = document.querySelectorAll('.weekly .module_slide_card li');
+    // const weekly = document.querySelectorAll('.weekly .module_slide_card li');
     const dimm = document.querySelector('.dimm');
     const info = view.querySelector('.info');
     const book_button = view.querySelector('.book_button');
@@ -124,16 +229,18 @@ const viewInfor = () => {
         })
     })
 
-    weekly.forEach((e,idx) => {
-        e.addEventListener('click',(week) => {
-            const aim = week.target;
-            if(aim.nodeName == 'A') {
-                openModal()
-                info.innerHTML = aim.innerHTML + datas[now].information;
-            }
+    // weekly.forEach((e,idx) => {
+    //     e.addEventListener('click',(week) => {
+    //         const aim = week.target;
+    //         if(aim.nodeName == 'A') {
+    //             openModal();
+                
+    //             info.innerHTML = aim.innerHTML + datas[now].information;
+    //             console.log(document.querySelector('.view_detail .test_price'));   
+    //         }
 
-        })
-    })
+    //     })
+    // })
     
     monthly.forEach((e,idx) => {
         e.addEventListener('click',(event) => {
@@ -260,7 +367,7 @@ function slideBanners() {
     const $weekly = $('.weekly .module_slide_card');
     
     $weekly.slick({
-        slidesToShow: 5,
+        slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 2000,

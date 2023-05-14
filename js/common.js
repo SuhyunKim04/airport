@@ -74,21 +74,21 @@ const tripLists = [
 const datas = [
     {
         id:0,
-        month: 1,
-        price: 1482500,
-        information: '1월입니다.'
+        start : 'seoul',
+        end: 'osaka',
+        way: '왕복'
     },
     {
         id:1,
-        month: 2,
-        price: 100,
-        information: '2월입니다.'
+        start : 'seoul',
+        end: 'frankfurt',
+        way: '왕복'
     },
     {
         id:2,
-        month: 3,
-        price: 100,
-        information: '3월입니다.'
+        start : 'seoul',
+        end: 'honolulu',
+        way: '왕복'
     },
     {
         id:3,

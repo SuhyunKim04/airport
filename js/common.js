@@ -92,57 +92,45 @@ const datas = [
     },
     {
         id:3,
-        month: 4,
-        price: 100,
-        information: '4월입니다.'
+        start : 'seoul',
+        end: 'toronto',
+        way: '왕복'
     },
     {
         id:4,
-        month: 5,
-        price: 100,
-        information: '5월입니다.'
+        start : 'seoul',
+        end: 'sweden',
+        way: '편도'
     },
     {
         id:5,
-        month: 6,
-        price: 100,
-        information: '6월입니다.'
+        start : 'seoul',
+        end: 'guam',
+        way: '왕복'
     },
     {
         id:6,
-        month: 7,
-        price: 100,
-        information: '7월입니다.'
+        start : 'seoul',
+        end: 'boracay',
+        way: '왕복'
     },
     {
         id:7,
-        month: 8,
-        price: 100,
-        information: '8월입니다.'
+        start : 'seoul',
+        end: 'hongkong',
+        way: '편도'
     },
     {
         id:8,
-        month: 9,
-        price: 100,
-        information: '9월입니다.'
+        start : 'seoul',
+        end: 'rome',
+        way: '왕복'
     },
     {
         id:9,
-        month: 10,
-        price: 100,
-        information: '10월입니다.'
-    },
-    {
-        id:10,
-        month: 11,
-        price: 100,
-        information: '11월입니다.'
-    },
-    {
-        id:11,
-        month: 12,
-        price: 100,
-        information: '12월입니다.'
+        start : 'seoul',
+        end: 'paris',
+        way: '왕복'
     },
 ]
 

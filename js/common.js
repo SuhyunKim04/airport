@@ -12,63 +12,72 @@ const tripLists = [
         id:0,
         start : 'seoul',
         end: 'osaka',
-        way: '왕복'
+        way: '왕복',
+        price: '450,000'
     },
     {
         id:1,
         start : 'seoul',
         end: 'fukuoka',
-        way: '왕복'
+        way: '왕복',
+        price: '560,000'
     },
     {
         id:2,
         start : 'seoul',
         end: 'shanghai',
-        way: '왕복'
+        way: '왕복',
+        price: '528,000'
     },
     {
         id:3,
         start : 'seoul',
         end: 'taiwan',
-        way: '왕복'
+        way: '왕복',
+        price: '589,000'
     },
     {
         id:4,
         start : 'seoul',
         end: 'guam',
-        way: '왕복'
+        way: '왕복',
+        price: '1,030,000'
     },
     {
         id:5,
         start : 'seoul',
         end: 'doha',
-        way: '왕복'
+        way: '왕복',
+        price: '1,693,000'
     },
     {
         id:6,
         start : 'seoul',
         end: 'san francisco',
-        way: '편도'
+        way: '편도',
+        price: '958,000'
     },
     {
         id:7,
         start : 'seoul',
         end: 'cancun',
-        way: '편도'
+        way: '편도',
+        price: '1,201,000'
     },
     {
         id:8,
         start : 'seoul',
         end: 'lundon',
-        way: '편도'
+        way: '편도',
+        price: '1,305,000'
     },
     {
         id:9,
         start : 'seoul',
         end: 'barcelona',
-        way: '왕복'
-    },
-    
+        way: '왕복',
+        price: '2,490,000'
+    }
 ]
 
 const datas = [
@@ -76,61 +85,71 @@ const datas = [
         id:0,
         start : 'seoul',
         end: 'osaka',
-        way: '왕복'
+        way: '왕복',
+        price: '520,000'
     },
     {
         id:1,
         start : 'seoul',
         end: 'frankfurt',
-        way: '왕복'
+        way: '왕복',
+        price: '1,482,900'
     },
     {
         id:2,
         start : 'seoul',
         end: 'honolulu',
-        way: '왕복'
+        way: '왕복',
+        price: '2,321,000'
     },
     {
         id:3,
         start : 'seoul',
         end: 'toronto',
-        way: '왕복'
+        way: '왕복',
+        price: '2,493,000'
     },
     {
         id:4,
         start : 'seoul',
         end: 'sweden',
-        way: '편도'
+        way: '편도',
+        price: '1,734,000'
     },
     {
         id:5,
         start : 'seoul',
         end: 'guam',
-        way: '왕복'
+        way: '왕복',
+        price: '520,000'
     },
     {
         id:6,
         start : 'seoul',
         end: 'boracay',
-        way: '왕복'
+        way: '왕복',
+        price: '850,000'
     },
     {
         id:7,
         start : 'seoul',
         end: 'hongkong',
-        way: '편도'
+        way: '편도',
+        price: '630,000'
     },
     {
         id:8,
         start : 'seoul',
         end: 'rome',
-        way: '왕복'
+        way: '왕복',
+        price: '2,450,000'
     },
     {
         id:9,
         start : 'seoul',
         end: 'paris',
-        way: '왕복'
+        way: '왕복',
+        price: '2,520,000'
     },
 ]
 
@@ -154,7 +173,7 @@ const weeklyUpdate = () => {
                 <span>${tripLists[i].way}</span> 
                 <p>
                     <b>KRW</b>
-                    <em>${datas[i].price}</em>
+                    <em>${tripLists[i].price}</em>
                     <span>~</span>
                 </p>
             </div>
@@ -163,19 +182,49 @@ const weeklyUpdate = () => {
     }
    wrap.innerHTML = weeklyData;
 
+    // let test = '';
+    // const a = ['mango','banana','melon']
+    // for(let i=0; i< a.length; i++) {
+    //     test = test + a[i]
+    //     test += a[i]
+    // }
 
-    let test = '';
-    const a = ['mango','banana','melon']
-    for(let i=0; i< a.length; i++) {
-        test = test + a[i]
-        test += a[i]
+
+    // console.log(test);
+}
+weeklyUpdate();
+
+const recommandUpdate = () => {
+    const wrap = document.querySelector('.recommand .module_slide_card');
+    const count = datas.length;
+    let recommandData = '';
+
+    for (let i=0; i < count; i++){
+        recommandData += `<li class="module_card a">
+        <a href="javascript:void(0);">
+        <img src="./static/images/pics_${[i]}.jpg" alt="images" class="pics">
+            <div class="text">
+                <p>
+                    <strong>${datas[i].start}</strong>
+                    <i class="material-symbols-outlined">
+                        sync_alt
+                    </i>
+                    <strong>${datas[i].end}</strong>
+                </p> 
+                <span>${datas[i].way}</span> 
+                <p>
+                    <b>KRW</b>
+                    <em>${datas[i].price}</em>
+                    <span>~</span>
+                </p>
+            </div>
+        </a>
+    </li>`
     }
-
-
-    console.log(test);
+    wrap.innerHTML = recommandData;
 }
 
-weeklyUpdate();
+recommandUpdate();
 
 const viewInfor = () => {
     const view = document.querySelector('.view_detail');
@@ -187,7 +236,6 @@ const viewInfor = () => {
     const close = view.querySelector('.close');
     const monthly = view.querySelectorAll('.monthly button');
     const month = view.querySelector('.month');
-    // view.innerHTML = datas[index].information
     const closeModal = () => {
         view.classList.remove('open');
         dimm.classList.remove('open');
@@ -247,10 +295,6 @@ const visualTab = () => {
     const tabMenus = document.querySelectorAll('.visual .tab_menu li');
     const tabContents = document.querySelectorAll('.tab-contents');
     console.log(tabContents)
-    // const reserve = tabContents.querySelector('.reserv');
-    // const search = tabContents.querySelector('.search');
-    // const ticket = tabContents.querySelector('.ticket');
-    // const time = tabContents.querySelector('.time');
     tabMenus.forEach((tabMenu,index) => {
         tabMenu.addEventListener('click', (e) => {
             tabMenus.forEach(menu => {
@@ -362,22 +406,6 @@ function slideBanners() {
         });
 }
                           
-
-      
- 
-
-/*
-const notice = document.querySelector('.notice');
-const noticeList = notice.querySelectorAll('.list ul li');
-console.log(noticeList)
-
-let seconds = 1;
-let timerId;
-
-timerId = setInterval(function(){
-    notice.textContent = seconds++
-},2000);
-*/
 const noticeAutoScroll = () => {
     const notice = document.getElementById('notice');
     const list = notice.querySelector('.list ul');

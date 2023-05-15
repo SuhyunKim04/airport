@@ -840,7 +840,6 @@ body {
 .visual .tab-container .tab-contents {
   padding: 20px;
   display: none;
-  height: 500px;
 }
 .visual .tab-container .tab-contents.active {
   display: block;
@@ -848,6 +847,13 @@ body {
 .visual .tab-container .tab-contents .inner {
   flex-grow: 1;
   position: relative;
+}
+.visual .tab-container .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-direction: column;
+  height: 460px;
 }
 .visual .tab-container .tab_menu {
   position: absolute;
@@ -921,13 +927,13 @@ body {
   display: flex;
   background-color: #333FBB;
 }
-.visual .reserv .book_container {
+.visual .reserv .container {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   font-size: 16px;
 }
-.visual .reserv .book_container .books, .visual .reserv .book_container .passenger, .visual .reserv .book_container .book_class {
+.visual .reserv .container .books, .visual .reserv .container .passenger, .visual .reserv .container .book_class {
   background-color: #ffffff;
   border-radius: 10px;
   padding: 20px;

@@ -254,14 +254,18 @@ const viewInfor = () => {
     let now = date.getMonth();
     
 
-    list.forEach( (e,idx) => {
+    list.forEach( (e,idx) => { 
+        
         e.addEventListener('click',(event) => {
-            const target = event.target;
-           
-            if(target.nodeName == 'A') {
-                openModal()
-                info.innerHTML = target.innerHTML + datas[now].information;
-            }
+            const contents = e.children[0].innerHTML;
+            
+            openModal()
+            info.innerHTML = contents + datas[now].information;
+            // const target = event.target;
+            // if(target.nodeName == 'A') {
+            //     openModal()
+            //     info.innerHTML = target.innerHTML + datas[now].information;
+            // }
         })
     })
 
@@ -294,7 +298,7 @@ viewInfor();
 const visualTab = () => {
     const tabMenus = document.querySelectorAll('.visual .tab_menu li');
     const tabContents = document.querySelectorAll('.tab-contents');
-    console.log(tabContents)
+    // console.log(tabContents)
     tabMenus.forEach((tabMenu,index) => {
         tabMenu.addEventListener('click', (e) => {
             tabMenus.forEach(menu => {
@@ -394,6 +398,25 @@ function slideBanners() {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 2000,
+        responsive: [
+            {
+              breakpoint: 640,
+              settings: {
+                slidesToShow: 2,
+                dots: false
+              }
+            },
+            {
+              breakpoint: 360,
+              settings: {
+                slidesToShow: 1,
+              }
+            },
+
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+          ]
         });
 
     const $weekly = $('.weekly .module_slide_card');
@@ -452,7 +475,7 @@ const searchBox = () => {
     const dimm = document.querySelector('.dimm');
 
     const openSearchModal = () => {
-        console.log('hello')
+        
         searchModal.classList.add('open')
         dimm.classList.add('open')
 

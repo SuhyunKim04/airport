@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+        $( function() {
+            $( ".sub_depth2" ).accordion();
+          } );
+    </script>
+</head>
+<body>
+    <ul class="sub_depth2">
+        <li>
+            <a href="#">체크인</a>
+            <ul class="sub_depth3">
+                <li><a href="#">사전체크인</a></li>
+                <li><a href="#">공항체크인</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">탑승절차</a>
+            <ul class="sub_depth3">
+                <li><a href="#">탑승 절차 안내</a></li>
+                <li><a href="#">Sky Priority</a></li>
+                <li><a href="#">출입국 규정 정보</a></li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

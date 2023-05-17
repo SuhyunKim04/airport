@@ -544,7 +544,7 @@ body {
   position: relative;
   z-index: 2;
 }
-.page_header h1 {
+.page_header .logo {
   font-family: "Tiro Devanagari Hindi", serif;
   font-size: 40px;
 }

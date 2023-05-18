@@ -544,6 +544,9 @@ body {
   position: relative;
   z-index: 2;
 }
+.page_header .inner .hamburger {
+  display: none;
+}
 .page_header .logo {
   font-family: "Tiro Devanagari Hindi", serif;
   font-size: 40px;
@@ -624,15 +627,7 @@ body {
   display: block;
   width: 30px;
   height: 30px;
-}
-.acc_gnb li:nth-child(1) a {
-  background-image: url("../images/ico_chatbot.png");
-}
-.acc_gnb li:nth-child(2) a {
-  background-image: url("../images/ico_profile.png");
-}
-.acc_gnb li:nth-child(3) a {
-  background-image: url("../images/ico_search.png");
+  outline: 1px solid red;
 }
 
 .searchModal {
@@ -722,6 +717,48 @@ body {
   transform: rotate(-45deg);
 }
 
+@media all and (max-width: 960px) {
+  .page_header {
+    background-color: #333FBB;
+  }
+  .page_header .bg {
+    display: none !important;
+  }
+  .page_header .inner {
+    display: flex;
+    padding: 0 24px;
+    color: #fff;
+  }
+  .page_header .inner .hamburger {
+    display: block;
+  }
+  .page_header .inner .hamburger .ham_menu {
+    display: flex;
+    align-items: center;
+    width: 30px;
+    color: #fff;
+  }
+  .page_header .inner .gnb {
+    display: block;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    background-color: azure;
+    color: #3da1ff;
+    height: calc(100vh - 80px);
+  }
+  .page_header .inner .gnb .main_menu {
+    display: block;
+    width: 350px;
+    height: 400px;
+  }
+  .page_header .inner .gnb .depth1 > li.on .sub_depth2 {
+    display: block;
+  }
+  .page_header .sub_depth2 {
+    position: static;
+  }
+}
 .dimm {
   position: fixed;
   background: rgba(0, 0, 0, 0.7);
@@ -828,6 +865,13 @@ body {
   background-image: url("../images/pics_4.jpg");
 }
 
+@media all and (max-width: 960px) {
+  .dimm {
+    top: 80px;
+    bottom: auto;
+    height: calc(100vh - 80px);
+  }
+}
 .visual {
   display: flex;
   height: 500px;

@@ -88,3 +88,12 @@
                 }
         }
 }
+
+@media all and (max-width: 960px) {
+    .dimm {
+        top:80px;
+        bottom:auto;
+        height:calc(100vh - 80px);
+    }
+    
+}

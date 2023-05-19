@@ -624,10 +624,11 @@ body {
 }
 .acc_gnb li a {
   background: no-repeat center center/contain;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 30px;
   height: 30px;
-  outline: 1px solid red;
 }
 
 .searchModal {
@@ -882,7 +883,7 @@ body {
   position: relative;
 }
 .visual .tab-container .tab-contents {
-  padding: 20px;
+  padding: 15px;
   display: none;
 }
 .visual .tab-container .tab-contents.active {

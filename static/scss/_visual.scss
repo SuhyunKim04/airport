@@ -8,9 +8,11 @@
        
         flex-basis:450px;
         position:relative;
+
         .tab-contents {
             padding:15px;
             display:none;
+            height:500px;
         
             &.active {display:block;}
             .inner{
@@ -19,8 +21,9 @@
             }
         }
         .container{
-            @include flex($a:stretch, $d:column);
-            height: 460px;
+            @include flex($a:stretch, $d:column); 
+            
+
         }
         .tab_menu{
             @include position($l:450px,$t:0);
@@ -93,8 +96,6 @@
         display: flex;
         background-color: $main; 
 
-      
-
         .container{
             @include flex(null,$d:column);
             font-size:16px;
@@ -102,7 +103,7 @@
                 background-color: #ffffff;
                 border-radius: 10px;
                 padding: 20px;
-                margin-bottom: 10px;
+               
             }
         }
         .option{

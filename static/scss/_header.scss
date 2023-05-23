@@ -132,15 +132,19 @@
             display:flex;
             justify-content: center;
             align-items: center;
-            width:30px;height:30px;
+            width:24px;height:24px;
            
+        
                 // .material-symbols-outlined{
                     
                 //     font-variation-settings:
                 //     'FILL' 1,
                 //     'wght' 600,
                 // }
+        }
 
+        .linkdin{
+            background-image: url($imgUrl + 'linkedin_bk.svg');
             
         }
             // @for $i from 1 through 3{
@@ -176,8 +180,26 @@
     color:nth($primary, 5);
 
     .search_form{
+
         .search_modal{
             border: none;
+            background-color: #f5f5f5;
+            color: rgb(185, 185, 186);
+            width:150px;
+            font-style: italic;
+        }
+
+        .modal_search{
+            width: 60px;
+            border-radius: 30px;
+            background-color: $active;
+            height: 30px;
+            border: none;
+            color: #fff;
+            &:hover{
+                color: $active;
+                background-color:#fff;
+            }
         }
     }
     .search_custom{
@@ -236,24 +258,21 @@
     
 }
 .close{
-    width: 20px;
-    height: 20px;
+    width: 150px;
+    height: 30px;
+    background-color:$active;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 40px auto 0;
+    border-radius: 20px;
+    font-size: 16px;
+    color: #fff;
 
-    &::before, &::after{
-       position: absolute;
-        right:30px;top:15px;
-        content: '';
-        height: 30px;
-        width:2px;
-        background-color:$active;
-        
-    }
-
-    &::before{
-        transform: rotate(45deg);
-    }
-    &::after{
-        transform:rotate(-45deg);
+    &:hover{
+        background-color: #fff;
+        color: $active;
+        font-weight: 600;
     }
 }
 
@@ -312,14 +331,33 @@
 
             & > li {
                 padding-top: 20px;
+                padding-bottom: 8px;
                 & > a{
-                    border-bottom: 1px solid red;
+                    border-bottom: 1px solid rgb(0, 92, 222);
                     display: block;
-                    
+                    padding-bottom: 10px;
 
                 }
             }
         }
+        .sub_depth3{
+            & > li{
+
+                a:hover{
+                    font-size: 18px;
+                    font-weight: 700;
+                }
+            }
+        }
         
+    }
+    .acc_gnb{
+        li{
+            .linkdin{
+                background-image: url($imgUrl + 'linkedin.svg');
+
+            }
+
+        }
     }
 }

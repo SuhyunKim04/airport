@@ -489,15 +489,33 @@ const searchBox = () => {
     }
     searchClose.addEventListener('click', closeSearchModal);
 }
-function accor() {
-    $( function() {
-        $( ".main_menu" ).accordion();
-      } );
-}
+
 mainMenu(); // gnb
 visualTab(); // home - tabmenu
 noticeAutoScroll(); // notice
 slideBanners(); //jquery 
 searchBox();
-accor();
+
 })
+// if (matchMedia("screen and (max-width: 960px)").matches) {
+//     function accor() {
+//         $( function() {
+//             $( ".main_menu" ).accordion();
+//             console.log('960일때 아코디언이 실행되야해요')
+//           } );
+//     }
+    
+//     // 1024px 이상에서 사용할 스크립트
+//   } else {
+//     console.log('960이상이면 아코디언 없애기')
+//     // 1024px 미만에서 사용할 스크립트
+// }
+// accor();
+
+// $(window).resize(function() {
+//     accor();
+
+// });
+// window.addEventListener('resize', () => {
+//     console.log('resize')
+// });

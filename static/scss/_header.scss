@@ -309,6 +309,16 @@
         }
         .sub_depth2{
             position: static;
+
+            & > li {
+                padding-top: 20px;
+                & > a{
+                    border-bottom: 1px solid red;
+                    display: block;
+                    
+
+                }
+            }
         }
         
     }

@@ -759,6 +759,13 @@ body {
   .page_header .sub_depth2 {
     position: static;
   }
+  .page_header .sub_depth2 > li {
+    padding-top: 20px;
+  }
+  .page_header .sub_depth2 > li > a {
+    border-bottom: 1px solid red;
+    display: block;
+  }
 }
 .dimm {
   position: fixed;

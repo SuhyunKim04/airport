@@ -489,9 +489,15 @@ const searchBox = () => {
     }
     searchClose.addEventListener('click', closeSearchModal);
 }
+function accor() {
+    $( function() {
+        $( ".main_menu" ).accordion();
+      } );
+}
 mainMenu(); // gnb
 visualTab(); // home - tabmenu
 noticeAutoScroll(); // notice
 slideBanners(); //jquery 
 searchBox();
+accor();
 })

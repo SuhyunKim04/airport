@@ -22,8 +22,7 @@
         }
         .container{
             @include flex($a:stretch, $d:column); 
-            
-
+    
         }
         .tab_menu{
             @include position($l:450px,$t:0);

@@ -143,9 +143,6 @@
         .tab_label{
            @include position(20px,20px);
         }
-        .books{
-            background-color: #22a048;
-        }
         .book_form{
             @include flex(null, $j:space-between);
             margin-top: 10px;

@@ -439,6 +439,7 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: stretch;
+  text-overflow: ellipsis;
   column-gap: 20px;
 }
 .notice .inner h2 {
@@ -517,6 +518,13 @@ body {
   top: 5px;
 }
 
+@media all and (max-width: 960px) {
+  .notice li {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
 .page_header {
   position: fixed;
   z-index: 900;
@@ -821,14 +829,20 @@ body {
 .view_detail.open {
   display: block;
 }
-.view_detail .close {
-  position: relative;
-  right: 0;
+.view_detail .buttons {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 0 20px 0;
+}
+.view_detail .buttons .modal_close {
+  margin: 0 0;
+  display: block;
 }
 .view_detail .view_grid {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 1fr;
   padding: 30px 30px;
+  gap: 20px;
 }
 .view_detail .view_grid .monthly {
   display: grid;
@@ -838,15 +852,25 @@ body {
 .view_detail .view_grid .monthly button {
   font-size: 16px;
   border: 1px solid rgb(107, 107, 107);
-  border-radius: 5px;
+  border-radius: 30px;
   opacity: 0.8;
 }
+.view_detail .view_grid .monthly button:hover {
+  background-color: #3da1ff;
+  color: #fff;
+}
 .view_detail .book_button {
+  width: 150px;
+  height: 30px;
+  background-color: #3da1ff;
+  border-radius: 20px;
   font-size: 16px;
-  position: relative;
-  left: 50%;
-  transform: translate(-50%);
-  padding-bottom: 20px;
+  color: #fff;
+}
+.view_detail .book_button:hover {
+  color: #3da1ff;
+  background-color: #fff;
+  font-weight: 600;
 }
 .view_detail .contents {
   display: flex;
@@ -860,8 +884,13 @@ body {
   font-weight: 600;
   padding: 0 20px 0 20px;
 }
+.view_detail .contents .text {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 .view_detail .contents .text p {
-  padding-bottom: 30px;
+  padding: 10px 0 20px 0;
   font-size: 16px;
 }
 .view_detail .contents .text i {
@@ -871,6 +900,9 @@ body {
 .view_detail .contents .text em {
   color: red;
   font-size: 18px;
+}
+.view_detail .contents .text span {
+  font-size: 16px;
 }
 .view_detail .contents .view_contents {
   display: flex;

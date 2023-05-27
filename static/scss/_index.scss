@@ -2,41 +2,43 @@
 .main{
 
     img{
-         height: 70vh;
-         width: 100%;
+        height: 70vh;
+        width: 100%;
     }
  }
- .notice{
-     background-color: rgb(210, 227, 249);
-     font-family: 'Rubik', sans-serif;
+.notice{
+    background-color: rgb(210, 227, 249);
+    font-family: 'Rubik', sans-serif;
  
-     .inner{
-         @extend %inner;
-         @include flex($a:stretch, $j:flex-start);
+    .inner{
+        @extend %inner;
+        @include flex($a:stretch, $j:flex-start);
+        text-overflow: ellipsis;
        
-         column-gap: 20px;
+        column-gap: 20px;
  
-             h2{
-                 @include flex($j:flex-start);
-                 padding-left: 10px;
-                     i{
-                         padding-right: 10px;
-                     }
-             }
-     }
+            h2{
+                @include flex($j:flex-start);
+                padding-left: 10px;
+                    i{
+                        padding-right: 10px;
+                    }
+            }
+    }
 
-     .list {
+    .list {
         overflow: hidden;
-         height: 50px;
+        height: 50px;
+
         ul {
             transition:0.4s;
         }
-     }
+    }
  
-     li{
-         @include flex($a:flex-start,$j:center,$d:column);
-         height:50px;
-     }
+    li{
+        @include flex($a:flex-start,$j:center,$d:column);
+        height:50px;
+    }
  }
  
  
@@ -91,5 +93,16 @@
      }
  }
 
+@media all and (max-width: 960px){
 
+    .notice{
+        
+            li{     
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+        
+    }
+}
 

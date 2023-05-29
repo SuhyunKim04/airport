@@ -8,36 +8,36 @@
             background:  no-repeat center center/cover;
             margin:0 10px;
     
-                &.a {
-                    background-image:url($imgUrl + 'pics_0.jpg');
-                }
-                &.b {
-                    background-image:url($imgUrl + 'pics_1.jpg');
-                }
-                &.c {
-                    background-image:url($imgUrl + 'pics_2.jpg');
-                }
-                &.d {
-                    background-image:url($imgUrl + 'pics_3.jpg');
-                }
-                &.e {
-                    background-image:url($imgUrl + 'pics_4.jpg');
-                }
-                &.f {
-                    background-image:url($imgUrl + 'pics_5.jpg');
-                }
-                &.g {
-                    background-image:url($imgUrl + 'pics_6.jpg');
-                }
-                &.h {
-                    background-image:url($imgUrl + 'pics_7.jpg');
-                }
-                &.i {
-                    background-image:url($imgUrl + 'pics_8.jpg');
-                }
-                &.j {
-                    background-image:url($imgUrl + 'pics_9.jpg');
-                }
+                // &.a {
+                //     background-image:url($imgUrl + 'pics_0.jpg');
+                // }
+                // &.b {
+                //     background-image:url($imgUrl + 'pics_1.jpg');
+                // }
+                // &.c {
+                //     background-image:url($imgUrl + 'pics_2.jpg');
+                // }
+                // &.d {
+                //     background-image:url($imgUrl + 'pics_3.jpg');
+                // }
+                // &.e {
+                //     background-image:url($imgUrl + 'pics_4.jpg');
+                // }
+                // &.f {
+                //     background-image:url($imgUrl + 'pics_5.jpg');
+                // }
+                // &.g {
+                //     background-image:url($imgUrl + 'pics_6.jpg');
+                // }
+                // &.h {
+                //     background-image:url($imgUrl + 'pics_7.jpg');
+                // }
+                // &.i {
+                //     background-image:url($imgUrl + 'pics_8.jpg');
+                // }
+                // &.j {
+                //     background-image:url($imgUrl + 'pics_9.jpg');
+                // }
             
     
             
@@ -45,7 +45,11 @@
                 display: block; 
                 position: relative;
                 height: 356px;
+                overflow: hidden;
     
+                img{
+                    width: 100%;
+                }
     
     
                 .text{

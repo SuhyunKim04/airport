@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const dataDevice = [
+        { type: "mobile", size: 599 },
+        { type: "tablet", size: 767 },
+        { type: "laptop", size: 1439 },
+        { type: "pc" },
+      ];
+
+      const mobile = window.matchMedia(
+        `screen and (max-width:${dataDevice[0].size}px)`
+      );
+      const tablet = window.matchMedia(
+        `screen and (min-width:${dataDevice[0].size + 1}px) and (max-width:${
+          dataDevice[1].size
+        }px)`
+      );
+      const laptop = window.matchMedia(
+        `screen and (min-width:${dataDevice[1].size + 1}px) and (max-width:${
+          dataDevice[2].size
+        }px)`
+      );
+      const pc = window.matchMedia(
+        `screen and (min-width:${dataDevice[2].size + 1}px)`
+      );
+
+      const mediaArray = [mobile, tablet, laptop, pc];
+      const chkMedia = (device, index) => {
+        if (device.matches) {
+          console.log(dataDevice[index].type);
+        }
+      };
+
+      mediaArray.forEach((type, index) => {
+        chkMedia(type, index);
+      });
+
+      mediaArray.forEach((type, index) => {
+        type.addEventListener("change", (e) => {
+          chkMedia(e, index);
+        });
+      });
+    </script>
+  </body>
+</html>

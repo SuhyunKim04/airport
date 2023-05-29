@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1><code>matchMedia()</code> Function</h1>
+    <ul>
+      <li>Used to match media queries in JS</li>
+      <li>Can be used to detect screen size, OS dark/light mode.</li>
+    </ul>
+    <script>
+      const matchResult = window.matchMedia(`(max-width:767px)`);
+      const matchOSmode = window.matchMedia(`(prefers-color-scheme:dark)`);
+      console.log(matchResult);
+
+      function isSmallScreen() {
+        if (matchResult.matches) {
+          console.log("true");
+        } else {
+          console.log("false");
+        }
+      }
+      function isDarkMode() {
+        if (matchOSmode.matches) {
+          console.log("darkMode");
+        } else {
+          console.log("lightMode");
+        }
+      }
+
+      isSmallScreen();
+      isDarkMode();
+    </script>
+  </body>
+</html>

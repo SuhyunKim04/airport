@@ -387,7 +387,14 @@ function slideBanners() {
         arrows:false,
         speed: 500,
         // fade: true,
-        cssEase: 'linear'
+        cssEase: 'linear',
+        responsive: [
+            {
+              breakpoint: 960,
+              settings: {
+                arrows: true
+              }
+            },]
         });
  
         
@@ -490,6 +497,22 @@ const searchBox = () => {
     searchClose.addEventListener('click', closeSearchModal);
 }
 
+const chkMobile = () => {
+    const matchResult = window.matchMedia(`(max-width: 960px)`);
+    const tabContainer = document.querySelector('.page_main .visual .tab-container');
+    if(matchResult.matches) {
+
+        // is Mobile
+        tabContainer.style.display = 'none'
+    }else{
+
+        // is not Mobile
+        tabContainer.style.display = 'block'
+    }
+}
+
+chkMobile();
+window.addEventListener('resize', chkMobile)
 mainMenu(); // gnb
 visualTab(); // home - tabmenu
 noticeAutoScroll(); // notice
@@ -497,25 +520,3 @@ slideBanners(); //jquery
 searchBox();
 
 })
-// if (matchMedia("screen and (max-width: 960px)").matches) {
-//     function accor() {
-//         $( function() {
-//             $( ".main_menu" ).accordion();
-//             console.log('960일때 아코디언이 실행되야해요')
-//           } );
-//     }
-    
-//     // 1024px 이상에서 사용할 스크립트
-//   } else {
-//     console.log('960이상이면 아코디언 없애기')
-//     // 1024px 미만에서 사용할 스크립트
-// }
-// accor();
-
-// $(window).resize(function() {
-//     accor();
-
-// });
-// window.addEventListener('resize', () => {
-//     console.log('resize')
-// });

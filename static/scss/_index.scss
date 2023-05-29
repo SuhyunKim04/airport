@@ -28,7 +28,7 @@
 
     .list {
         overflow: hidden;
-        height: 50px;
+        height: 40px;
 
         ul {
             transition:0.4s;
@@ -37,7 +37,7 @@
  
     li{
         @include flex($a:flex-start,$j:center,$d:column);
-        height:50px;
+        height:40px;
     }
  }
  
@@ -98,11 +98,21 @@
     .notice{
         
             li{     
+                /* one line
                 text-overflow: ellipsis;
-                white-space: nowrap;
                 overflow: hidden;
+                white-space:nowrap;
+                */
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                padding: 5px 0;
             }
         
     }
 }
 
+
+ 

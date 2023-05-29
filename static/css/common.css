@@ -765,7 +765,7 @@ body {
     color: #fff;
   }
   .page_header .inner .gnb {
-    display: block;
+    display: none;
     position: absolute;
     top: 80px;
     left: 0;
@@ -943,6 +943,13 @@ body {
   height: 500px;
   margin: 80px 0 0;
 }
+.visual .swap {
+  border: 1px solid #a3a3a3;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  order: 2;
+}
 .visual .tab-container {
   flex-basis: 450px;
   position: relative;
@@ -1038,9 +1045,6 @@ body {
   background-color: #333FBB;
 }
 .visual .reserv .container {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
   font-size: 16px;
   gap: 10px;
 }
@@ -1093,7 +1097,6 @@ body {
 .visual .reserv .book_form {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
 }
 .visual .reserv .book_form .book_depart {
   order: 1;
@@ -1122,13 +1125,6 @@ body {
 }
 .visual .reserv .book_form .book_arrive .eng_location {
   font-size: 24px;
-}
-.visual .reserv .book_form .swap {
-  border: 1px solid #a3a3a3;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  order: 2;
 }
 .visual .reserv .book_term {
   margin: 20px 0;
@@ -1195,7 +1191,6 @@ body {
   background-color: #ffffff;
   border-radius: 10px;
   padding: 20px;
-  margin-bottom: 10px;
 }
 .visual .search .container .flight_num {
   padding-bottom: 20px;
@@ -1342,7 +1337,6 @@ body {
   background-color: #ffffff;
   border-radius: 10px;
   padding: 20px;
-  margin-bottom: 10px;
 }
 .visual .time .option {
   display: flex;
@@ -1350,33 +1344,77 @@ body {
   align-items: center;
   margin-bottom: 30px;
 }
+.visual .time .option button {
+  font-weight: 600;
+  color: #a3a3a3;
+  font-size: 16px;
+}
+.visual .time .option button:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 25px;
+  top: 50px;
+  height: 4px;
+  background-color: #333FBB;
+  width: 80px;
+  transition: 0.4s;
+}
+.visual .time .option button.active {
+  color: #333FBB;
+  font-size: 16px;
+  font-weight: 600;
+}
+.visual .time .option button:hover {
+  color: #333FBB;
+}
 .visual .time .book_form {
   display: flex;
   justify-content: space-evenly;
   margin-top: 10px;
+  padding-bottom: 20px;
 }
 .visual .time .book_form .book_depart {
-  order: 1;
+  order: 3;
   font-weight: 600;
 }
 .visual .time .book_form .book_depart span {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
 }
-.visual .time .book_form .book_depart .eng_location {
-  font-size: 24px;
-}
-.visual .time .book_form .book_depart .book_arrive {
-  order: 2;
+.visual .time .book_form .book_arrive {
   font-weight: 600;
 }
-.visual .time .book_form .book_depart .book_arrive span {
-  font-size: 14px;
+.visual .time .book_form .book_arrive span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.visual .time .book_form .book_depart .book_arrive .eng_location {
+.visual .time .eng_location {
   font-size: 24px;
+}
+.visual .time .dayofdepart {
+  border: 1px solid #d2d0d0;
+  border-width: 1px 0 0 0;
+  padding: 20px 0;
+}
+.visual .time .dayofdepart p {
+  font-size: 16px;
+  padding-bottom: 10px;
+}
+.visual .time .dayofdepart a em {
+  display: flex;
+  justify-content: none;
+  align-items: center;
+}
+.visual .time .search_btn {
+  background-color: #de5a97;
+  height: 54px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .slide_wrap {
@@ -1503,6 +1541,18 @@ body {
   }
   100% {
     transform: translateY(85px) scaleX(0.6);
+  }
+}
+@media all and (max-width: 960px) {
+  .visual .tab-container .tab_menu {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    display: flex;
+    align-items: flex-end;
+  }
+  .visual .tab-container .tab_menu li button {
+    width: 50px;
   }
 }
 .page_footer {

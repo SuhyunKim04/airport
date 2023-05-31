@@ -747,13 +747,14 @@ body {
     color: #fff;
   }
   .page_header .inner .gnb {
-    display: none;
+    display: block;
     position: absolute;
     top: 80px;
     left: 0;
     background-color: azure;
     color: #3da1ff;
     height: calc(100vh - 80px);
+    overflow-y: auto;
   }
   .page_header .inner .gnb .main_menu {
     display: block;
@@ -936,6 +937,13 @@ body {
 .visual .tab-container {
   flex-basis: 450px;
   position: relative;
+  display: none;
+}
+.visual .tab-container.open {
+  display: block;
+}
+.visual .tab-container .cancel {
+  display: none;
 }
 .visual .tab-container .tab-contents {
   padding: 15px;
@@ -954,16 +962,22 @@ body {
   justify-content: space-between;
   align-items: stretch;
   flex-direction: column;
+  height: 470px;
 }
 .visual .tab_menu {
+  display: flex;
+  flex-direction: column;
   position: absolute;
   top: 0;
   left: 450px;
   z-index: 100;
 }
+.visual .tab_menu li {
+  transition: flex-basis 0.4s;
+}
 .visual .tab_menu li button {
   width: 80px;
-  padding: 20px 0;
+  height: 70px;
   border-radius: 0 20px 20px 0;
   transition: all 0.5s;
 }
@@ -1010,7 +1024,7 @@ body {
   overflow: hidden;
 }
 .visual .tab_menu li.on button {
-  padding: 40px 0;
+  height: 120px;
   color: #fff;
 }
 .visual .tab_menu li.on button i {
@@ -1157,7 +1171,7 @@ body {
 .visual .reserv .book_class select option {
   font-size: 16px;
 }
-.visual .reserv .book_search {
+.visual .reserv .contents_buttons .book_search {
   font-family: "Rubik", sans-serif;
   background-color: rgb(23, 30, 127);
   height: 54px;
@@ -1165,6 +1179,10 @@ body {
   font-weight: 600;
   color: #ffffff;
   border-radius: 10px;
+  width: 100%;
+}
+.visual .reserv .contents_buttons .cancle {
+  display: none;
 }
 .visual .search {
   color: rgb(102, 102, 102);
@@ -1235,7 +1253,7 @@ body {
   font-weight: 600;
   color: #ffffff;
   border-radius: 10px;
-  width: 370px;
+  width: 100%;
 }
 .visual .ticket {
   color: rgb(102, 102, 102);
@@ -1307,7 +1325,7 @@ body {
   font-weight: 600;
   color: #ffffff;
   border-radius: 10px;
-  width: 370px;
+  width: 100%;
 }
 .visual .time {
   color: rgb(102, 102, 102);
@@ -1388,8 +1406,9 @@ body {
 }
 .visual .time .dayofdepart a em {
   display: flex;
-  justify-content: none;
+  justify-content: flex-start;
   align-items: center;
+  gap: 10px;
 }
 .visual .time .search_btn {
   background-color: #de5a97;
@@ -1398,6 +1417,7 @@ body {
   color: #fff;
   font-size: 18px;
   font-weight: 600;
+  width: 100%;
 }
 
 .slide_wrap {
@@ -1531,7 +1551,7 @@ body {
     display: block;
   }
   .visual .tab-container {
-    height: calc(100vh - 80px);
+    height: calc(100vh - 150px);
     position: fixed;
     left: 0;
     top: 80px;
@@ -1539,7 +1559,7 @@ body {
     z-index: 900;
   }
   .visual .tab-container .tab-contents {
-    height: calc(100vh - 80px);
+    height: calc(100vh - 150px);
   }
   .visual .tab_menu {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -1548,9 +1568,8 @@ body {
     top: auto;
     right: 0;
     left: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: row;
+    transform: none;
   }
   .visual .tab_menu li {
     flex-basis: 25%;
@@ -1560,11 +1579,77 @@ body {
     width: 100%;
     border-radius: 0;
   }
+  .visual .tab_menu li button:hover {
+    width: 100%;
+  }
+  .visual .tab_menu li.on {
+    flex-basis: 40%;
+  }
   .visual .tab_menu li.on button {
-    padding: 0;
+    height: 70px;
+  }
+  .visual .tab_menu li button {
+    color: #fff;
   }
   .visual .slide_wrap {
     width: auto;
+  }
+  .visual .reserv .contents_buttons {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 5px;
+  }
+  .visual .reserv .cancel {
+    background-color: rgb(23, 30, 127);
+    display: block;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .visual .search .contents_buttons {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 5px;
+  }
+  .visual .search .cancel {
+    background-color: gold;
+    display: block;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .visual .ticket .contents_buttons {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 5px;
+  }
+  .visual .ticket .cancel {
+    background-color: #90e2a9;
+    display: block;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .visual .time .contents_buttons {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 5px;
+  }
+  .visual .time .cancel {
+    background-color: #de5a97;
+    display: block;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
+@media all and (max-width: 480px) {
+  .slide_wrap .slide_list .list_item {
+    height: 40vh;
   }
 }
 .page_footer {

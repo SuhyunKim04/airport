@@ -17,7 +17,14 @@
         flex-basis:450px;
         position:relative;
         // flex-shrink: 0;
+        display:none;
+        &.open {
+            display:block;
+        }
 
+        .cancel{
+            display: none;
+        }
         .tab-contents {
             padding:15px;
             display:none;
@@ -31,10 +38,13 @@
         }
         .container{
             @include flex($a:stretch, $d:column); 
+            height:470px;
     
         }
     }
     .tab_menu{
+        display: flex;
+        flex-direction: column;
         @include position($l:450px,$t:0);
         z-index: 100;
         $color:  $main, gold, #90e2a9, #de5a97;
@@ -42,9 +52,10 @@
        
         
         li{
+            transition: flex-basis 0.4s;
             button {
                 width: 80px;  
-                padding: 20px 0;
+                height: 70px;
                 border-radius: 0 20px 20px 0;
                 transition: all 0.5s;
                 i{
@@ -82,7 +93,7 @@
             button {
 
                 // background-color: $main;
-                padding: 40px 0;
+                height: 120px;
                 color:#fff;
                 i {
                     font-size:30px;
@@ -233,16 +244,23 @@
                 }
             }
         }
+        .contents_buttons{
 
-        .book_search{
-            font-family: 'Rubik', sans-serif;
-            background-color: rgb(23, 30, 127);
-            height: 54px;
-            font-size: 18px;
-            font-weight: 600;
-            color: #ffffff;
-            border-radius: 10px;
+            .book_search{
+                font-family: 'Rubik', sans-serif;
+                background-color: rgb(23, 30, 127);
+                height: 54px;
+                font-size: 18px;
+                font-weight: 600;
+                color: #ffffff;
+                border-radius: 10px;
+                width: 100%;
+            }
+            .cancle{
+                display: none;
+            }
         }
+
     }
 
     .search{
@@ -314,7 +332,7 @@
                 font-weight: 600;
                 color: #ffffff;
                 border-radius: 10px;
-                width: 370px;
+                width: 100%;
             }
     }
     
@@ -393,7 +411,7 @@
             font-weight: 600;
             color: #ffffff;
             border-radius: 10px;
-            width:370px;
+            width:100%;
         }
     
     }
@@ -474,8 +492,8 @@
             }
             a{
                 em{
-                    @include flex($j:none);
-
+                    @include flex($j:flex-start);
+                    gap: 10px;
                 }
 
             }
@@ -487,6 +505,7 @@
             color: #fff;
             font-size: 18px;
             font-weight: 600;
+            width: 100%;
         }
     }
 
@@ -649,36 +668,45 @@
 @media all and (max-width: 960px){
     .visual{
         display: block;
-        .tab-container{
 
-            height: calc(100vh - 80px);
+        .tab-container{
+            height: calc(100vh - 150px);
             position:fixed;
             left:0;top:80px;
             right:0;
             z-index:900;
             .tab-contents {
-                height: calc(100vh - 80px);
+                height: calc(100vh - 150px);
             }
             
         }
         .tab_menu{
             border-top:1px solid rgba(255,255,255,0.1);
             @include position($t:auto, $l:0, $b:0, $r:0, $p:fixed);
-            @include flex;
+            flex-direction: row;
+            transform: none;
 
             li{
                 flex-basis:25%;
                 width:auto;
                 button {
-                    width:100%;
-                    border-radius:0;
+                width:100%;
+                border-radius:0;
+                
+
+                    &:hover{
+                        width:100%;
+                    }
                 }
                &.on {
+                flex-basis: 40%;
                 button {
-                    padding: 0;
+                    height: 70px;
                 }
                }
-
+               button{
+                color: #fff;
+               }
               
             }
         }
@@ -687,5 +715,51 @@
             width:auto;
         }
 
+        .reserv{
+            .contents_buttons{
+                @include grid($c:50% 50%);
+                grid-gap: 5px;
+
+            }
+            .cancel{
+                @include cancel_button($c:rgb(23, 30, 127));
+            }
+        }
+
+        .search{
+            .contents_buttons{
+                @include grid($c: 50% 50%);
+                grid-gap: 5px;
+            }
+            .cancel{
+                @include cancel_button($c:gold);
+            }
+        }
+
+        .ticket{
+            .contents_buttons{
+                @include grid($c: 50% 50%);
+                grid-gap: 5px;
+            }
+            .cancel{
+                @include cancel_button($c:#90e2a9);
+            }
+        }
+        .time{
+            .contents_buttons{
+                @include grid($c: 50% 50%);
+                grid-gap: 5px;
+            }
+            .cancel{
+                @include cancel_button($c:#de5a97);
+            }
+        }
+
+    }
+}
+
+@media all and (max-width: 480px){
+    .slide_wrap .slide_list .list_item{
+        height: 40vh;
     }
 }

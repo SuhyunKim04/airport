@@ -297,7 +297,9 @@ viewInfor();
 
 const visualTab = () => {
     const tabMenus = document.querySelectorAll('.visual .tab_menu li');
+    const tabContainer = document.querySelector('.visual .tab-container')
     const tabContents = document.querySelectorAll('.tab-contents');
+    const cancels = document.querySelectorAll('.visual .cancel');
     // console.log(tabContents)
     tabMenus.forEach((tabMenu,index) => {
         tabMenu.addEventListener('click', (e) => {
@@ -305,12 +307,19 @@ const visualTab = () => {
                 menu.classList.remove('on');
             })
             e.currentTarget.classList.add('on');
+            tabContainer.classList.add('open')
 
             tabContents.forEach(content => {
                 content.classList.remove('active');
             })
 
             tabContents[index].classList.add('active');
+        })
+
+    })
+    cancels.forEach((cancel) => {
+        cancel.addEventListener('click', (e) => {
+            tabContainer.classList.remove('open');
         })
 
     })
@@ -503,13 +512,32 @@ const chkMobile = () => {
     if(matchResult.matches) {
 
         // is Mobile
-        tabContainer.style.display = 'none'
+        // tabContainer.style.display = 'none'
+        tabContainer.classList.remove('open')
     }else{
 
         // is not Mobile
-        tabContainer.style.display = 'block'
+        // tabContainer.style.display = 'block'
+        tabContainer.classList.add('open')
     }
+    
 }
+
+
+const scrollTabMenu = () => {
+    const tabMenu = document.querySelector('.tab_menu');
+    window.addEventListener('scroll', () => {
+        if(window.pageYOffset > 100) {
+            tabMenu.style.display = 'none'
+        }else{
+            tabMenu.style.display = 'flex'
+        }
+    })
+}
+
+
+
+
 
 chkMobile();
 window.addEventListener('resize', chkMobile)
@@ -518,5 +546,6 @@ visualTab(); // home - tabmenu
 noticeAutoScroll(); // notice
 slideBanners(); //jquery 
 searchBox();
+scrollTabMenu();
 
 })

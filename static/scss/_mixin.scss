@@ -78,6 +78,15 @@
     }
 }
 
+@mixin cancel_button($c:null){
+    background-color: $c;
+    display: block;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+}
+
  
 
 

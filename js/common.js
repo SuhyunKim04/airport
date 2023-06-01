@@ -79,78 +79,162 @@ const tripLists = [
         price: '2,490,000'
     }
 ]
-
+// recommand lists
 const datas = [
     {
         id:0,
         start : 'seoul',
         end: 'osaka',
         way: '왕복',
-        price: '520,000'
+        price: '520,000',
+        information: 'Beautiful weather'
     },
     {
         id:1,
         start : 'seoul',
         end: 'frankfurt',
         way: '왕복',
-        price: '1,482,900'
+        price: '1,482,900',
+        information: 'Beautiful weather'
     },
     {
         id:2,
         start : 'seoul',
         end: 'honolulu',
         way: '왕복',
-        price: '2,321,000'
+        price: '2,321,000',
+        information: 'Beautiful weather'
     },
     {
         id:3,
         start : 'seoul',
         end: 'toronto',
         way: '왕복',
-        price: '2,493,000'
+        price: '2,493,000',
+        information: 'Beautiful weather'
     },
     {
         id:4,
         start : 'seoul',
         end: 'sweden',
         way: '편도',
-        price: '1,734,000'
+        price: '1,734,000',
+        information: 'Beautiful weather'
     },
     {
         id:5,
         start : 'seoul',
         end: 'guam',
         way: '왕복',
-        price: '520,000'
+        price: '520,000',
+        information: 'Beautiful weather'
     },
     {
         id:6,
         start : 'seoul',
         end: 'boracay',
         way: '왕복',
-        price: '850,000'
+        price: '850,000',
+        information: 'Beautiful weather'
     },
     {
         id:7,
         start : 'seoul',
         end: 'hongkong',
         way: '편도',
-        price: '630,000'
+        price: '630,000',
+        information: 'Beautiful weather'
     },
     {
         id:8,
         start : 'seoul',
         end: 'rome',
         way: '왕복',
-        price: '2,450,000'
+        price: '2,450,000',
+        information: 'Beautiful weather'
     },
     {
         id:9,
         start : 'seoul',
         end: 'paris',
         way: '왕복',
-        price: '2,520,000'
+        price: '2,520,000',
+        information: 'Beautiful weather'
     },
+]
+const monthlyData = [
+    {
+        id: 0,
+        price: '500,000',
+        weather: 'winter', information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
+
+    },
+    {
+        id: 1,
+        price: '500,000',
+        weather: 'winter', information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
+
+    },
+    {
+        id: 2,
+        price: '500,000',
+        weather: 'winter', information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
+
+    },
+    {
+        id: 3,
+        price: '500,000',
+        weather: 'winter', information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
+
+    },
+    {
+        id: 4,
+        price: '500,000',
+        weather: 'winter', information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
+
+    },
+    {
+        id: 5,
+        price: '500,000',
+        weather: 'winter', information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
+
+    },
+    {
+        id: 6,
+        price: '500,000',
+        weather: 'winter', information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
+
+    },
+    {
+        id: 7,
+        price: '500,000',
+        weather: 'winter', information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
+
+    },
+    {
+        id: 8,
+        price: '500,000',
+        weather: 'winter', information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
+
+    },
+    {
+        id: 9,
+        price: '500,000',
+        weather: 'winter', information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
+
+    },
+    {
+        id: 10,
+        price: '500,000',
+        weather: 'winter', information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
+
+    },
+    {
+        id: 11,
+        price: '500,000',
+        weather: 'winter', information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
+
+    }
 ]
 
 const weeklyUpdate = () => {
@@ -231,11 +315,13 @@ const viewInfor = () => {
     const list = document.querySelectorAll('.recommand .module_slide_card li');
     // const weekly = document.querySelectorAll('.weekly .module_slide_card li');
     const dimm = document.querySelector('.dimm');
-    const info = view.querySelector('.info');
     const book_button = view.querySelector('.book_button');
     const close = view.querySelector('.close');
     const monthly = view.querySelectorAll('.monthly button');
     const month = view.querySelector('.month');
+    const info = view.querySelector('.info');
+    const monthEvent = view.querySelector('.monthEvent');
+    console.log(monthEvent)
     const closeModal = () => {
         view.classList.remove('open');
         dimm.classList.remove('open');
@@ -269,25 +355,15 @@ const viewInfor = () => {
         })
     })
 
-    // weekly.forEach((e,idx) => {
-    //     e.addEventListener('click',(week) => {
-    //         const aim = week.target;
-    //         if(aim.nodeName == 'A') {
-    //             openModal();
-                
-    //             info.innerHTML = aim.innerHTML + datas[now].information;
-    //             console.log(document.querySelector('.view_detail .test_price'));   
-    //         }
-
-    //     })
-    // })
     
     monthly.forEach((e,idx) => {
         e.addEventListener('click',(event) => {
             const mon = event.target;
             if(mon.nodeName == 'BUTTON') {
-                month.innerHTML = mon.innerHTML;
-                info.innerHTML = datas[idx].information;
+                // month.innerHTML = mon.innerHTML;
+                monthEvent.innerHTML = monthlyData[idx].information;
+                console.log(mon.innerHTML)
+                console.log(monthlyData[idx].weather)
             }
         })
     })
@@ -506,6 +582,23 @@ const searchBox = () => {
     searchClose.addEventListener('click', closeSearchModal);
 }
 
+const mobile = () => {
+    // 메뉴들 클릭하면 depth1 숨기고 submenu만 보여야함
+    // back 버튼 보이게
+    // back 버튼을 클릭하면 submenu 닫고 depth1 보이게
+    // dimm 처리하고 , dimm 누르면 메뉴 닫아지기
+    // 헴버거 메뉴 기능 설정하기
+}
+
+const mobileMenu = () => {
+    
+    console.log('mobile Menu running')
+} 
+
+const pcMenu = () => {
+    console.log('pc Menu runing')
+}
+
 const chkMobile = () => {
     const matchResult = window.matchMedia(`(max-width: 960px)`);
     const tabContainer = document.querySelector('.page_main .visual .tab-container');
@@ -514,11 +607,13 @@ const chkMobile = () => {
         // is Mobile
         // tabContainer.style.display = 'none'
         tabContainer.classList.remove('open')
+        mobileMenu();
     }else{
 
         // is not Mobile
         // tabContainer.style.display = 'block'
         tabContainer.classList.add('open')
+        pcMenu();
     }
     
 }

@@ -29,13 +29,15 @@
     }
 
     .view_grid{
-        @include grid($c:1fr 1fr);
+        @include flex;
         padding: 30px 30px;
         gap:20px;
 
         .monthly{
-            @include grid($c:50px 50px 50px);
-            grid-gap: 16px;
+            @include grid ($c:repeat(3, 50px));
+            column-gap: 20px;
+            row-gap: 10px;
+            flex-basis: 50%;
             
             button{
                 font-size: 16px;
@@ -76,9 +78,10 @@
             }
 
             .text{
-                display: flex;
-                align-items: center;
-                flex-direction: column;
+                text-align: center;
+                background-color: #fff;
+                margin-top: -130px;
+                position: relative;
                 p{
                     padding: 10px 0 20px 0;
                     font-size: 16px;

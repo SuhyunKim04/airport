@@ -444,7 +444,7 @@ body {
   font-weight: 600;
   font-family: "Mukta", sans-serif;
   font-size: 30px;
-  margin: 20px 0 20px 0;
+  padding: 0 10px;
 }
 .recommand .text p i {
   position: relative;
@@ -540,6 +540,9 @@ body {
 .page_header .logo {
   font-family: "Tiro Devanagari Hindi", serif;
   font-size: 40px;
+}
+.page_header .gnb .arrow_back {
+  display: none;
 }
 .page_header .gnb .line {
   width: 0;
@@ -710,7 +713,7 @@ body {
 .close {
   width: 150px;
   height: 30px;
-  background-color: #3da1ff;
+  background-color: #d8d8d8;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -720,14 +723,17 @@ body {
   color: #fff;
 }
 .close:hover {
-  background-color: #fff;
-  color: #3da1ff;
+  background-color: #999;
+  color: #292929;
   font-weight: 600;
 }
 
 @media all and (max-width: 960px) {
   .page_header {
     background-color: #333FBB;
+  }
+  .page_header .logo {
+    font-size: 30px;
   }
   .page_header .bg {
     display: none !important;
@@ -755,6 +761,12 @@ body {
     color: #3da1ff;
     height: calc(100vh - 80px);
     overflow-y: auto;
+  }
+  .page_header .inner .gnb .arrow_back {
+    display: block;
+    position: relative;
+    top: 20px;
+    left: 10px;
   }
   .page_header .inner .gnb .main_menu {
     display: block;
@@ -800,7 +812,7 @@ body {
 
 .view_detail {
   position: fixed;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #ffffff;
@@ -822,15 +834,18 @@ body {
   display: block;
 }
 .view_detail .view_grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 30px 30px;
   gap: 20px;
 }
 .view_detail .view_grid .monthly {
   display: grid;
-  grid-template-columns: 50px 50px 50px;
-  grid-gap: 16px;
+  grid-template-columns: repeat(3, 50px);
+  column-gap: 20px;
+  row-gap: 10px;
+  flex-basis: 50%;
 }
 .view_detail .view_grid .monthly button {
   font-size: 16px;
@@ -868,9 +883,10 @@ body {
   padding: 0 20px 0 20px;
 }
 .view_detail .contents .text {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  text-align: center;
+  background-color: #fff;
+  margin-top: -130px;
+  position: relative;
 }
 .view_detail .contents .text p {
   padding: 10px 0 20px 0;
@@ -1456,12 +1472,12 @@ body {
   padding: 110px 0 0 100px;
 }
 .slide_wrap .slide_list .list_item > a strong {
-  line-height: 24px;
-  font-size: 18px;
+  line-height: 1.3;
+  font-size: 2.5vw;
 }
 .slide_wrap .slide_list .list_item > a p {
-  line-height: 40px;
-  font-size: 25px;
+  line-height: 1.6;
+  font-size: 3vw;
   padding-top: 50px;
 }
 
@@ -1548,6 +1564,7 @@ body {
 }
 @media all and (max-width: 960px) {
   .visual {
+    height: 318px;
     display: block;
   }
   .visual .tab-container {
@@ -1594,18 +1611,35 @@ body {
   .visual .slide_wrap {
     width: auto;
   }
+  .visual .slide_wrap .slide_list .list_item {
+    height: 318px;
+  }
+  .visual .slide_wrap .slide_list .list_item > a {
+    display: flex;
+    padding: 30px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .visual .slide_wrap .slide_list .list_item > a strong {
+    font-size: 3vw;
+  }
+  .visual .slide_wrap .slide_list .list_item > a p {
+    padding-top: 20px;
+  }
   .visual .reserv .contents_buttons {
     display: grid;
     grid-template-columns: 50% 50%;
     grid-gap: 5px;
   }
   .visual .reserv .cancel {
-    background-color: rgb(23, 30, 127);
+    background-color: #d8d8d8;
     display: block;
     border-radius: 10px;
     color: #fff;
     font-size: 18px;
     font-weight: 600;
+    color: #292929;
   }
   .visual .search .contents_buttons {
     display: grid;
@@ -1613,12 +1647,13 @@ body {
     grid-gap: 5px;
   }
   .visual .search .cancel {
-    background-color: gold;
+    background-color: #d8d8d8;
     display: block;
     border-radius: 10px;
     color: #fff;
     font-size: 18px;
     font-weight: 600;
+    color: #292929;
   }
   .visual .ticket .contents_buttons {
     display: grid;
@@ -1626,12 +1661,13 @@ body {
     grid-gap: 5px;
   }
   .visual .ticket .cancel {
-    background-color: #90e2a9;
+    background-color: #d8d8d8;
     display: block;
     border-radius: 10px;
     color: #fff;
     font-size: 18px;
     font-weight: 600;
+    color: #292929;
   }
   .visual .time .contents_buttons {
     display: grid;
@@ -1639,12 +1675,13 @@ body {
     grid-gap: 5px;
   }
   .visual .time .cancel {
-    background-color: #de5a97;
+    background-color: #d8d8d8;
     display: block;
     border-radius: 10px;
     color: #fff;
     font-size: 18px;
     font-weight: 600;
+    color: #292929;
   }
 }
 @media all and (max-width: 480px) {

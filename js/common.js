@@ -583,6 +583,8 @@ const searchBox = () => {
 }
 
 const mobile = () => {
+    const main_btn = document.querySelectorAll('.main_btn');
+    const sub_depth2 = document.querySelectorAll('.sub_depth2');
     // 메뉴들 클릭하면 depth1 숨기고 submenu만 보여야함
     // back 버튼 보이게
     // back 버튼을 클릭하면 submenu 닫고 depth1 보이게

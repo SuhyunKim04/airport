@@ -753,7 +753,7 @@ body {
     color: #fff;
   }
   .page_header .inner .gnb {
-    display: block;
+    display: none;
     position: absolute;
     top: 80px;
     left: 0;
@@ -761,6 +761,9 @@ body {
     color: #3da1ff;
     height: calc(100vh - 80px);
     overflow-y: auto;
+  }
+  .page_header .inner .gnb.on {
+    display: block;
   }
   .page_header .inner .gnb .arrow_back {
     display: block;

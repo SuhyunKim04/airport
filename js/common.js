@@ -584,7 +584,18 @@ const searchBox = () => {
 
 const mobile = () => {
     const main_btn = document.querySelectorAll('.main_btn');
+    const gnb = document.querySelector('.gnb');
     const sub_depth2 = document.querySelectorAll('.sub_depth2');
+    const hamburger = document.querySelector('.hamburder button')
+
+    const openMenu = () => {
+        gnb.classList.add('on');
+        console.log(gnb)
+        dimm.classList.add('opne')
+    }
+
+    hamburger.addEventListener('click', openMenu);
+    console.log(hamburger)
     // 메뉴들 클릭하면 depth1 숨기고 submenu만 보여야함
     // back 버튼 보이게
     // back 버튼을 클릭하면 submenu 닫고 depth1 보이게
@@ -635,7 +646,7 @@ const scrollTabMenu = () => {
 
 
 
-
+mobile();
 chkMobile();
 window.addEventListener('resize', chkMobile)
 mainMenu(); // gnb

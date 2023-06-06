@@ -314,6 +314,7 @@ const viewInfor = () => {
     const month = view.querySelector('.month');
     const info = view.querySelector('.info');
     const monthEvent = view.querySelector('.monthEvent');
+    const monthWeather = view.querySelector('.monthWeather');
     console.log(monthEvent)
     const closeModal = () => {
         view.classList.remove('open');
@@ -355,8 +356,10 @@ const viewInfor = () => {
             if(mon.nodeName == 'BUTTON') {
                 // month.innerHTML = mon.innerHTML;
                 monthEvent.innerHTML = monthlyData[idx].information;
+                monthEvent.innerHTML = monthlyData[idx].weather;
                 console.log(mon.innerHTML)
                 console.log(monthlyData[idx].weather)
+                
             }
         })
     })

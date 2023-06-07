@@ -586,6 +586,9 @@ body {
   font-size: 16px;
   line-height: 30px;
 }
+.page_header .sub_depth2.on {
+  display: block;
+}
 .page_header .sub_depth2 > li {
   border-left: 1px solid #d8d8d8;
   padding-left: 20px;
@@ -731,6 +734,7 @@ body {
 @media all and (max-width: 960px) {
   .page_header {
     background-color: #333FBB;
+    z-index: 1001;
   }
   .page_header .logo {
     font-size: 30px;
@@ -753,20 +757,22 @@ body {
     color: #fff;
   }
   .page_header .inner .gnb {
-    display: none;
+    display: block;
     position: absolute;
     top: 80px;
-    left: 0;
+    left: -60vw;
+    width: 60vw;
     background-color: azure;
     color: #3da1ff;
     height: calc(100vh - 80px);
     overflow-y: auto;
+    transition: left 0.4s ease-out;
   }
   .page_header .inner .gnb.on {
-    display: block;
+    left: 0;
+    z-index: 1001;
   }
   .page_header .inner .gnb .arrow_back {
-    display: block;
     position: relative;
     top: 20px;
     left: 10px;
@@ -1505,7 +1511,7 @@ body {
 .middle_ad .service_box .contents_box {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: stretch;
   column-gap: 40px;
 }
 .middle_ad .service_box .contents_box li {
@@ -1687,7 +1693,7 @@ body {
     color: #292929;
   }
   .middle_ad .ad_pic {
-    padding-bottom: 20px;
+    padding: 0 10px 20px;
     margin-top: 40px;
   }
   .middle_ad .ad_text {
@@ -1699,9 +1705,6 @@ body {
   }
   .middle_ad .ad_text p {
     font-size: 14px;
-  }
-  .middle_ad .service_box {
-    width: 90%;
   }
   .middle_ad .service_box .contents_box {
     column-gap: 13px;

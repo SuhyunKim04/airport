@@ -399,16 +399,24 @@ const visualTab = () => {
     
 }
 
-const mainMenu = () => {
+const pcGnb = () => { 
     const header = document.getElementById("header");
     const gnb = header.querySelector('.gnb');
     const menus = gnb.querySelectorAll(".depth1 > li");
     const bg = header.querySelector(".bg");
-    const line = gnb.querySelector(".line");
+    const line = gnb.querySelector(".line"); 
+    const arrow_back = document.querySelector('.arrow_back');
+    const dimm = document.querySelector('.dimm') 
 
-    
-    const showMenu = (menu, idx) => {
-        
+    const pcReset = () => {
+        gnb.classList.remove('on');
+        dimm.classList.remove('open');
+        arrow_back.style.display = 'none';
+    }
+
+    pcReset();
+
+    const showMenu = (menu, idx) => { 
         menu.classList.add("on"); 
         let size = menu.offsetWidth; 
         bg.style.height = menu.children[1].offsetHeight + "px";  
@@ -595,17 +603,52 @@ const searchBox = () => {
     searchClose.addEventListener('click', closeSearchModal);
 }
 
-const mobile = () => {
-    const main_btn = document.querySelectorAll('.main_btn');
+const mobileGnb = () => {
+    const menus = document.querySelectorAll('.depth1 > li');
+    const menu_btns = document.querySelectorAll('.main_btn');
+  
     const gnb = document.querySelector('.gnb');
     const sub_depth2 = document.querySelectorAll('.sub_depth2');
-    const hamburger = document.querySelector('.hamburder button')
+    const hamburger = document.querySelector('.hamburger');
+    const arrow_back = document.querySelector('.arrow_back');
+    const dimm = document.querySelector('.dimm') 
+    const bg = header.querySelector(".bg");
 
-    const openMenu = () => {
-        gnb.classList.add('on');
-        console.log(gnb)
-        dimm.classList.add('opne')
-    }
+    hamburger.addEventListener('click',() => { 
+        gnb.classList.toggle('on')
+        dimm.classList.toggle('open')
+    })
+
+    const showMenu = (menu, idx) => { 
+        menu.classList.add("on");  
+    };
+    
+    menus.forEach((btn, index) => {
+        btn.addEventListener('click', (menu) => { 
+            const target = menu.target;
+            if(target.nodeName == 'A') {
+                console.log('clicked A')      
+            }
+            menu_btns.forEach((e)=>{
+                e.style.display = 'none'
+            })
+            btn.classList.add('on');
+            target.style.display = 'block'
+            
+            arrow_back.style.display = 'block'; 
+        })
+    })
+
+    arrow_back.addEventListener('click', (e) =>{
+        menus.forEach((e) => {
+            e.classList.remove('on')
+        })
+
+        menu_btns.forEach((e) => {
+            e.style.display = 'block'
+        })
+    })
+   
 
     // hamburger.addEventListener('click', openMenu);
     // console.log(hamburger)
@@ -616,32 +659,27 @@ const mobile = () => {
     // 헴버거 메뉴 기능 설정하기
 }
 
-const mobileMenu = () => {
-    
-    console.log('mobile Menu running')
-} 
-
-const pcMenu = () => {
-    console.log('pc Menu runing')
-}
 
 const chkMobile = () => {
     const matchResult = window.matchMedia(`(max-width: 960px)`);
     const tabContainer = document.querySelector('.page_main .visual .tab-container');
+    
     if(matchResult.matches) {
 
         // is Mobile
         // tabContainer.style.display = 'none'
         tabContainer.classList.remove('open')
-        mobileMenu();
+        console.log('mobile')
+        mobileGnb();
     }else{
 
         // is not Mobile
         // tabContainer.style.display = 'block'
         tabContainer.classList.add('open')
-        pcMenu();
-    }
-    
+         
+        console.log('pc')
+        pcGnb();
+    } 
 }
 
 
@@ -659,10 +697,10 @@ const scrollTabMenu = () => {
 
 
 
-mobile();
+ 
 chkMobile();
 window.addEventListener('resize', chkMobile)
-mainMenu(); // gnb
+ 
 visualTab(); // home - tabmenu
 noticeAutoScroll(); // notice
 slideBanners(); //jquery 

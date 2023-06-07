@@ -44,3 +44,44 @@
         padding-top: 30px;
     }
 }
+
+@media all and (max-width: 960px) {
+    .page_footer{
+        padding: 16px;
+
+        .inner{
+            display: block;
+            .fnb{
+                width: 100%;
+            }
+
+            .download{
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 360px) {
+    .page_footer{
+        .inner{
+
+            .download{
+                li{
+                    .icons{
+                        width: 70%;
+                        height: 30px;
+                    }
+                }
+            }
+            .fnb{
+                & > li{
+                    margin-right: 20px;
+                    .footer_title{
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}

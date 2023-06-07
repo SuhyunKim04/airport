@@ -6,76 +6,86 @@ const tripLists = [
         start : 'seoul',
         end: 'osaka',
         way: '왕복',
-        price: '450,000'
+        price: '450,000',
+        information: 'Winter festival'
     },
     {
         id:1,
         start : 'seoul',
         end: 'fukuoka',
         way: '왕복',
-        price: '560,000'
+        price: '560,000',
+        information: 'Ice festival'
     },
     {
         id:2,
         start : 'seoul',
         end: 'shanghai',
         way: '왕복',
-        price: '528,000'
+        price: '528,000',
+        information: 'Spring festival'
     },
     {
         id:3,
         start : 'seoul',
         end: 'taiwan',
         way: '왕복',
-        price: '589,000'
+        price: '589,000',
+        information: 'Tulip festival'
     },
     {
         id:4,
         start : 'seoul',
         end: 'guam',
         way: '왕복',
-        price: '1,030,000'
+        price: '1,030,000',
+        information: 'Rose festival'
     },
     {
         id:5,
         start : 'seoul',
         end: 'doha',
         way: '왕복',
-        price: '1,693,000'
+        price: '1,693,000',
+        information: 'Summer festival'
     },
     {
         id:6,
         start : 'seoul',
         end: 'san francisco',
         way: '편도',
-        price: '958,000'
+        price: '958,000',
+        information: 'Pool festival'
     },
     {
         id:7,
         start : 'seoul',
         end: 'cancun',
         way: '편도',
-        price: '1,201,000'
+        price: '1,201,000',
+        information: 'Kayaking festival'
     },
     {
         id:8,
         start : 'seoul',
         end: 'lundon',
         way: '편도',
-        price: '1,305,000'
+        price: '1,305,000',
+        information: 'Fall festival'
     },
     {
         id:9,
         start : 'seoul',
         end: 'barcelona',
         way: '왕복',
-        price: '2,490,000'
+        price: '2,490,000',
+        information: 'Maple festival'
     }
 ]
 // recommand lists
 const datas = [
     {
-        id:0,
+        id:1,
         start : 'seoul',
         end: 'osaka',
         way: '왕복',
@@ -83,7 +93,7 @@ const datas = [
         information: 'Beautiful weather'
     },
     {
-        id:1,
+        id:2,
         start : 'seoul',
         end: 'frankfurt',
         way: '왕복',
@@ -157,75 +167,75 @@ const datas = [
 ]
 const monthlyData = [
     {
-        id: 0,
-        price: '500,000',
-        weather: 'winter', information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
-
-    },
-    {
         id: 1,
         price: '500,000',
-        weather: 'winter', information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
+        information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
 
     },
     {
         id: 2,
         price: '500,000',
-        weather: 'winter', information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
+        information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
 
     },
     {
         id: 3,
         price: '500,000',
-        weather: 'winter', information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
+        information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
 
     },
     {
         id: 4,
         price: '500,000',
-        weather: 'winter', information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
+        information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
 
     },
     {
         id: 5,
         price: '500,000',
-        weather: 'winter', information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
+        information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
 
     },
     {
         id: 6,
         price: '500,000',
-        weather: 'winter', information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
+        information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
 
     },
     {
         id: 7,
         price: '500,000',
-        weather: 'winter', information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
+        information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
 
     },
     {
         id: 8,
         price: '500,000',
-        weather: 'winter', information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
+        information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
 
     },
     {
         id: 9,
         price: '500,000',
-        weather: 'winter', information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
+        information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
 
     },
     {
         id: 10,
         price: '500,000',
-        weather: 'winter', information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
+        information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
 
     },
     {
         id: 11,
         price: '500,000',
-        weather: 'winter', information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
+        information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
+
+    },
+    {
+        id: 12,
+        price: '500,000',
+        information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
 
     }
 ]
@@ -258,16 +268,6 @@ const weeklyUpdate = () => {
         </li> `
     }
    wrap.innerHTML = weeklyData;
-
-    // let test = '';
-    // const a = ['mango','banana','melon']
-    // for(let i=0; i< a.length; i++) {
-    //     test = test + a[i]
-    //     test += a[i]
-    // }
-
-
-    // console.log(test);
 }
 weeklyUpdate();
 
@@ -306,7 +306,7 @@ recommandUpdate();
 const viewInfor = () => {
     const view = document.querySelector('.view_detail');
     const list = document.querySelectorAll('.recommand .module_slide_card li');
-    // const weekly = document.querySelectorAll('.weekly .module_slide_card li');
+    const weekly = document.querySelectorAll('.weekly .module_slide_card li');
     const dimm = document.querySelector('.dimm');
     const book_button = view.querySelector('.book_button');
     const close = view.querySelector('.close');
@@ -314,7 +314,6 @@ const viewInfor = () => {
     const month = view.querySelector('.month');
     const info = view.querySelector('.info');
     const monthEvent = view.querySelector('.monthEvent');
-    const monthWeather = view.querySelector('.monthWeather');
     console.log(monthEvent)
     const closeModal = () => {
         view.classList.remove('open');
@@ -341,12 +340,16 @@ const viewInfor = () => {
             
             openModal()
             info.innerHTML = contents + datas[now].information;
-            // const target = event.target;
-            // if(target.nodeName == 'A') {
-            //     openModal()
-            //     info.innerHTML = target.innerHTML + datas[now].information;
-            // }
         })
+    })
+
+    weekly.forEach((e, idx) => {
+        e.addEventListener('click',(event) =>{
+            const contents = e.children[0].innerHTML;
+
+            openModal()
+            info.innerHTML = contents + tripLists[now].information;
+        } )
     })
 
     
@@ -356,9 +359,7 @@ const viewInfor = () => {
             if(mon.nodeName == 'BUTTON') {
                 // month.innerHTML = mon.innerHTML;
                 monthEvent.innerHTML = monthlyData[idx].information;
-                monthEvent.innerHTML = monthlyData[idx].weather;
-                console.log(mon.innerHTML)
-                console.log(monthlyData[idx].weather)
+                month.innerHTML = monthlyData[idx].id;            
                 
             }
         })
@@ -461,7 +462,6 @@ const mainMenu = () => {
 
 function slideBanners() {
     const $list = $('.slide_wrap .slide_list');
-    // const $slide = $('.test_slide')
     $list.slick({
         dots: true,
         infinite: true,
@@ -500,10 +500,6 @@ function slideBanners() {
                 slidesToShow: 1,
               }
             },
-
-            // You can unslick at a given breakpoint now by adding:
-            // settings: "unslick"
-            // instead of a settings object
           ]
         });
 
@@ -514,6 +510,28 @@ function slideBanners() {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 2000,
+        responsive: [
+            {
+                breakpoint: 960,
+                settings:{
+                    slidesToShow: 3,
+                    dots: false
+                }
+            },
+            {
+                breakpoint: 640,
+                settings: {
+                  slidesToShow: 2,
+                  dots: false
+                }
+            },
+            {
+                breakpoint: 360,
+                settings: {
+                  slidesToShow: 1,
+                }
+            },
+        ]
         });
 }
                           
@@ -532,7 +550,6 @@ const noticeAutoScroll = () => {
             size = 0 
         }else{
             size += line
-            // 만약 사이즈가 250보다 크면 0으로 돌아가고, 작으면 50을 더해라
         }
         list.style.transform = `translateY(-${size}px)`;
 

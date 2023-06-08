@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/ko.js"></script>
+
+</head>
+<body>
+    <input type="text" id="picker" placeholder="날짜를 선택하세요">
+    <p>출발일 <span class="start"></span></p>
+    <script>
+
+        let date = document.getElementById('picker');
+        let start = document.querySelector('.start')
+        $("#picker").flatpickr({
+            // dateFormat:'Y-m-d H:i',
+            dateFormat:'Y-m-d',
+            enableTime: false,
+            minDate :'today',
+            // maxDate : '2023-06-15',
+            // noCalendar: true,
+            // mode : 'range',
+            locale: "ko",
+            disable: [
+                {
+                    from: "2023-06-10",
+                    to: "2023-06-11"
+                },
+                {
+                    from: "2023-06-21",
+                    to: "2023-06-22"
+                }
+            ] ,
+            onChange : function() {
+                console.log('date changed');
+                console.log(date.value);
+                start.innerHTML = date.value;
+            }
+        });
+    </script>
+</body>
+</html>

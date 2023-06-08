@@ -1,8 +1,7 @@
 .recommand {
     .module_slide_card{
-        @extend %inner;
         // @include flex(null);
-    
+        margin:0 -10px;
         .module_card{
             width: 260px;
             background:  no-repeat center center/cover;
@@ -80,7 +79,7 @@
 
 .weekly{
     .module_slide_card{
-        @extend %inner;
+       margin: 0 -10px;
         
         .slide_card{
             width: 260px;

@@ -24,3 +24,12 @@ body{
 @import 'visual';
 @import 'footer';
  
+
+@media all and (max-width: 960px) {
+    %inner {
+        width: auto;
+        max-width: none;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+}

@@ -62,10 +62,10 @@
     }
 }
 
-@media all and (max-width: 360px) {
+@media all and (max-width: 480px) {
     .page_footer{
         .inner{
-
+            
             .download{
                 li{
                     .icons{
@@ -75,11 +75,33 @@
                 }
             }
             .fnb{
+                display: block;
                 & > li{
                     margin-right: 20px;
                     .footer_title{
                         font-size: 14px;
                     }
+                }
+
+                .inside_list{
+                    display: flex;
+                    flex-wrap: wrap;
+                    padding: 0 0 10px;
+
+                    li{
+                        position: relative;
+                        margin-right: 10px;
+                    }
+
+                    li:not(:last-child):after{
+                        content:'';
+                        width: 1px;
+                        height: 10px;
+                        position: absolute;
+                        background-color: blue;
+                        top: calc(50% - 5px);right: -5px;
+                    }
+
                 }
             }
         }

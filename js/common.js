@@ -165,6 +165,7 @@ const datas = [
         information: 'Beautiful weather'
     },
 ]
+// weekly
 const monthlyData = [
     {
         id: 1,
@@ -258,11 +259,11 @@ const weeklyUpdate = () => {
                     <strong>${tripLists[i].end}</strong>
                 </p> 
                 <span>${tripLists[i].way}</span> 
-                <p>
+                <span>
                     <b>KRW</b>
                     <em>${tripLists[i].price}</em>
                     <span>~</span>
-                </p>
+                </span>
             </div>
         </a>
         </li> `
@@ -359,7 +360,7 @@ const viewInfor = () => {
             if(mon.nodeName == 'BUTTON') {
                 // month.innerHTML = mon.innerHTML;
                 monthEvent.innerHTML = monthlyData[idx].information;
-                month.innerHTML = monthlyData[idx].id;            
+                month.innerHTML = monthlyData[idx].id + '월';            
                 
             }
         })

@@ -596,8 +596,8 @@
             
             li{
                 background-color: rgba(255, 255, 255, 0.95);
-                flex:1;
-                max-width:250px; 
+                max-width:none;
+                flex-basis: calc(50% - 10px);
 
                 .icon {
                     .shadow {
@@ -788,7 +788,7 @@
 
     .middle_ad{
         .ad_pic{
-            padding:0 10px 20px;
+            padding:0 0 20px;
             margin-top: 40px;
             
         }
@@ -811,6 +811,8 @@
 
             .contents_box{
                 column-gap: 13px;
+                flex-wrap: wrap;
+                row-gap: 20px;
 
                 li{
                    
@@ -842,5 +844,8 @@
 @media all and (max-width: 480px){
     .slide_wrap .slide_list .list_item{
         height: 40vh;
+
+
     }
+
 }

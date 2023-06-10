@@ -77,12 +77,6 @@
         }
     }
 
-    // .main_menu.depth1 {
-    //     & > li {
-    //         position:static;
-    //     }
-    // }
-
     .sub_depth2 {
         position:absolute;
         left:0;top:80px; 
@@ -156,14 +150,6 @@
             background-image: url($imgUrl + 'linkedin_bk.svg');
             
         }
-            // @for $i from 1 through 3{
-
-            //     &:nth-child(#{$i}){
-            //         a{
-            //             background-image:url($imgUrl + 'ico_#{nth($icons, $i)}.png')
-            //         }
-            //     }
-            // }
         
     }
 }

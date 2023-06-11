@@ -720,12 +720,8 @@ body {
 
 .close {
   width: 150px;
-  height: 30px;
+  height: 40px;
   background-color: #d8d8d8;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin: 40px auto 0;
   border-radius: 20px;
   font-size: 16px;
   color: #fff;
@@ -834,18 +830,22 @@ body {
   max-width: 600px;
   z-index: 1001;
   display: none;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  overflow: hidden;
 }
 .view_detail.open {
   display: block;
 }
 .view_detail .buttons {
   display: flex;
-  justify-content: space-around;
-  margin: 0 0 20px 0;
+  justify-content: center;
+  column-gap: 30px;
 }
 .view_detail .buttons .modal_close {
   margin: 0 0;
   display: block;
+  height: 40px;
 }
 .view_detail .view_grid {
   display: flex;
@@ -876,7 +876,7 @@ body {
 }
 .view_detail .book_button {
   width: 150px;
-  height: 30px;
+  height: 40px;
   background-color: #3da1ff;
   border-radius: 20px;
   font-size: 16px;

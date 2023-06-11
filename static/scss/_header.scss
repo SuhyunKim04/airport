@@ -254,12 +254,8 @@
 }
 .close{
     width: 150px;
-    height: 30px;
+    height: 40px;
     background-color:nth($gray, 3);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 40px auto 0;
     border-radius: 20px;
     font-size: 16px;
     color: #fff;

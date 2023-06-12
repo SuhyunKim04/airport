@@ -89,80 +89,70 @@ const datas = [
         start : 'seoul',
         end: 'osaka',
         way: '왕복',
-        price: '520,000',
-        information: 'Beautiful weather'
+        price: '520,000'
     },
     {
         id:2,
         start : 'seoul',
         end: 'frankfurt',
         way: '왕복',
-        price: '1,482,900',
-        information: 'Beautiful weather'
+        price: '1,482,900'
     },
     {
         id:2,
         start : 'seoul',
         end: 'honolulu',
         way: '왕복',
-        price: '2,321,000',
-        information: 'Beautiful weather'
+        price: '2,321,000'
     },
     {
         id:3,
         start : 'seoul',
         end: 'toronto',
         way: '왕복',
-        price: '2,493,000',
-        information: 'Beautiful weather'
+        price: '2,493,000'
     },
     {
         id:4,
         start : 'seoul',
         end: 'sweden',
         way: '편도',
-        price: '1,734,000',
-        information: 'Beautiful weather'
+        price: '1,734,000'
     },
     {
         id:5,
         start : 'seoul',
         end: 'guam',
         way: '왕복',
-        price: '520,000',
-        information: 'Beautiful weather'
+        price: '520,000'
     },
     {
         id:6,
         start : 'seoul',
         end: 'boracay',
         way: '왕복',
-        price: '850,000',
-        information: 'Beautiful weather'
+        price: '850,000'
     },
     {
         id:7,
         start : 'seoul',
         end: 'hongkong',
         way: '편도',
-        price: '630,000',
-        information: 'Beautiful weather'
+        price: '630,000'
     },
     {
         id:8,
         start : 'seoul',
         end: 'rome',
         way: '왕복',
-        price: '2,450,000',
-        information: 'Beautiful weather'
+        price: '2,450,000'
     },
     {
         id:9,
         start : 'seoul',
         end: 'paris',
         way: '왕복',
-        price: '2,520,000',
-        information: 'Beautiful weather'
+        price: '2,520,000'
     },
 ]
 // weekly
@@ -340,7 +330,7 @@ const viewInfor = () => {
             const contents = e.children[0].innerHTML;
             
             openModal()
-            info.innerHTML = contents + datas[now].information;
+            info.innerHTML = contents + datas[now];
         })
     })
 
@@ -349,7 +339,7 @@ const viewInfor = () => {
             const contents = e.children[0].innerHTML;
 
             openModal()
-            info.innerHTML = contents + tripLists[now].information;
+            info.innerHTML = contents + tripLists[now];
         } )
     })
 
@@ -359,7 +349,6 @@ const viewInfor = () => {
             const mon = event.target;
             if(mon.nodeName == 'BUTTON') {
                 // month.innerHTML = mon.innerHTML;
-                monthEvent.innerHTML = monthlyData[idx].information;
                 month.innerHTML = monthlyData[idx].id + '월';            
                 
             }

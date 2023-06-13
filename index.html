@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Airline</title>
     <script src="./js/jquery-1.11.2.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="./js/jquery-ui.min.js"></script>
     <script src="./js/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/ko.js"></script>
     <link rel="stylesheet" href="./static/css/common.css">
    
 </head>
@@ -340,14 +343,21 @@
                                         </div>
                                     
                                         <div class="book_term">
-                                            <button type="button">
+                                            <div class="book_date">
                                                 <i class="material-symbols-outlined">
                                                     calendar_month
                                                 </i>
-                                                <span>가는 날 ~ 오는 날</span>
-                                            </button>
+                                                <input type="text" id="trip_start" class="date_text" placeholder="가는 날">
+                                                <input type="text" id="trip_end" class="date_text" placeholder="오는 날">
+                                               <dl class="showDate">
+                                                <dt>탑승일</dt>
+                                                <dd class="start"></dd>
+                                                <dt>오는날</dt>
+                                                <dd class="end"></dd>
+                                               </dl>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </div> 
                                     
                                     <dl class="passenger">
                                         <dt>승객수</dt>

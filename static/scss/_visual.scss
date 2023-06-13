@@ -200,22 +200,23 @@
             border-width: 1px 0;
             padding: 20px 0; 
             
-            button{
-                column-gap: 10px;
-                margin:0 auto;
-                @include flex($a:center, $j:space-around);
-            }
-                
-            span{
-                font-size: 16px;
-                font-style: italic;
-                font-weight: 500; 
-                
-            }
+            // .book_date{
+            //     column-gap: 10px;
+            //     margin:0 auto;
+            //     @include flex($a:center, $j:space-around);
+
+            //     input{
+            //         font-size: 16px;
+            //         font-style: italic;
+            //         font-weight: 500; 
+                    
+            //     }
+            // } 
+               
             
         }
 
-        dl{
+        .passenger{
             @include flex;
 
             dt{

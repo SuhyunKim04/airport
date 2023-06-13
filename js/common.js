@@ -684,6 +684,43 @@ const scrollTabMenu = () => {
     })
 }
 
+    window.addEventListener('DOMContentLoaded', (event) => {
+        
+        const trip = document.getElementById('trip_start');
+        const come = document.getElementById('trip_end');
+        const start = document.querySelector('.start');
+        const end = document.querySelector('.end');
+    
+        function updateTrip(){
+            start.innerHTML = trip.value;
+            end.innerHTML = come.value;
+        }
+    
+        const config = {
+            altInput: true, // 기존 입력을 숨기고 새 입력을 만듦
+            altFormat: "Y-m-d H:i", // 날짜 선택 후 표시 형태
+            defaultDate: new Date(), // 기본 선택 시간
+            locale: "ko", // 한국어
+            time_24hr: true, // 24시간 형태
+            disableMobile: true, // 모바일 지원
+            minDate: "today",
+            dateFormat: "Y-m-d",
+            defaultDate: "today",
+        };
+    
+        flatpickr(trip, {
+            config,
+            onChange: function () {
+                updateTrip();
+            },
+        });
+        flatpickr(come, {
+            config, 
+            onChange: function() {
+                updateTrip();
+            },
+        });
+    });
 
 
 
@@ -696,5 +733,6 @@ noticeAutoScroll(); // notice
 slideBanners(); //jquery 
 searchBox();
 scrollTabMenu();
+selecDate();
 
 })

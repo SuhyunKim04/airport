@@ -1162,29 +1162,17 @@ body {
   border-width: 1px 0;
   padding: 20px 0;
 }
-.visual .reserv .book_term button {
-  column-gap: 10px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-.visual .reserv .book_term span {
-  font-size: 16px;
-  font-style: italic;
-  font-weight: 500;
-}
-.visual .reserv dl {
+.visual .reserv .passenger {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.visual .reserv dl dt {
+.visual .reserv .passenger dt {
   font-size: 16px;
   font-family: "Rubik", sans-serif;
   color: rgb(139, 141, 144);
 }
-.visual .reserv dl span {
+.visual .reserv .passenger span {
   font-size: 16px;
   font-family: "Rubik", sans-serif;
 }

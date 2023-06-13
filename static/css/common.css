@@ -1081,7 +1081,7 @@ body {
 .visual .reserv .container .books, .visual .reserv .container .passenger, .visual .reserv .container .book_class {
   background-color: #ffffff;
   border-radius: 10px;
-  padding: 20px;
+  padding: 14px;
 }
 .visual .reserv .option {
   display: flex;
@@ -1161,6 +1161,16 @@ body {
   border: 1px solid #d2d0d0;
   border-width: 1px 0;
   padding: 20px 0;
+}
+.visual .reserv .book_term .book_date .date_text {
+  border: none;
+}
+.visual .reserv .book_term .book_date .showDate {
+  display: flex;
+  justify-content: flex-start;
+}
+.visual .reserv .book_term .book_date .showDate dt {
+  padding-left: 10px;
 }
 .visual .reserv .passenger {
   display: flex;

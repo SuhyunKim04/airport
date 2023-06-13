@@ -120,7 +120,7 @@
             .books, .passenger, .book_class{
                 background-color: #ffffff;
                 border-radius: 10px;
-                padding: 20px;
+                padding: 14px;
             }
         }
         .option{
@@ -199,6 +199,26 @@
             border: 1px solid #d2d0d0;
             border-width: 1px 0;
             padding: 20px 0; 
+
+            .book_date{
+                .date_text{
+                    border: none;
+                }
+
+                .showDate{
+                    display: flex;
+                    justify-content: flex-start;
+
+                    // .start{
+                    //     padding-left: 10px;
+                    // }
+
+                    dt{
+                        padding-left: 10px;
+                    }
+                    
+                }
+            }
             
             // .book_date{
             //     column-gap: 10px;

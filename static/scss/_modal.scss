@@ -20,6 +20,10 @@
         display:block;
     }
 
+    &.notInfo h2.month p {
+        display:none;
+    }
+
     .buttons{
         display: flex;
         justify-content: center;
@@ -52,7 +56,7 @@
                 height: 50px;
                 line-height: 16px;
 
-                &:hover{
+                &:hover, &.active{
                     background-color: #3da1ff;
                     color: #fff;
                 }

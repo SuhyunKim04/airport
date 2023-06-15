@@ -1,11 +1,23 @@
 
 .main{
 
-    img{
-        height: 70vh;
-        width: 100%;
+    // img{
+    //     height: 70vh;
+    //     width: 100%;
+    // }
+
+    .list-container{
+        @extend %inner;
+      h2{
+          font-weight: 600;
+          font-family: 'Mukta', sans-serif;
+          font-size: 30px;
+         }
+     
+      
+     } 
     }
- }
+ 
 .notice{
     background-color: rgb(210, 227, 249);
     font-family: 'Rubik', sans-serif;
@@ -39,58 +51,8 @@
         @include flex($a:flex-start,$j:center,$d:column);
         height:40px;
     }
- }
- 
- 
- .recommand{
-    @extend %inner;
-     h2{
-         font-weight: 600;
-         font-family: 'Mukta', sans-serif;
-         font-size: 30px;
-        }
- 
-    .text{
-        p{
-            i{
-                 position: relative;
-                 top: 5px;
- 
-            }
-        }
-    }
 }
- 
- .weekly{
-    @extend %inner;
-     h2{
-         font-weight: 600;
-         font-family: 'Mukta', sans-serif;
-         font-size: 30px;
-         margin: 20px 0 20px 0;
- 
-     }
- 
-     ul{
-         li{
-             @for $i from 0 through 9{
-                 &:nth-child(#{$i + 1}){
-                 background-image: url($imgUrl + 'weekly_#{$i}.jpg')}
-             }
-         }
- 
-     }
- 
-     .text{
-         p{
-             i{
-                 position: relative;
-                 top: 5px;
- 
-             }
-         }
-     }
- }
+
 
 @media all and (max-width: 960px){
 

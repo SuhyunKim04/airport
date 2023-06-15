@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", (event) => {
 
-const tripLists = [
+const weeklyDatas = [
     {
         id:0,
         start : 'seoul',
@@ -80,10 +80,11 @@ const tripLists = [
         way: '왕복',
         price: '2,490,000',
         information: 'Maple festival'
-    }
+    },
+    
 ]
 // recommand lists
-const datas = [
+const recomDatas = [
     {
         id:1,
         start : 'seoul',
@@ -158,6 +159,12 @@ const datas = [
 // weekly
 const monthlyData = [
     {
+        id: 0,
+        price: '500,000',
+        information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
+
+    },
+    {
         id: 1,
         price: '500,000',
         information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
@@ -222,36 +229,30 @@ const monthlyData = [
         price: '500,000',
         information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
 
-    },
-    {
-        id: 12,
-        price: '500,000',
-        information:'아름다운 이벤트가 가득하고, 야시장등 볼거리가많습니다.'
-
-    }
+    } 
 ]
 
 const weeklyUpdate = () => {
     const wrap = document.querySelector('.weekly .module_slide_card');
-    const count = tripLists.length;
+    const count = weeklyDatas.length;
     let weeklyData = '';
     
     for (let i=0; i < count; i++){
-        weeklyData += `<li class="slide_card a">
+        weeklyData += `<li class="module_card a">
         <a href="javascript:void(0);">
         <img src="./static/images/weekly_${[i]}.jpg" alt="images" class="picbg">
             <div class="text">
-                <p>
-                    <strong>${tripLists[i].start}</strong>
+                <p class="journey">
+                    <strong>${weeklyDatas[i].start}</strong>
                     <i class="material-symbols-outlined">
                         sync_alt
                     </i>
-                    <strong>${tripLists[i].end}</strong>
+                    <strong>${weeklyDatas[i].end}</strong>
                 </p> 
-                <span>${tripLists[i].way}</span> 
-                <span>
+                <span>${weeklyDatas[i].way}</span> 
+                <span class="price">
                     <b>KRW</b>
-                    <em>${tripLists[i].price}</em>
+                    <em>${weeklyDatas[i].price}</em>
                     <span>~</span>
                 </span>
             </div>
@@ -264,7 +265,7 @@ weeklyUpdate();
 
 const recommandUpdate = () => {
     const wrap = document.querySelector('.recommand .module_slide_card');
-    const count = datas.length;
+    const count = recomDatas.length;
     let recommandData = '';
 
     for (let i=0; i < count; i++){
@@ -272,17 +273,17 @@ const recommandUpdate = () => {
         <a href="javascript:void(0);">
         <img src="./static/images/pics_${[i]}.jpg" alt="images" class="pics">
             <div class="text">
-                <p>
-                    <strong>${datas[i].start}</strong>
+                <p class="journey">
+                    <strong>${recomDatas[i].start}</strong>
                     <i class="material-symbols-outlined">
                         sync_alt
                     </i>
-                    <strong>${datas[i].end}</strong>
+                    <strong>${recomDatas[i].end}</strong>
                 </p> 
-                <span>${datas[i].way}</span> 
-                <p>
+                <span>${recomDatas[i].way}</span> 
+                <p class="price">
                     <b>KRW</b>
-                    <em>${datas[i].price}</em>
+                    <em>${recomDatas[i].price}</em>
                     <span>~</span>
                 </p>
             </div>
@@ -296,7 +297,7 @@ recommandUpdate();
 
 const viewInfor = () => {
     const view = document.querySelector('.view_detail');
-    const list = document.querySelectorAll('.recommand .module_slide_card li');
+    const recomm = document.querySelectorAll('.recommand .module_slide_card li');
     const weekly = document.querySelectorAll('.weekly .module_slide_card li');
     const dimm = document.querySelector('.dimm');
     const book_button = view.querySelector('.book_button');
@@ -304,8 +305,7 @@ const viewInfor = () => {
     const monthly = view.querySelectorAll('.monthly button');
     const month = view.querySelector('.month');
     const info = view.querySelector('.info');
-    const monthEvent = view.querySelector('.monthEvent');
-    console.log(monthEvent)
+    const monthEvent = view.querySelector('.monthEvent'); 
     const closeModal = () => {
         view.classList.remove('open');
         dimm.classList.remove('open');
@@ -313,43 +313,52 @@ const viewInfor = () => {
    
     book_button.addEventListener('click', closeModal);
 
-    const openModal = () => {
+    let date = new Date();
+    let now = date.getMonth();
+
+    const openModal = (now) => { 
         view.classList.add('open');
         dimm.classList.add('open');
+        console.log(now)
+        month.innerHTML = `${monthlyData[now].id + 1}월<p>${monthlyData[now].information}</p>`
+        
     }
    
     close.addEventListener('click',closeModal);
     
-    let date = new Date();
-    let now = date.getMonth();
     
 
-    list.forEach( (e,idx) => { 
-        
+    recomm.forEach( (e,idx) => {  
         e.addEventListener('click',(event) => {
-            const contents = e.children[0].innerHTML;
-            
-            openModal()
-            info.innerHTML = contents + datas[now];
-        })
+            const contents = e.children[0].innerHTML; 
+            openModal(now)
+            view.classList.add('notInfo')
+            info.innerHTML = contents;
+        }) 
     })
 
     weekly.forEach((e, idx) => {
         e.addEventListener('click',(event) =>{
             const contents = e.children[0].innerHTML;
+            view.classList.remove('notInfoc')
 
-            openModal()
-            info.innerHTML = contents + tripLists[now];
+            openModal(now)
+            info.innerHTML = contents;
         } )
     })
 
     
+    monthly[now].classList.add('active')
     monthly.forEach((e,idx) => {
         e.addEventListener('click',(event) => {
             const mon = event.target;
             if(mon.nodeName == 'BUTTON') {
                 // month.innerHTML = mon.innerHTML;
-                month.innerHTML = monthlyData[idx].id + '월';            
+              
+                month.innerHTML =
+                `
+                    ${monthlyData[idx].id}월<p>${weeklyDatas[idx].information}</p>
+                `            
                 
             }
         })
@@ -733,6 +742,6 @@ noticeAutoScroll(); // notice
 slideBanners(); //jquery 
 searchBox();
 scrollTabMenu();
-selecDate();
+// selectDate();
 
 })

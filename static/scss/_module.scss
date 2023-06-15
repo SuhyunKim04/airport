@@ -1,155 +1,54 @@
-.recommand {
-    .module_slide_card{
-        // @include flex(null);
-        margin:0 -10px;
-        .module_card{
-            width: 260px;
-            background:  no-repeat center center/cover;
-            margin:0 10px;
+.module_slide_card{ 
+    margin:0 -10px;
+
+    .module_card{
+        width: 260px; 
+        margin:0 10px;
     
-                // &.a {
-                //     background-image:url($imgUrl + 'pics_0.jpg');
-                // }
-                // &.b {
-                //     background-image:url($imgUrl + 'pics_1.jpg');
-                // }
-                // &.c {
-                //     background-image:url($imgUrl + 'pics_2.jpg');
-                // }
-                // &.d {
-                //     background-image:url($imgUrl + 'pics_3.jpg');
-                // }
-                // &.e {
-                //     background-image:url($imgUrl + 'pics_4.jpg');
-                // }
-                // &.f {
-                //     background-image:url($imgUrl + 'pics_5.jpg');
-                // }
-                // &.g {
-                //     background-image:url($imgUrl + 'pics_6.jpg');
-                // }
-                // &.h {
-                //     background-image:url($imgUrl + 'pics_7.jpg');
-                // }
-                // &.i {
-                //     background-image:url($imgUrl + 'pics_8.jpg');
-                // }
-                // &.j {
-                //     background-image:url($imgUrl + 'pics_9.jpg');
-                // }
-            
-    
-            
-            & > a{
-                display: block; 
-                position: relative;
-                height: 356px;
-                overflow: hidden;
-    
-                img{
-                    width: 100%;
+        & > a{
+
+            display: block; 
+            position: relative;
+            max-height:356px;
+            overflow: hidden;
+
+            img{
+                width: 100%;
+                min-height:100%;
+            }
+
+
+            .text{
+                background-color: rgba(0,0,0,0.7);
+                @include position(null,0,0,0);
+
+                color:#fff;
+                padding: 15px;
+                font-size:16px;
+                font-weight:600;
+
+                
+                .journey {
+                    display: flex;
+                    align-items: center; 
+                    column-gap:20px;
+                    text-transform: uppercase;
                 }
-    
-    
-                .text{
-                    background-color: black;
-                    @include position(null,null,0,0);
-                    opacity: 0.7;
-                    width: 100%;
-                    height: 110px;
-                    padding-left: 10px;
-                    
-    
-                    p{
-                        color: #ffffff;
-                        font-weight: 500;
-                        margin-top: 10px;
-                        font-size: 14px;
+
+                .price {
+                    em {
+                        color:rgb(255, 79, 79);
+                        font-weight:900;
+                        font-size: 1.2em;
+                        letter-spacing: 0.5px;
                     }
-    
-                    span{
-                        color: #ffffff;
-                    }
-                }
+                } 
+                
             }
         }
-    
     }
+
 }
 
-.weekly{
-    .module_slide_card{
-       margin: 0 -10px;
-        
-        .slide_card{
-            width: 260px;
-            background:  no-repeat center center/cover;
-            margin:0 10px;
-            
 
-            // &.a {
-            //     background-image:url($imgUrl + 'weekly_0.jpg');
-            // }
-            // &.b {
-            //     background-image:url($imgUrl + 'weekly_1.jpg');
-            // }
-            // &.c {
-            //     background-image:url($imgUrl + 'weekly_2.jpg');
-            // }
-            // &.d {
-            //     background-image:url($imgUrl + 'weekly_3.jpg');
-            // }
-            // &.e {
-            //     background-image:url($imgUrl + 'weekly_4.jpg');
-            // }
-            // &.f {
-            //     background-image:url($imgUrl + 'weekly_5.jpg');
-            // }
-            // &.g {
-            //     background-image:url($imgUrl + 'weekly_6.jpg');
-            // }
-            // &.h {
-            //     background-image:url($imgUrl + 'weekly_7.jpg');
-            // }
-            // &.i {
-            //     background-image:url($imgUrl + 'weekly_8.jpg');
-            // }
-            // &.j {
-            //     background-image:url($imgUrl + 'weekly_9.jpg');
-            // }
-
-            & > a{
-                display: block; 
-                position: relative;
-                height: 356px;
-                overflow:hidden;
-
-                .picbg{
-                   min-height:100%;
-                }
-
-                .text{
-                    background-color: black;
-                    @include position(null,null,0,0);
-                    opacity: 0.7;
-                    width: 100%;
-                    height: 110px;
-                    padding-left: 10px;
-                    
-    
-                    p{
-                        color: #ffffff;
-                        font-weight: 500;
-                        margin-top: 10px;
-                        font-size: 14px;
-                    }
-    
-                    span{
-                        color: #ffffff;
-                    }
-                }
-        }
-    }
-}
-}
 

@@ -16,6 +16,10 @@ body {
   overflow-x: hidden;
 }
 
+em, i, address {
+  font-style: inherit;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: inherit;
 }
@@ -75,7 +79,7 @@ fieldset {
   box-sizing: border-box;
 }
 
-.middle_ad .service_box, .middle_ad .ad_text, .search_box, .page_header .inner, .weekly, .recommand, .notice .inner {
+.middle_ad .service_box, .middle_ad .ad_text, .search_box, .page_header .inner, .notice .inner, .main .list-container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -332,83 +336,51 @@ body {
   opacity: 0.75;
 }
 
-.recommand .module_slide_card {
+.module_slide_card {
   margin: 0 -10px;
 }
-.recommand .module_slide_card .module_card {
+.module_slide_card .module_card {
   width: 260px;
-  background: no-repeat center center/cover;
   margin: 0 10px;
 }
-.recommand .module_slide_card .module_card > a {
+.module_slide_card .module_card > a {
   display: block;
   position: relative;
-  height: 356px;
+  max-height: 356px;
   overflow: hidden;
 }
-.recommand .module_slide_card .module_card > a img {
+.module_slide_card .module_card > a img {
   width: 100%;
-}
-.recommand .module_slide_card .module_card > a .text {
-  background-color: black;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  opacity: 0.7;
-  width: 100%;
-  height: 110px;
-  padding-left: 10px;
-}
-.recommand .module_slide_card .module_card > a .text p {
-  color: #ffffff;
-  font-weight: 500;
-  margin-top: 10px;
-  font-size: 14px;
-}
-.recommand .module_slide_card .module_card > a .text span {
-  color: #ffffff;
-}
-
-.weekly .module_slide_card {
-  margin: 0 -10px;
-}
-.weekly .module_slide_card .slide_card {
-  width: 260px;
-  background: no-repeat center center/cover;
-  margin: 0 10px;
-}
-.weekly .module_slide_card .slide_card > a {
-  display: block;
-  position: relative;
-  height: 356px;
-  overflow: hidden;
-}
-.weekly .module_slide_card .slide_card > a .picbg {
   min-height: 100%;
 }
-.weekly .module_slide_card .slide_card > a .text {
-  background-color: black;
+.module_slide_card .module_card > a .text {
+  background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
   bottom: 0;
+  right: 0;
   left: 0;
-  opacity: 0.7;
-  width: 100%;
-  height: 110px;
-  padding-left: 10px;
+  color: #fff;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 600;
 }
-.weekly .module_slide_card .slide_card > a .text p {
-  color: #ffffff;
-  font-weight: 500;
-  margin-top: 10px;
-  font-size: 14px;
+.module_slide_card .module_card > a .text .journey {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  text-transform: uppercase;
 }
-.weekly .module_slide_card .slide_card > a .text span {
-  color: #ffffff;
+.module_slide_card .module_card > a .text .price em {
+  color: rgb(255, 79, 79);
+  font-weight: 900;
+  font-size: 1.2em;
+  letter-spacing: 0.5px;
 }
 
-.main img {
-  height: 70vh;
-  width: 100%;
+.main .list-container h2 {
+  font-weight: 600;
+  font-family: "Mukta", sans-serif;
+  font-size: 30px;
 }
 
 .notice {
@@ -444,57 +416,6 @@ body {
   align-items: flex-start;
   flex-direction: column;
   height: 40px;
-}
-
-.recommand h2 {
-  font-weight: 600;
-  font-family: "Mukta", sans-serif;
-  font-size: 30px;
-}
-.recommand .text p i {
-  position: relative;
-  top: 5px;
-}
-
-.weekly h2 {
-  font-weight: 600;
-  font-family: "Mukta", sans-serif;
-  font-size: 30px;
-  margin: 20px 0 20px 0;
-}
-.weekly ul li:nth-child(1) {
-  background-image: url("../images/weekly_0.jpg");
-}
-.weekly ul li:nth-child(2) {
-  background-image: url("../images/weekly_1.jpg");
-}
-.weekly ul li:nth-child(3) {
-  background-image: url("../images/weekly_2.jpg");
-}
-.weekly ul li:nth-child(4) {
-  background-image: url("../images/weekly_3.jpg");
-}
-.weekly ul li:nth-child(5) {
-  background-image: url("../images/weekly_4.jpg");
-}
-.weekly ul li:nth-child(6) {
-  background-image: url("../images/weekly_5.jpg");
-}
-.weekly ul li:nth-child(7) {
-  background-image: url("../images/weekly_6.jpg");
-}
-.weekly ul li:nth-child(8) {
-  background-image: url("../images/weekly_7.jpg");
-}
-.weekly ul li:nth-child(9) {
-  background-image: url("../images/weekly_8.jpg");
-}
-.weekly ul li:nth-child(10) {
-  background-image: url("../images/weekly_9.jpg");
-}
-.weekly .text p i {
-  position: relative;
-  top: 5px;
 }
 
 @media all and (max-width: 960px) {
@@ -836,6 +757,9 @@ body {
 .view_detail.open {
   display: block;
 }
+.view_detail.notInfo h2.month p {
+  display: none;
+}
 .view_detail .buttons {
   display: flex;
   justify-content: center;
@@ -869,7 +793,7 @@ body {
   height: 50px;
   line-height: 16px;
 }
-.view_detail .view_grid .monthly button:hover {
+.view_detail .view_grid .monthly button:hover, .view_detail .view_grid .monthly button.active {
   background-color: #3da1ff;
   color: #fff;
 }
@@ -1838,7 +1762,7 @@ body {
   }
 }
 @media all and (max-width: 960px) {
-  .notice .inner, .recommand, .weekly, .page_header .inner, .search_box, .middle_ad .ad_text, .middle_ad .service_box {
+  .main .list-container, .notice .inner, .page_header .inner, .search_box, .middle_ad .ad_text, .middle_ad .service_box {
     width: auto;
     max-width: none;
     margin: 0 auto;

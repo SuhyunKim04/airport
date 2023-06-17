@@ -347,8 +347,8 @@
                                                 <i class="material-symbols-outlined">
                                                     calendar_month
                                                 </i>
-                                                <input type="text" id="trip_start" class="date_text" placeholder="가는 날">
-                                                <input type="text" id="trip_end" class="date_text" placeholder="오는 날">
+                                                
+                                                <input type="text" id="trip_range" class="date_text" placeholder="여행 기간">
                                                <dl class="showDate">
                                                 <dt>탑승일</dt>
                                                 <dd class="start"></dd>
@@ -646,6 +646,7 @@
 
         <!-- Modal -->
         <section class="view_detail">
+            <h2 class="month"></h2>
             <div class="view_grid">
                 <div class="monthly">
                     <button>1월</button>
@@ -661,16 +662,15 @@
                     <button>11월</button>
                     <button>12월</button>
                 </div>
-                <div class="contents">
-                    <h2 class="month"></h2>
+                <div class="contents"> 
                     <div class="info"></div>
                     <div class="monthEvent"></div>
                     <div class="monthWeather"></div>
                 </div>
             </div>
             <div class="buttons">
-                <button type="button" class="modal_close close">닫기</button>
-                <button type="button" class="book_button">예약하기</button>
+                <button type="button" class="modal_close">닫기</button>
+                <button type="button" class="modal_book">예약하기</button>
             </div>
         </section>
 

@@ -646,6 +646,8 @@ body {
   border-radius: 20px;
   font-size: 16px;
   color: #fff;
+  margin: 0 auto;
+  display: block;
 }
 .close:hover {
   background-color: #999;
@@ -746,13 +748,13 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #8ea9c2;
+  background-color: #f3f3f3;
   width: 100%;
   max-width: 600px;
   z-index: 1001;
   display: none;
   border-radius: 20px;
-  padding-bottom: 20px;
+  padding: 25px;
 }
 .view_detail.open {
   display: block;
@@ -760,30 +762,44 @@ body {
 .view_detail.notInfo h2.month p {
   display: none;
 }
+.view_detail h2 {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+.view_detail h2 span {
+  font-size: 0.7em;
+  display: block;
+  font-weight: 400;
+  color: #999;
+}
 .view_detail .buttons {
   display: flex;
   justify-content: center;
   column-gap: 30px;
 }
 .view_detail .buttons .modal_close {
-  margin: 0 0;
   display: block;
   height: 40px;
+  background-color: #a9a9a9;
 }
 .view_detail .view_grid {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px 30px;
-  gap: 20px;
+  justify-content: center;
+  align-items: stretch;
+  column-gap: 25px;
+  padding: 20px 0;
 }
 .view_detail .view_grid .monthly {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 20px;
   display: grid;
   grid-template-columns: repeat(3, 50px);
   column-gap: 20px;
   row-gap: 10px;
   color: #fff;
-  margin: 0 auto;
+  align-content: space-evenly;
 }
 .view_detail .view_grid .monthly button {
   font-size: 16px;
@@ -794,34 +810,35 @@ body {
   line-height: 16px;
 }
 .view_detail .view_grid .monthly button:hover, .view_detail .view_grid .monthly button.active {
-  background-color: #3da1ff;
+  background-color: #333fbb;
   color: #fff;
 }
-.view_detail .book_button {
+.view_detail .buttons button {
   width: 150px;
   height: 40px;
-  background-color: #3da1ff;
   border-radius: 20px;
   font-size: 16px;
   color: #fff;
+  transition: 0.4s;
 }
-.view_detail .book_button:hover {
-  color: #3da1ff;
-  background-color: #fff;
-  font-weight: 600;
+.view_detail .buttons button:nth-child(1) {
+  background-color: #a9a9a9;
+}
+.view_detail .buttons button:nth-child(1):hover {
+  background-color: #666;
+}
+.view_detail .buttons button:nth-child(2) {
+  background-color: #333fbb;
+}
+.view_detail .buttons button:nth-child(2):hover {
+  background-color: #1d268f;
 }
 .view_detail .contents {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  grid-gap: 10px;
+  border-radius: 15px;
+  overflow: hidden;
 }
-.view_detail .contents h2 {
-  font-size: 20px;
-  font-weight: 600;
-  padding: 0 20px 0 20px;
-  color: #fff;
+.view_detail .contents .info img {
+  width: 100%;
 }
 .view_detail .contents .text {
   text-align: center;
@@ -1086,8 +1103,15 @@ body {
   border-width: 1px 0;
   padding: 20px 0;
 }
+.visual .reserv .book_term .book_date i {
+  display: inline-block;
+  vertical-align: middle;
+}
 .visual .reserv .book_term .book_date .date_text {
   border: none;
+  width: calc(100% - 30px);
+  vertical-align: middle;
+  height: 24px;
 }
 .visual .reserv .book_term .book_date .showDate {
   display: flex;

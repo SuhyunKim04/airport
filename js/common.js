@@ -300,8 +300,8 @@ const viewInfor = () => {
     const recomm = document.querySelectorAll('.recommand .module_slide_card li');
     const weekly = document.querySelectorAll('.weekly .module_slide_card li');
     const dimm = document.querySelector('.dimm');
-    const book_button = view.querySelector('.book_button');
-    const close = view.querySelector('.close');
+    const book_button = view.querySelector('.modal_book');
+    const close = view.querySelector('.modal_close');
     const monthly = view.querySelectorAll('.monthly button');
     const month = view.querySelector('.month');
     const info = view.querySelector('.info');
@@ -320,7 +320,7 @@ const viewInfor = () => {
         view.classList.add('open');
         dimm.classList.add('open');
         console.log(now)
-        month.innerHTML = `${monthlyData[now].id + 1}월<p>${monthlyData[now].information}</p>`
+        month.innerHTML = `${monthlyData[now].id + 1}월<span>${monthlyData[now].information}</span>`
         
     }
    
@@ -344,6 +344,7 @@ const viewInfor = () => {
 
             openModal(now)
             info.innerHTML = contents;
+            
         } )
     })
 
@@ -354,13 +355,18 @@ const viewInfor = () => {
             const mon = event.target;
             if(mon.nodeName == 'BUTTON') {
                 // month.innerHTML = mon.innerHTML;
-              
+
+              monthly.forEach( (e) => {
+                e.classList.remove('active')
+              })
+
+              mon.classList.add('active')
                 month.innerHTML =
                 `
-                    ${monthlyData[idx].id}월<p>${weeklyDatas[idx].information}</p>
-                `            
+                    ${monthlyData[idx].id + 1}월<span>${monthlyData[idx].information}</span>` 
                 
             }
+
         })
     })
 };
@@ -693,43 +699,46 @@ const scrollTabMenu = () => {
     })
 }
 
-    window.addEventListener('DOMContentLoaded', (event) => {
-        
-        const trip = document.getElementById('trip_start');
-        const come = document.getElementById('trip_end');
-        const start = document.querySelector('.start');
-        const end = document.querySelector('.end');
+const rangeDates = () => {
+    const trip = document.getElementById('trip_range');
+    const start = document.querySelector('.start');
+    const end = document.querySelector('.end');
     
-        function updateTrip(){
-            start.innerHTML = trip.value;
-            end.innerHTML = come.value;
-        }
+    function updateTrip(){
+        // start.innerHTML = trip.value;
+        console.log(allDay);
+        let range1 = new Date( allDay.selectedDates[0]);
+        let range2 = new Date( allDay.selectedDates[1]);
+        start.innerHTML = `
+            ${range1.getFullYear()}-${range1.getMonth()+1}-${range1.getDate()}
+        `
+        end.innerHTML = `
+        ${range2.getFullYear()}-${range2.getMonth()+1}-${
+            range2.getDate()}`
+    }
     
-        const config = {
-            altInput: true, // 기존 입력을 숨기고 새 입력을 만듦
-            altFormat: "Y-m-d H:i", // 날짜 선택 후 표시 형태
-            defaultDate: new Date(), // 기본 선택 시간
-            locale: "ko", // 한국어
-            time_24hr: true, // 24시간 형태
-            disableMobile: true, // 모바일 지원
-            minDate: "today",
-            dateFormat: "Y-m-d",
-            defaultDate: "today",
-        };
-    
-        flatpickr(trip, {
-            config,
-            onChange: function () {
-                updateTrip();
-            },
-        });
-        flatpickr(come, {
-            config, 
-            onChange: function() {
-                updateTrip();
-            },
-        });
+    const allDay = flatpickr(trip, {
+        enableTime: false, // 시간 선택 여부
+        locale: "ko", // 한국어
+        altInput: true, // 기존 입력을 숨기고 새 입력을 만듦
+        // mode: "multiple",
+        // defaultDate: ["today", "today"],
+        mode: "range",
+        minDate: "today",
+        dateFormat: "Y-m-d",
+        defaultDate: ["today", "2023-06-15"],
+        onChange: function() {
+            updateTrip();
+        },
     });
+    
+    console.log(allDay.selectedDates[0])
+     
+}
+ 
+        
+     
+ 
 
 
 
@@ -743,5 +752,6 @@ slideBanners(); //jquery
 searchBox();
 scrollTabMenu();
 // selectDate();
+rangeDates();
 
 })

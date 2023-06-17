@@ -201,8 +201,15 @@
             padding: 20px 0; 
 
             .book_date{
+                i{
+                    display: inline-block;
+                    vertical-align: middle;
+                }
                 .date_text{
                     border: none;
+                    width: calc(100% - 30px);
+                    vertical-align: middle;
+                    height: 24px;
                 }
 
                 .showDate{

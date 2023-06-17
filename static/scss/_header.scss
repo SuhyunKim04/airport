@@ -259,6 +259,8 @@
     border-radius: 20px;
     font-size: 16px;
     color: #fff;
+    margin: 0 auto;
+    display:block;
 
     &:hover{
         background-color: nth($gray, 5);

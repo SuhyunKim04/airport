@@ -1,3 +1,5 @@
+ 
+
 .dimm{
     @include full(rgba(0,0,0,0.7),1000, fixed); 
     display:none;
@@ -8,13 +10,13 @@
 
 .view_detail{
     @include center;
-    background-color: #8ea9c2;
+    background-color: #f3f3f3;
     width:100%;
     max-width: 600px;
     z-index: 1001;
     display:none;
     border-radius: 20px;
-    padding-bottom: 20px;
+    padding:25px;
 
     &.open {
         display:block;
@@ -24,29 +26,46 @@
         display:none;
     }
 
+    h2{
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+
+        span{
+            font-size: 0.7em;
+            display: block;
+            font-weight: 400;
+            color: nth($gray, 5)
+        }
+    }
     .buttons{
         display: flex;
         justify-content: center;
         column-gap: 30px;
         
         .modal_close{
-            margin: 0 0;
             display: block;
             height: 40px;
+            background-color: nth($gray,4);
         }
     }
 
     .view_grid{
-        @include flex;
-        padding: 30px 30px;
-        gap:20px;
+        @include flex($a:stretch,$j:center); 
+        column-gap:25px;
+        padding:20px 0;
 
         .monthly{
+            background-color:rgba(255,255,255,0.1);
+            border-radius:20px;
+            padding:20px;
             @include grid ($c:repeat(3, 50px));
             column-gap: 20px;
             row-gap: 10px;
             color: #fff;
-            margin: 0 auto;
+            align-content: space-evenly;
+           
+
             
             button{
                 font-size: 16px;
@@ -57,36 +76,41 @@
                 line-height: 16px;
 
                 &:hover, &.active{
-                    background-color: #3da1ff;
+                    background-color: nth($primary, 5);
                     color: #fff;
                 }
             }
         }
 
     }
-    .book_button{
-        width: 150px;
-        height: 40px;
-        background-color: #3da1ff;
-        border-radius: 20px;
-        font-size: 16px;
-        color: #fff;
 
-        &:hover{
-            color: #3da1ff;
-            background-color: #fff;
-            font-weight: 600;
+    .buttons {
+        $color : nth($gray, 4), nth($primary, 5);
+        $hover :  nth($gray, 6), nth($primary, 7);
+        button {
+            width: 150px;
+            height: 40px;
+            border-radius: 20px;
+            font-size: 16px;
+            color: #fff;
+            transition:0.4s; 
+            @for $i from 1 through 2 {
+                &:nth-child(#{$i}) {
+                    background-color:nth($color, $i);   
+                    &:hover {
+                        background-color:nth($hover, $i);
+                    } 
+                }
+            }
         }
     }
-        .contents{
-            @include flex($j:center,$d:column);
-            grid-gap: 10px;
+   
+   
+        .contents{ 
+            border-radius:15px;overflow:hidden;
 
-            h2{
-                font-size: 20px;
-                font-weight: 600;
-                padding: 0 20px 0 20px;
-                color: #fff;
+            .info{ 
+                img { width:100%;}
             }
 
             .text{

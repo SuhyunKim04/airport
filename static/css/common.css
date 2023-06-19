@@ -348,6 +348,9 @@ body {
   padding: 0 20px;
 }
 
+.module_slide_card {
+  margin: 0 -10px;
+}
 .module_slide_card .module_card {
   width: 260px;
   margin: 0 10px;
@@ -844,16 +847,21 @@ body {
 }
 .view_detail .contents {
   border-radius: 15px;
-  overflow: hidden;
+}
+.view_detail .contents .info {
+  position: relative;
 }
 .view_detail .contents .info img {
   width: 100%;
+  margin-bottom: -4px;
 }
 .view_detail .contents .text {
   text-align: center;
-  background-color: #fff;
-  margin-top: -116px;
-  position: relative;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 .view_detail .contents .text p {
   padding: 10px 0 20px 0;
@@ -902,6 +910,12 @@ body {
     top: 80px;
     bottom: auto;
     height: calc(100vh - 80px);
+  }
+}
+@media all and (max-width: 640px) {
+  .view_detail {
+    max-width: none;
+    width: calc(100vw - 40px);
   }
 }
 .visual {
@@ -1121,6 +1135,7 @@ body {
   width: calc(100% - 30px);
   vertical-align: middle;
   height: 24px;
+  cursor: pointer;
 }
 .visual .reserv .book_term .book_date .showDate {
   display: flex;
@@ -1192,6 +1207,8 @@ body {
   border: none;
   width: 250px;
   color: rgb(185, 185, 186);
+  width: 100%;
+  height: 40px;
 }
 .visual .search .container .flight_days {
   padding-bottom: 20px;
@@ -1221,6 +1238,8 @@ body {
 .visual .search .flight_lastname .lastname {
   border: none;
   color: rgb(185, 185, 186);
+  width: 100%;
+  height: 40px;
 }
 .visual .search .flight_firstname {
   padding-bottom: 20px;
@@ -1232,6 +1251,8 @@ body {
 .visual .search .flight_firstname .firstname {
   border: none;
   color: rgb(185, 185, 186);
+  width: 100%;
+  height: 40px;
 }
 .visual .search .search_btn {
   font-family: "Rubik", sans-serif;
@@ -1264,6 +1285,8 @@ body {
   border: none;
   width: 250px;
   color: rgb(185, 185, 186);
+  width: 100%;
+  height: 40px;
 }
 .visual .ticket .flight_depart {
   padding-bottom: 20px;
@@ -1281,7 +1304,9 @@ body {
 }
 .visual .ticket .flight_depart a em {
   display: flex;
+  justify-content: space-between;
   border-bottom: 1px solid #000000;
+  width: 100%;
 }
 .visual .ticket .flight_lastname {
   padding-bottom: 20px;
@@ -1293,6 +1318,8 @@ body {
 .visual .ticket .flight_lastname .lastname {
   border: none;
   color: rgb(185, 185, 186);
+  width: 100%;
+  height: 40px;
 }
 .visual .ticket .flight_firstname {
   padding-bottom: 20px;
@@ -1304,6 +1331,8 @@ body {
 .visual .ticket .flight_firstname .firstname {
   border: none;
   color: rgb(185, 185, 186);
+  width: 100%;
+  height: 40px;
 }
 .visual .ticket .search_btn {
   font-family: "Rubik", sans-serif;
@@ -1449,7 +1478,7 @@ body {
 }
 .slide_wrap .slide_list .list_item > a p {
   line-height: 1.6;
-  font-size: 2.5vw;
+  font-size: 3vw;
   padding-top: 50px;
 }
 

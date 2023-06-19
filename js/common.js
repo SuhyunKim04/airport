@@ -716,23 +716,26 @@ const rangeDates = () => {
         ${range2.getFullYear()}-${range2.getMonth()+1}-${
             range2.getDate()}`
     }
-    
+
+   
+  
     const allDay = flatpickr(trip, {
         enableTime: false, // 시간 선택 여부
         locale: "ko", // 한국어
         altInput: true, // 기존 입력을 숨기고 새 입력을 만듦
+        altFormat : "Y-m-d",
         // mode: "multiple",
         // defaultDate: ["today", "today"],
         mode: "range",
         minDate: "today",
         dateFormat: "Y-m-d",
-        defaultDate: ["today", "2023-06-15"],
+        // defaultDate: ["today", "2023-06-15"],
         onChange: function() {
             updateTrip();
         },
     });
-    
-    console.log(allDay.selectedDates[0])
+   
+
      
 }
  

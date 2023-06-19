@@ -107,17 +107,23 @@
    
    
         .contents{ 
-            border-radius:15px;overflow:hidden;
+            border-radius:15px;
 
             .info{ 
-                img { width:100%;}
+                img { 
+                    width:100%; 
+                    margin-bottom:-4px;
+                }
+                position: relative;
             }
 
             .text{
                 text-align: center;
-                background-color: #fff;
-                margin-top: -116px;
-                position: relative;
+                background-color: rgba(255,255,255,0.9);
+                position: absolute;
+                left:0;
+                right: 0;
+                bottom: 0;
                 p{
                     padding: 10px 0 20px 0;
                     font-size: 16px;
@@ -161,3 +167,9 @@
     
 }
 
+@media all and (max-width: 640px) {
+    .view_detail{
+        max-width: none;
+        width: calc(100vw - 40px);
+    }
+}

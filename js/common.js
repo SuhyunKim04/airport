@@ -378,7 +378,7 @@ const visualTab = () => {
     const tabContainer = document.querySelector('.visual .tab-container')
     const tabContents = document.querySelectorAll('.tab-contents');
     const cancels = document.querySelectorAll('.visual .cancel');
-    // console.log(tabContents)
+
     tabMenus.forEach((tabMenu,index) => {
         tabMenu.addEventListener('click', (e) => {
             tabMenus.forEach(menu => {
@@ -480,7 +480,6 @@ function slideBanners() {
         infinite: true,
         arrows:false,
         speed: 500,
-        // fade: true,
         cssEase: 'linear',
         responsive: [
             {
@@ -653,15 +652,6 @@ const mobileGnb = () => {
             e.style.display = 'block'
         })
     })
-   
-
-    // hamburger.addEventListener('click', openMenu);
-    // console.log(hamburger)
-    // 메뉴들 클릭하면 depth1 숨기고 submenu만 보여야함
-    // back 버튼 보이게
-    // back 버튼을 클릭하면 submenu 닫고 depth1 보이게
-    // dimm 처리하고 , dimm 누르면 메뉴 닫아지기
-    // 헴버거 메뉴 기능 설정하기
 }
 
 
@@ -671,15 +661,11 @@ const chkMobile = () => {
     
     if(matchResult.matches) {
 
-        // is Mobile
-        // tabContainer.style.display = 'none'
         tabContainer.classList.remove('open')
         console.log('mobile')
         mobileGnb();
     }else{
 
-        // is not Mobile
-        // tabContainer.style.display = 'block'
         tabContainer.classList.add('open')
          
         console.log('pc')
@@ -705,7 +691,6 @@ const rangeDates = () => {
     const end = document.querySelector('.end');
     
     function updateTrip(){
-        // start.innerHTML = trip.value;
         console.log(allDay);
         let range1 = new Date( allDay.selectedDates[0]);
         let range2 = new Date( allDay.selectedDates[1]);
@@ -720,16 +705,13 @@ const rangeDates = () => {
    
   
     const allDay = flatpickr(trip, {
-        enableTime: false, // 시간 선택 여부
-        locale: "ko", // 한국어
-        altInput: true, // 기존 입력을 숨기고 새 입력을 만듦
+        enableTime: false, 
+        locale: "ko", 
+        altInput: true, 
         altFormat : "Y-m-d",
-        // mode: "multiple",
-        // defaultDate: ["today", "today"],
         mode: "range",
         minDate: "today",
         dateFormat: "Y-m-d",
-        // defaultDate: ["today", "2023-06-15"],
         onChange: function() {
             updateTrip();
         },
@@ -740,11 +722,6 @@ const rangeDates = () => {
 }
  
         
-     
- 
-
-
-
  
 chkMobile();
 window.addEventListener('resize', chkMobile)

@@ -1,11 +1,5 @@
 
 .main{
-
-    // img{
-    //     height: 70vh;
-    //     width: 100%;
-    // }
-
     .list-container{
         @extend %inner;
       h2{
@@ -59,11 +53,6 @@
     .notice{
         
             li{     
-                /* one line
-                text-overflow: ellipsis;
-                overflow: hidden;
-                white-space:nowrap;
-                */
                 overflow: hidden;
                 text-overflow: ellipsis;
                 display: -webkit-box;

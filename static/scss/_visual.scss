@@ -14,7 +14,6 @@
     .tab-container {
         flex-basis:450px;
         position:relative;
-        // flex-shrink: 0;
         display:none;
         &.open {
             display:block;
@@ -64,7 +63,6 @@
                     color: #ffffff;
                     i{
                         transform: rotate(45deg);
-                        // transform: translateY(-8px);
                     }
                 }
 
@@ -89,8 +87,6 @@
            &.on{
 
             button {
-
-                // background-color: $main;
                 height: 120px;
                 color:#fff;
                 i {
@@ -871,12 +867,6 @@
     }
 
     .middle_ad{
-        // .ad_pic{
-        //     .ad_text{
-
-        //     }
-        // }
-
         .service_box{
             .contents_box{
                 flex-direction: column;
